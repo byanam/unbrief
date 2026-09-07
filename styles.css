@@ -1510,7 +1510,8 @@ button {
 .featured-badge {
   position: absolute;
   top: -12px;
-  right: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
   background-color: var(--accent-blue);
   color: #ffffff;
   font-size: 0.68rem;
@@ -1519,7 +1520,7 @@ button {
   letter-spacing: 0.05em;
   padding: 0.3rem 0.85rem;
   border-radius: var(--radius-full);
-  transition: transform 150ms ease;
+  white-space: nowrap;
 }
 
 .pricing-tier-card.featured.is-revealed .featured-badge {
@@ -1527,8 +1528,8 @@ button {
 }
 
 @keyframes badgePop {
-  0% { transform: translateY(6px) scale(0.88); opacity: 0; }
-  100% { transform: translateY(0) scale(1); opacity: 1; }
+  0% { transform: translate(-50%, 6px) scale(0.88); opacity: 0; }
+  100% { transform: translate(-50%, 0) scale(1); opacity: 1; }
 }
 
 .tier-title {
