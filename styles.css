@@ -1210,18 +1210,27 @@ button {
   border-bottom: 1px solid var(--border-hairline);
 }
 
+.pricing-toggle-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 2.25rem auto 0 auto;
+}
+
 .pricing-switch-housing {
   display: inline-flex;
+  align-items: center;
   background-color: var(--bg-card);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-full);
   padding: 4px;
-  margin-top: 2rem;
+  margin: 0;
 }
 
 .pricing-switch-btn {
-  padding: 0.5rem 1.4rem;
-  font-size: 0.82rem;
+  padding: 0.5rem 1.6rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-muted);
   border-radius: var(--radius-full);
@@ -1235,17 +1244,6 @@ button {
   background-color: #1e293b;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.pricing-save-pill {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--accent-blue);
-  background-color: var(--accent-blue-subtle);
-  border: 1px solid var(--accent-blue-border);
-  padding: 0.35rem 0.85rem;
-  border-radius: var(--radius-full);
-  margin-left: 1rem;
 }
 
 .pricing-grid {
