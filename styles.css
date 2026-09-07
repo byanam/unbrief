@@ -1936,6 +1936,36 @@ a,
   filter: none !important;
 }
 
+/* ==========================================================================
+   TYPEWRITER & TEXT-WRITING ANIMATIONS (SCROLL-TRIGGERED)
+   Headers type themselves out dynamically character-by-character on scroll
+   ========================================================================== */
+.typewriter-text {
+  display: inline;
+}
+
+.typewriter-cursor {
+  display: inline-block;
+  color: var(--accent-blue);
+  font-weight: 300;
+  margin-left: 2px;
+  animation: typewriterBlink 0.75s infinite ease-in-out;
+  transition: opacity 0.5s ease;
+}
+
+.typewriter-cursor.fading {
+  opacity: 0;
+}
+
+@keyframes typewriterBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+[data-typewriter] {
+  min-height: 1.2em;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .scroll-reveal,
   .scroll-reveal-scale,
