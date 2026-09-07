@@ -1949,27 +1949,6 @@ button {
   color: #ffffff;
 }
 
-/* Centered Waitlist Badge */
-.ref-waitlist-badge-center {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.55rem;
-  font-family: var(--font-sans);
-  font-size: 0.76rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  color: #d1d5db;
-  background-color: rgba(255, 255, 255, 0.03);
-  border: 1px solid var(--border-hairline);
-  padding: 0.45rem 1rem;
-  border-radius: var(--radius-full);
-}
-
-.ref-status-box {
-  color: #ea580c;
-  font-size: 0.7rem;
-}
 
 /* Middle: Studio / Copyright */
 .ref-footer-mid {
