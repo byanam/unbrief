@@ -231,14 +231,21 @@ button {
 }
 
 /* ==========================================================================
-   HERO SECTION — 1-TO-1 FIGMA REFERENCE LINEAR GRADIENT
-   Vertical Linear Gradient Stops:
-   0%: Website Royal Blue (#1d4ed8)
-   49%: Deep Navy Shadow (#0b1633)
-   100%: Pure Black (#000000)
+   HERO SECTION — SMOOTHLY EASED ACCELERATED BLUE-TO-BLACK GRADIENT
    ========================================================================== */
 .hero-snipify-wrapper {
-  background: linear-gradient(180deg, #1d4ed8 0%, #0b1633 49%, #000000 100%);
+  background: linear-gradient(
+    180deg,
+    #1d4ed8 0%,
+    #1841b8 10%,
+    #133394 20%,
+    #0e246e 32%,
+    #09174a 44%,
+    #050e2c 56%,
+    #020614 68%,
+    #000000 78%,
+    #000000 100%
+  );
   position: relative;
   width: 100%;
   overflow: hidden;
