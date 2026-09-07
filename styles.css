@@ -249,7 +249,8 @@ button {
   position: relative;
   width: 100%;
   overflow: hidden;
-  border-bottom: 1px solid var(--border-hairline);
+  border-bottom: none !important;
+  margin-bottom: 0 !important;
 }
 
 .snipify-header {
@@ -909,6 +910,8 @@ button {
    ========================================================================== */
 .social-proof-section {
   padding: 5rem 0 5.5rem;
+  margin-top: 0 !important;
+  border-top: none !important;
   border-bottom: 1px solid var(--border-hairline);
   background-color: var(--bg-surface);
 }
