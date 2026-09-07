@@ -538,7 +538,75 @@ const proposalPackage = {
     requestAnimationFrame(update);
   }
 
+  // ==========================================================================
+  // 7. SCROLL-TRIGGERED TYPEWRITER & TEXT WRITING ENGINE
+  // Types out text dynamically as headers and problem statements scroll into view
+  // ==========================================================================
+  function initTypewriterOnScroll() {
+    const typewriterElements = document.querySelectorAll('[data-typewriter]');
+    if (!typewriterElements.length) return;
+
+    // Cache the original text so it can be typed out cleanly
+    typewriterElements.forEach(el => {
+      if (!el.getAttribute('data-full-text')) {
+        el.setAttribute('data-full-text', el.textContent.trim());
+      }
+    });
+
+    if (!('IntersectionObserver' in window)) return;
+
+    const typewriterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const el = entry.target;
+          if (!el.dataset.hasTyped) {
+            el.dataset.hasTyped = "true";
+            runTypewriter(el);
+          }
+          observer.unobserve(el);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.2
+    });
+
+    typewriterElements.forEach(el => typewriterObserver.observe(el));
+  }
+
+  function runTypewriter(el) {
+    const fullText = el.getAttribute('data-full-text');
+    if (!fullText) return;
+
+    el.innerHTML = '<span class="typewriter-text"></span><span class="typewriter-cursor">|</span>';
+    const textSpan = el.querySelector('.typewriter-text');
+    const cursorSpan = el.querySelector('.typewriter-cursor');
+
+    let charIndex = 0;
+    const speed = fullText.length > 50 ? 16 : 24; // ms per character
+
+    function typeChar() {
+      if (charIndex < fullText.length) {
+        textSpan.textContent += fullText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeChar, speed + (Math.random() * 6));
+      } else {
+        // Subtle cursor fadeout after typing finishes
+        setTimeout(() => {
+          if (cursorSpan) {
+            cursorSpan.classList.add('fading');
+            setTimeout(() => cursorSpan.remove(), 700);
+          }
+        }, 1200);
+      }
+    }
+
+    typeChar();
+  }
+
   initScrollReveal();
+  initTypewriterOnScroll();
 
 });
 
