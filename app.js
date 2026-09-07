@@ -145,91 +145,95 @@ and in-app onboarding flows. Can we do a fixed monthly retainer with 48h turnaro
   const modeRawBtn = document.getElementById("modeRaw");
   const modeProposalBtn = document.getElementById("modeProposal");
 
-  function renderPreview() {
-    const sc = scenarios[currentScenarioKey];
-    scenarioMeta.textContent = sc.meta;
-    if (previewDealTitle) {
-      previewDealTitle.textContent = sc.dealTitle;
-    }
+  if (workbenchContent && scenarioMeta) {
+    function renderPreview() {
+      const sc = scenarios[currentScenarioKey];
+      scenarioMeta.textContent = sc.meta;
+      if (previewDealTitle) {
+        previewDealTitle.textContent = sc.dealTitle;
+      }
 
-    if (currentMode === "raw") {
-      workbenchContent.innerHTML = `
-        <div class="raw-dump-box">
-          <div class="raw-dump-title">Client Raw Ingest // Unstructured Brief</div>
-          <p class="raw-dump-quote">${sc.rawText.replace(/\n/g, '<br/>')}</p>
-          <div class="risk-alert-box">
-            <div class="risk-alert-header">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/></svg>
-              <span>Unbrief Risk Scanner: 3 Profit Leaks Detected</span>
-            </div>
-            ${sc.traps.map(trap => `
-              <div class="risk-leak-line">
-                <span style="color: var(--red-accent); font-weight: bold;">✕</span>
-                <span>${trap}</span>
+      if (currentMode === "raw") {
+        workbenchContent.innerHTML = `
+          <div class="raw-dump-box">
+            <div class="raw-dump-title">Client Raw Ingest // Unstructured Brief</div>
+            <p class="raw-dump-quote">${sc.rawText.replace(/\n/g, '<br/>')}</p>
+            <div class="risk-alert-box">
+              <div class="risk-alert-header">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/></svg>
+                <span>Unbrief Risk Scanner: 3 Profit Leaks Detected</span>
               </div>
-            `).join('')}
-          </div>
-        </div>
-      `;
-    } else {
-      const p = sc.proposal;
-      workbenchContent.innerHTML = `
-        <div class="scoped-proposal-box">
-          <div>
-            <div class="proposal-meta-heading">${p.title}</div>
-            <div class="proposal-meta-sub">${p.meta}</div>
-          </div>
-
-          <div class="proposal-tiers-row">
-            ${p.tiers.map(t => `
-              <div class="clean-tier-item ${t.active ? 'active' : ''}">
-                <div class="clean-tier-label">${t.name}</div>
-                <div class="clean-tier-price">${t.price}</div>
-                <div class="clean-tier-desc">${t.summary}</div>
-              </div>
-            `).join('')}
-          </div>
-
-          <div class="clean-boundaries-box">
-            <div class="clean-boundaries-header">Contractual Scope Guardrails (Prevents Creep)</div>
-            <div class="clean-boundaries-list">
-              ${p.outOfScope.map(clause => `
-                <div>• ${clause}</div>
+              ${sc.traps.map(trap => `
+                <div class="risk-leak-line">
+                  <span style="color: var(--accent-blue); font-weight: bold;">✕</span>
+                  <span>${trap}</span>
+                </div>
               `).join('')}
             </div>
           </div>
-        </div>
-      `;
+        `;
+      } else {
+        const p = sc.proposal;
+        workbenchContent.innerHTML = `
+          <div class="scoped-proposal-box">
+            <div>
+              <div class="proposal-meta-heading">${p.title}</div>
+              <div class="proposal-meta-sub">${p.meta}</div>
+            </div>
+
+            <div class="proposal-tiers-row">
+              ${p.tiers.map(t => `
+                <div class="clean-tier-item ${t.active ? 'active' : ''}">
+                  <div class="clean-tier-label">${t.name}</div>
+                  <div class="clean-tier-price">${t.price}</div>
+                  <div class="clean-tier-desc">${t.summary}</div>
+                </div>
+              `).join('')}
+            </div>
+
+            <div class="clean-boundaries-box">
+              <div class="clean-boundaries-header">Contractual Scope Guardrails (Prevents Creep)</div>
+              <div class="clean-boundaries-list">
+                ${p.outOfScope.map(clause => `
+                  <div>• ${clause}</div>
+                `).join('')}
+              </div>
+            </div>
+          </div>
+        `;
+      }
     }
-  }
 
-  // Scenario Tab click handlers
-  scenarioButtons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      scenarioButtons.forEach(b => b.classList.remove("active"));
-      btn.classList.add("active");
-      currentScenarioKey = btn.getAttribute("data-scenario");
-      renderPreview();
+    // Scenario Tab click handlers
+    scenarioButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+        scenarioButtons.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+        currentScenarioKey = btn.getAttribute("data-scenario");
+        renderPreview();
+      });
     });
-  });
 
-  // Mode Switch handlers
-  modeRawBtn.addEventListener("click", () => {
-    currentMode = "raw";
-    modeRawBtn.classList.add("active");
-    modeProposalBtn.classList.remove("active");
+    // Mode Switch handlers
+    if (modeRawBtn && modeProposalBtn) {
+      modeRawBtn.addEventListener("click", () => {
+        currentMode = "raw";
+        modeRawBtn.classList.add("active");
+        modeProposalBtn.classList.remove("active");
+        renderPreview();
+      });
+
+      modeProposalBtn.addEventListener("click", () => {
+        currentMode = "proposal";
+        modeProposalBtn.classList.add("active");
+        modeRawBtn.classList.remove("active");
+        renderPreview();
+      });
+    }
+
+    // Initial render
     renderPreview();
-  });
-
-  modeProposalBtn.addEventListener("click", () => {
-    currentMode = "proposal";
-    modeProposalBtn.classList.add("active");
-    modeRawBtn.classList.remove("active");
-    renderPreview();
-  });
-
-  // Initial render
-  renderPreview();
+  }
 
   // ==========================================================================
   // 2. HOW IT WORKS INTERACTIVE STEP TELEMETRY
@@ -447,4 +451,94 @@ const proposalPackage = {
     }, 400);
   });
 
+  // ==========================================================================
+  // 6. SCROLL REVEAL OBSERVER & DYNAMIC STAT COUNTER ANIMATIONS (LOWER SECTIONS)
+  // Strictly excludes the hero section so the hero loads instantly without motion.
+  // ==========================================================================
+  function initScrollReveal() {
+    const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-scale');
+    if (!revealElements.length) return;
+
+    // Enable animation CSS now that JavaScript is confirmed running
+    document.documentElement.classList.add('js-reveal-active');
+
+    // Immediately reveal any element already in or near the viewport on load
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    revealElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top <= vh * 0.95) {
+        el.classList.add('is-revealed');
+        const counters = el.querySelectorAll('.stat-counter');
+        counters.forEach(counter => {
+          if (!counter.dataset.animated) {
+            counter.dataset.animated = "true";
+            animateCounter(counter);
+          }
+        });
+      }
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      revealElements.forEach(el => el.classList.add('is-revealed'));
+      return;
+    }
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+
+          // Trigger dynamic number count-up for any stat-counter elements within this card
+          const counters = entry.target.querySelectorAll('.stat-counter');
+          counters.forEach(counter => {
+            if (!counter.dataset.animated) {
+              counter.dataset.animated = "true";
+              animateCounter(counter);
+            }
+          });
+
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08
+    });
+
+    revealElements.forEach(el => {
+      if (!el.classList.contains('is-revealed')) {
+        revealObserver.observe(el);
+      }
+    });
+  }
+
+  function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    if (isNaN(target)) return;
+
+    const duration = 1200; // ms
+    const startTime = performance.now();
+
+    function update(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Smooth cubic-out easing curve
+      const ease = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(ease * target);
+      el.textContent = current;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        el.textContent = target;
+      }
+    }
+
+    requestAnimationFrame(update);
+  }
+
+  initScrollReveal();
+
 });
+
