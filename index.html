@@ -374,67 +374,185 @@
   </section>
 
   <!-- ========================================================================
-       SECTION 4: COMPARISON TABLE
+       SECTION 4: VISUAL ARCHITECTURAL COMPARISON
        ======================================================================== -->
   <section class="comparison-section" id="comparison">
     <div class="container">
 
       <div class="section-head scroll-reveal">
-        <h2 class="section-title">Unbrief vs manual scoping vs legacy tools</h2>
+        <h2 class="section-title">The old way vs. the Unbrief system</h2>
         <p class="section-desc">
-          Why leading agencies are replacing static PDF templates and spreadsheets with Unbrief.
+          Why high-margin agency operators are dumping manual decks and static templates.
         </p>
       </div>
 
-      <div class="table-clean-wrapper scroll-reveal scroll-reveal-scale">
-        <table class="clean-table">
-          <thead>
-            <tr>
-              <th style="width: 25%;">Capability / Feature</th>
-              <th class="col-unbrief" style="width: 28%;">UNBRIEF ENGINE</th>
-              <th style="width: 23%;">Manual Scoping</th>
-              <th style="width: 24%;">Legacy Tools (PandaDoc/Proposify)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td style="font-weight: 700; color: #ffffff;">Turnaround to sent proposal</td>
-              <td class="col-unbrief val-unbrief-strong">8–12 minutes from raw brief</td>
-              <td>12–16 hours over 3–5 days</td>
-              <td>4–6 hours (formatting templates)</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 700; color: #ffffff;">Handling chaotic client inputs</td>
-              <td class="col-unbrief val-unbrief-strong">Paste raw audio transcript or emails</td>
-              <td>Manual line-by-line synthesis</td>
-              <td>Requires pre-written clean copy</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 700; color: #ffffff;">Pricing Architecture</td>
-              <td class="col-unbrief val-unbrief-strong">Automated 3-tier Good/Better/Best</td>
-              <td>Single take-it-or-leave-it figure</td>
-              <td>Static tables & basic calculators</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 700; color: #ffffff;">Scope Creep Defense</td>
-              <td class="col-unbrief val-unbrief-strong">Auto-generated out-of-scope clauses</td>
-              <td>Forgotten or loosely worded</td>
-              <td>Zero scoping or risk detection</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 700; color: #ffffff;">Agency Team Economics</td>
-              <td class="col-unbrief val-unbrief-strong">Flat pricing (Zero per-seat charges)</td>
-              <td>Free software, massive labor loss</td>
-              <td>$49–$99/user/month seat taxes</td>
-            </tr>
-            <tr>
-              <td style="font-weight: 700; color: #ffffff;">Pitch Win Rate</td>
-              <td class="col-unbrief val-unbrief-strong">74% average close rate</td>
-              <td>28% (lost to faster bids)</td>
-              <td>34% (standard follow-up)</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Visual Dual-Architecture Split -->
+      <div class="comp-visual-grid scroll-reveal scroll-reveal-scale">
+
+        <!-- Card A: The Old Agency Grind -->
+        <div class="comp-card comp-card-old">
+          <div class="comp-card-badge red">LEGACY PROTOCOL // 4-DAY CYCLE</div>
+          <h3 class="comp-card-title">Manual Proposal Hell</h3>
+          <p class="comp-card-sub">Cobbling together custom decks while deals turn cold.</p>
+
+          <div class="comp-timeline">
+            <div class="comp-timeline-item">
+              <span class="comp-time-tag">DAY 01</span>
+              <div class="comp-time-info">
+                <strong>45-Min Discovery Call</strong>
+                <p>Scattered bullet points trapped in Apple Notes or unreviewed audio files.</p>
+              </div>
+            </div>
+            <div class="comp-timeline-item">
+              <span class="comp-time-tag">DAY 02</span>
+              <div class="comp-time-info">
+                <strong>12 Hours Formatting Slides</strong>
+                <p>Manually designing 30 Keynote pages that the client’s CFO will never read.</p>
+              </div>
+            </div>
+            <div class="comp-timeline-item">
+              <span class="comp-time-tag">DAY 03</span>
+              <div class="comp-time-info">
+                <strong>Internal Day-Rate Arguments</strong>
+                <p>Chasing developers on Slack to price edge cases without clear scope limits.</p>
+              </div>
+            </div>
+            <div class="comp-timeline-item">
+              <span class="comp-time-tag">DAY 04</span>
+              <div class="comp-time-info">
+                <strong>Sent 1 Flat Quote & Ghosted</strong>
+                <p>Client already signed with the first agency that sent a clear scope.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="comp-metrics-row">
+            <div class="comp-metric-box">
+              <span class="comp-metric-num">14 hrs</span>
+              <span class="comp-metric-lbl">Time Burned</span>
+            </div>
+            <div class="comp-metric-box">
+              <span class="comp-metric-num">1 Single</span>
+              <span class="comp-metric-lbl">Fixed Price</span>
+            </div>
+            <div class="comp-metric-box">
+              <span class="comp-metric-num">28%</span>
+              <span class="comp-metric-lbl">Close Rate</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card B: The Unbrief System -->
+        <div class="comp-card comp-card-unbrief">
+          <div class="comp-card-badge blue">AUTONOMOUS PROTOCOL // 8-MIN CYCLE</div>
+          <h3 class="comp-card-title">The Unbrief System</h3>
+          <p class="comp-card-sub">First-responder advantage with automated scope guardrails.</p>
+
+          <div class="comp-timeline">
+            <div class="comp-timeline-item unbrief">
+              <span class="comp-time-tag">00:00</span>
+              <div class="comp-time-info">
+                <strong>Raw Brief Ingestion</strong>
+                <p>Paste chaotic client emails, Slack dumps, or Fireflies Zoom transcripts.</p>
+              </div>
+            </div>
+            <div class="comp-timeline-item unbrief">
+              <span class="comp-time-tag">00:02</span>
+              <div class="comp-time-info">
+                <strong>Risk & Ambiguity Scanner</strong>
+                <p>AI flags missing deadlines, uncapped revisions, and unstated technical debt.</p>
+              </div>
+            </div>
+            <div class="comp-timeline-item unbrief">
+              <span class="comp-time-tag">00:05</span>
+              <div class="comp-time-info">
+                <strong>3-Tier Architecture Generated</strong>
+                <p>Automated Good / Better / Best packages calibrated to your rate card.</p>
+              </div>
+            </div>
+            <div class="comp-timeline-item unbrief">
+              <span class="comp-time-tag">00:08</span>
+              <div class="comp-time-info">
+                <strong>Interactive Reverse-Brief Sent</strong>
+                <p>Trackable link with legally binding e-sign. Client signs same afternoon.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="comp-metrics-row">
+            <div class="comp-metric-box unbrief">
+              <span class="comp-metric-num">8 mins</span>
+              <span class="comp-metric-lbl">Turnaround</span>
+            </div>
+            <div class="comp-metric-box unbrief">
+              <span class="comp-metric-num">3 Tiers</span>
+              <span class="comp-metric-lbl">Good/Better/Best</span>
+            </div>
+            <div class="comp-metric-box unbrief">
+              <span class="comp-metric-num">74%</span>
+              <span class="comp-metric-lbl">Close Rate</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4 Visual Capability Comparison Blocks -->
+      <div class="comp-feature-grid scroll-reveal">
+
+        <div class="comp-feature-card">
+          <div class="comp-feat-head">
+            <span class="comp-feat-title">Response Latency</span>
+            <span class="comp-feat-stat">96% Faster</span>
+          </div>
+          <div class="comp-bar-group">
+            <div class="comp-bar-row">
+              <span class="comp-bar-label">Unbrief</span>
+              <div class="comp-bar-track">
+                <div class="comp-bar-fill blue" style="width: 8%;"></div>
+              </div>
+              <span class="comp-bar-val">8 mins</span>
+            </div>
+            <div class="comp-bar-row">
+              <span class="comp-bar-label">Legacy</span>
+              <div class="comp-bar-track">
+                <div class="comp-bar-fill red" style="width: 95%;"></div>
+              </div>
+              <span class="comp-bar-val">4 days</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="comp-feature-card">
+          <div class="comp-feat-head">
+            <span class="comp-feat-title">Pricing Psychology</span>
+            <span class="comp-feat-stat">+34% Deal Size</span>
+          </div>
+          <p class="comp-feat-desc">
+            Replaces take-it-or-leave-it single quotes with 3-tier Good/Better/Best architectures that anchor value and increase margin.
+          </p>
+        </div>
+
+        <div class="comp-feature-card">
+          <div class="comp-feat-head">
+            <span class="comp-feat-title">Scope Creep Defense</span>
+            <span class="comp-feat-stat">Zero Leaks</span>
+          </div>
+          <p class="comp-feat-desc">
+            Automatically writes contractual out-of-scope clauses and milestone revision caps directly into every agreement.
+          </p>
+        </div>
+
+        <div class="comp-feature-card">
+          <div class="comp-feat-head">
+            <span class="comp-feat-title">Software Economics</span>
+            <span class="comp-feat-stat">No Seat Tax</span>
+          </div>
+          <p class="comp-feat-desc">
+            Flat predictable studio tiers. No $99/user/month seat taxes penalizing your delivery team or subcontractors.
+          </p>
+        </div>
+
       </div>
 
     </div>
