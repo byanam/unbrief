@@ -235,12 +235,17 @@ button {
    Ultra-understated dark tone seamlessly anchored to website base palette
    ========================================================================== */
 .hero-snipify-wrapper {
-  background: linear-gradient(180deg,
-    #0a101d 0%,
-    #090e18 35%,
-    #080c13 65%,
-    #09090b 100%
-  );
+  background: 
+    radial-gradient(ellipse 80% 55% at 50% -5%, rgba(29, 78, 216, 0.32) 0%, rgba(15, 33, 76, 0.25) 45%, transparent 75%),
+    linear-gradient(145deg,
+      #081022 0%,
+      #0d1d42 20%,
+      #132e6a 42%,
+      #1b408e 60%,
+      #112552 80%,
+      #09090b 100%
+    );
+  background-size: 180% 180%;
   position: relative;
   width: 100%;
   overflow: hidden;
