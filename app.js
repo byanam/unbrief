@@ -746,9 +746,29 @@ const proposalPackage = {
       uniform vec3 uColor1;
       uniform vec3 uColor2;
       uniform vec3 uColor3;
+      uniform float uTime;
 
       varying vec3 vPos;
       varying vec2 vUv;
+
+      // High-precision pseudo-random noise generator (ruucm/shadergradient grain)
+      float rand(vec2 n) { 
+        return fract(sin(dot(n, vec2(12.9898, 78.233))) * 43758.5453123);
+      }
+
+      // Value noise for organic surface texture
+      float noise(vec2 p) {
+        vec2 ip = floor(p);
+        vec2 u = fract(p);
+        u = u * u * (3.0 - 2.0 * u);
+        
+        float res = mix(
+          mix(rand(ip), rand(ip + vec2(1.0, 0.0)), u.x),
+          mix(rand(ip + vec2(0.0, 1.0)), rand(ip + vec2(1.0, 1.0)), u.x),
+          u.y
+        );
+        return res * res;
+      }
 
       void main() {
         // Multi-axis chromatic blend (ruucm/shadergradient specification)
@@ -759,7 +779,18 @@ const proposalPackage = {
         float blendY = smoothstep(-2.0, 3.5, vPos.y);
         vec3 finalColor = mix(uColor3, c12, blendY);
 
-        gl_FragColor = vec4(finalColor, 1.0);
+        // Animated tactile film grain (ruucm/shadergradient grain: 'on')
+        vec2 grainUv = vUv * 720.0 + vec2(sin(uTime * 2.0), cos(uTime * 1.5)) * 10.0;
+        float grain = (rand(grainUv) - 0.5) * 0.095;
+
+        // Organic soft noise texture
+        float organic = (noise(vUv * 45.0 + uTime * 0.06) - 0.5) * 0.055;
+
+        // Apply grain smoothly across colored areas (fades out in pure black base)
+        float colorWeight = clamp(length(finalColor), 0.0, 1.0);
+        finalColor += vec3(grain + organic) * colorWeight;
+
+        gl_FragColor = vec4(clamp(finalColor, 0.0, 1.0), 1.0);
       }
     `;
 
