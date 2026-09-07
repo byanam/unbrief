@@ -741,96 +741,52 @@ const proposalPackage = {
   }
 
   // ==========================================================================
-  // [COMMENT 16]: Mobbin-grade scroll-synced comparison flightdeck controller
-  // Synchronizes the central laser spine, active milestone states, and scrubber telemetry with viewport scrolling.
+  // [COMMENT 16]: Clean scroll-synced comparison controller
+  // Synchronizes the center hairline pip and active editorial row states with viewport scroll.
+  // Zero glow, zero colored telemetry, smooth performance.
   // ==========================================================================
   function initComparisonFlightdeck() {
     const compSection = document.getElementById('comparison');
-    const flightdeck = document.getElementById('compFlightdeck');
-    const spineFill = document.getElementById('spineFillLine');
-    const spineLaser = document.getElementById('spineLaserHead');
-    const rows = document.querySelectorAll('.comp-milestone-row');
-    const scrubBtns = document.querySelectorAll('.scrub-step-btn');
-    const tradStatus = document.getElementById('ctbTradStatus');
-    const unbriefStatus = document.getElementById('ctbUnbriefStatus');
+    const syncStage = document.getElementById('compSyncStage');
+    const dividerPip = document.getElementById('dividerScrollPip');
+    const rows = document.querySelectorAll('.comp-pair-row');
 
-    if (!compSection || !flightdeck || !rows.length) return;
-
-    const telemetryData = [
-      {
-        trad: "Day 1 – 2 • Keynote formatting drag",
-        unbrief: "Minute 0 – 2 • Clean intake parsed"
-      },
-      {
-        trad: "Day 3 • Flat fee invites haggling",
-        unbrief: "Minute 3 – 5 • 3-Tier anchor ready"
-      },
-      {
-        trad: "Day 4 • Unpaid scope creep (Margin: 31%)",
-        unbrief: "Minute 6 – 7 • Scope guard locked (Margin: 68.4%)"
-      },
-      {
-        trad: "Day 5+ • Deal ghosted by competitor",
-        unbrief: "Minute 8 • Signed & deposit captured (74% Win)"
-      }
-    ];
+    if (!compSection || !syncStage || !rows.length) return;
 
     let activeIndex = 0;
     let isTicking = false;
 
-    // Handle clicks on scrubber step buttons
-    scrubBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const step = parseInt(btn.dataset.step, 10);
-        const targetRow = document.getElementById(`milestone-${step}`);
-        if (targetRow) {
-          const rect = targetRow.getBoundingClientRect();
-          const targetY = window.pageYOffset + rect.top - (window.innerHeight * 0.35);
-          window.scrollTo({
-            top: targetY,
-            behavior: 'smooth'
-          });
+    function updateComparisonSync() {
+      const stageRect = syncStage.getBoundingClientRect();
+      const viewportMid = window.innerHeight * 0.5;
+
+      // Calculate progress of scroll through comparison stage (0% to 100%)
+      const stageHeight = stageRect.height;
+      if (stageHeight > 0) {
+        const currentPos = viewportMid - stageRect.top;
+        const progress = Math.max(0, Math.min(1, currentPos / stageHeight));
+        if (dividerPip) {
+          dividerPip.style.top = `${progress * 100}%`;
         }
-      });
-    });
-
-    function updateFlightdeckSync() {
-      const fdRect = flightdeck.getBoundingClientRect();
-      const viewportMid = window.innerHeight * 0.45;
-      
-      // Calculate progress from 0% at top to 100% at bottom
-      const totalDist = fdRect.height;
-      const currentDist = viewportMid - fdRect.top;
-      let progress = currentDist / totalDist;
-      progress = Math.max(0.04, Math.min(0.98, progress));
-
-      // Update vertical tracker spine
-      if (spineFill) {
-        spineFill.style.height = `${progress * 100}%`;
-      }
-      if (spineLaser) {
-        spineLaser.style.top = `${progress * 100}%`;
       }
 
-      // Determine active milestone row
-      let bestIndex = 0;
+      // Find the pair row closest to viewport center
+      let closestIndex = 0;
       let minDistance = Infinity;
 
       rows.forEach((row, idx) => {
         const rowRect = row.getBoundingClientRect();
-        const rowCenter = rowRect.top + rowRect.height * 0.5;
+        const rowCenter = rowRect.top + (rowRect.height * 0.5);
         const dist = Math.abs(rowCenter - viewportMid);
 
         if (dist < minDistance) {
           minDistance = dist;
-          bestIndex = idx;
+          closestIndex = idx;
         }
       });
 
-      if (bestIndex !== activeIndex) {
-        activeIndex = bestIndex;
-
-        // Update rows
+      if (closestIndex !== activeIndex) {
+        activeIndex = closestIndex;
         rows.forEach((row, idx) => {
           if (idx === activeIndex) {
             row.classList.add('is-active');
@@ -838,23 +794,6 @@ const proposalPackage = {
             row.classList.remove('is-active');
           }
         });
-
-        // Update scrubber buttons
-        scrubBtns.forEach((btn, idx) => {
-          if (idx === activeIndex) {
-            btn.classList.add('active');
-          } else {
-            btn.classList.remove('active');
-          }
-        });
-
-        // Update telemetry status
-        if (tradStatus && telemetryData[activeIndex]) {
-          tradStatus.textContent = telemetryData[activeIndex].trad;
-        }
-        if (unbriefStatus && telemetryData[activeIndex]) {
-          unbriefStatus.textContent = telemetryData[activeIndex].unbrief;
-        }
       }
 
       isTicking = false;
@@ -862,13 +801,13 @@ const proposalPackage = {
 
     window.addEventListener('scroll', () => {
       if (!isTicking) {
-        requestAnimationFrame(updateFlightdeckSync);
+        requestAnimationFrame(updateComparisonSync);
         isTicking = true;
       }
     }, { passive: true });
 
-    // Initial calculation
-    updateFlightdeckSync();
+    // Initial check on load
+    updateComparisonSync();
   }
 
   initComparisonFlightdeck();

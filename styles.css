@@ -1161,762 +1161,266 @@ button {
 }
 
 /* ==========================================================================
-   COMPARISON SECTION — CLEAN, CONCISE & EDITORIAL
+   SECTION 4: COMPARISON — SPEED AND CLARITY (EDITORIAL CONTRAST)
+   Pure typography, zero glow, no colored text, unboxed bold labels
    ========================================================================== */
 .comparison-section {
-  padding: 7rem 0;
-  background-color: var(--bg-surface);
-  border-bottom: 1px solid var(--border-hairline);
+  padding: 8rem 0 9rem;
+  background-color: #000000 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
 }
 
-.comp-container {
-  max-width: 1340px;
+.comp-editorial-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Section Header */
+.comp-editorial-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 5rem auto;
+}
+
+.comp-mono-kicker {
+  display: block;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 1.1rem;
+}
+
+.comp-editorial-title {
+  font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+  font-weight: 850;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  color: #ffffff;
+  margin: 0 0 1.25rem 0;
+}
+
+.comp-editorial-desc {
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: #94a3b8;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+/* Big Bold Column Labels: NO BOXES, NO COLOR */
+.comp-columns-header {
+  display: grid;
+  grid-template-columns: 1fr 64px 1fr;
+  align-items: end;
+  margin-bottom: 3.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.comp-col-heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.comp-col-heading.left {
+  grid-column: 1;
+}
+
+.comp-col-heading.right {
+  grid-column: 3;
+}
+
+.comp-heading-sub {
+  font-family: var(--font-mono, monospace);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #64748b;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.comp-col-heading.right .comp-heading-sub {
+  color: #94a3b8;
+}
+
+.comp-heading-main {
+  font-size: clamp(1.9rem, 3vw, 2.6rem);
+  font-weight: 850;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+  color: #cbd5e1;
+  margin: 0;
+}
+
+.comp-col-heading.right .comp-heading-main {
+  color: #ffffff;
+}
+
+/* Comparison Stage with Central Hairline & Scroll Pip */
+.comp-sync-stage {
+  position: relative;
   width: 100%;
 }
 
-.comp-head-minimal {
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto 2.5rem auto;
-}
-
-.comp-eyebrow-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(59, 130, 246, 0.08);
-  border: 1px solid rgba(59, 130, 246, 0.25);
-  padding: 0.32rem 0.85rem;
-  border-radius: 9999px;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #38bdf8;
-  margin-bottom: 1rem;
-}
-
-.comp-eyebrow-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #38bdf8;
-  box-shadow: 0 0 8px #38bdf8;
-}
-
-.comp-headline {
-  font-size: clamp(2.1rem, 3.4vw, 2.75rem);
-  font-weight: 800;
-  letter-spacing: -0.035em;
-  color: #ffffff;
-  margin: 0 0 0.85rem 0;
-  line-height: 1.15;
-}
-
-.comp-subtext {
-  font-size: 1rem;
-  color: #94a3b8;
-  margin: 0;
-  line-height: 1.6;
-}
-
-/* ==========================================================================
-   INTERACTIVE SCRUBBER / MILESTONE CONTROLLER (MOBBIN STYLE)
-   ========================================================================== */
-.comp-scrub-bar-wrap {
-  max-width: 1080px;
-  margin: 0 auto 3rem auto;
-  position: sticky;
-  top: 75px;
-  z-index: 25;
-  background: rgba(8, 9, 13, 0.88);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 0.65rem 0.85rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-}
-
-.comp-scrub-bar {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.5rem;
-}
-
-.scrub-step-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: transparent;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  padding: 0.55rem 0.85rem;
-  color: #64748b;
-  cursor: pointer;
-  transition: all 160ms cubic-bezier(0.16, 1, 0.3, 1);
-  text-align: left;
-}
-
-.scrub-step-btn:hover {
-  background: rgba(255, 255, 255, 0.03);
-  color: #cbd5e1;
-}
-
-.scrub-step-btn.active {
-  background: #121520;
-  border-color: rgba(59, 130, 246, 0.35);
-  color: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-}
-
-.ssb-num {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #475569;
-}
-
-.scrub-step-btn.active .ssb-num {
-  color: #38bdf8;
-}
-
-.ssb-label {
-  font-size: 0.78rem;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-/* Telemetry Banner below Scrubber */
-.comp-telemetry-banner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.55rem 0.5rem 0.15rem 0.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  margin-top: 0.5rem;
-  font-size: 0.74rem;
-}
-
-.ctb-track {
-  display: flex;
-  align-items: center;
-  gap: 0.45rem;
-}
-
-.ctb-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-}
-
-.ctb-dot.red { background: #ef4444; }
-.ctb-dot.cyan { background: #38bdf8; }
-
-.ctb-title {
-  color: #64748b;
-  font-weight: 500;
-}
-
-.ctb-stat {
-  font-weight: 700;
-  color: #e2e8f0;
-}
-
-.ctb-track.left .ctb-stat { color: #f87171; }
-.ctb-track.right .ctb-stat { color: #38bdf8; }
-
-.cmm-pill {
-  font-size: 0.62rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: #475569;
-}
-
-/* ==========================================================================
-   DUAL-TRACK FLIGHTDECK WITH CENTRAL LASER SPINE
-   ========================================================================== */
-.comp-flightdeck {
-  position: relative;
-  max-width: 1160px;
-  margin: 0 auto;
-  padding: 1rem 0;
-}
-
-/* Central Tracker Spine */
-.comp-center-spine {
+.comp-center-divider {
   position: absolute;
-  top: 40px;
-  bottom: 60px;
+  top: 0;
+  bottom: 0;
   left: 50%;
-  width: 2px;
   transform: translateX(-50%);
+  width: 1px;
   pointer-events: none;
   z-index: 2;
 }
 
-.spine-bg-line {
+.divider-track-line {
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
-  right: 0;
+  width: 1px;
   background: rgba(255, 255, 255, 0.08);
 }
 
-.spine-fill-line {
+.divider-scroll-pip {
   position: absolute;
-  top: 0;
   left: 0;
-  right: 0;
-  height: 15%; /* Updated via JS scroll sync */
-  background: #38bdf8;
-  box-shadow: 0 0 10px #38bdf8;
-  transition: height 80ms linear;
-}
-
-.spine-laser-head {
-  position: absolute;
-  left: 50%;
-  top: 15%;
+  top: 0;
   transform: translate(-50%, -50%);
-  width: 8px;
-  height: 8px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
   background: #ffffff;
-  box-shadow: 0 0 12px #38bdf8, 0 0 4px #ffffff;
-  transition: top 80ms linear;
+  box-shadow: none;
+  transition: top 80ms ease-out;
 }
 
-/* Milestones Container */
-.comp-milestones-track {
+/* Comparison Rows List */
+.comp-pairs-list {
   display: flex;
   flex-direction: column;
-  gap: 3.5rem;
 }
 
-/* Milestone Row */
-.comp-milestone-row {
+.comp-pair-row {
   display: grid;
-  grid-template-columns: 1fr 48px 1fr;
-  align-items: center;
-  position: relative;
-  transition: opacity 220ms ease;
-  scroll-margin-top: 170px;
+  grid-template-columns: 1fr 64px 1fr;
+  align-items: start;
+  padding: 3.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  opacity: 0.28;
+  transform: translateY(10px);
+  transition: opacity 280ms cubic-bezier(0.16, 1, 0.3, 1), transform 280ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Central Spine Node Indicator */
-.spine-node {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: #0d0f17;
-  border: 1px solid rgba(255, 255, 255, 0.14);
+.comp-pair-row:last-child {
+  border-bottom: none;
+}
+
+.comp-pair-row.is-active {
+  opacity: 1.0;
+  transform: translateY(0);
+}
+
+/* Editorial Cards: Unboxed, pure typographic hierarchy */
+.comp-card-editorial {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  z-index: 3;
-  transition: all 220ms ease;
+  flex-direction: column;
+  gap: 0.65rem;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
-.node-index {
+.comp-card-editorial.left {
+  grid-column: 1;
+}
+
+.comp-card-editorial.right {
+  grid-column: 3;
+}
+
+.comp-item-num {
   font-family: var(--font-mono, monospace);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   font-weight: 700;
+  letter-spacing: 0.1em;
+  color: #475569;
+  display: block;
+}
+
+.comp-card-editorial.right .comp-item-num {
   color: #64748b;
 }
 
-.comp-milestone-row.is-active .spine-node {
-  background: #0e172a;
-  border-color: #38bdf8;
-  box-shadow: 0 0 14px rgba(59, 130, 246, 0.4);
-  transform: scale(1.15);
-}
-
-.comp-milestone-row.is-active .node-index {
-  color: #38bdf8;
-}
-
-/* Lanes & Cards */
-.comp-lane {
-  display: flex;
-  flex-direction: column;
-}
-
-.comp-lane.lane-traditional {
-  padding-right: 1.5rem;
-}
-
-.comp-lane.lane-unbrief {
-  padding-left: 1.5rem;
-}
-
-.lane-card {
-  background: #0a0b10;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  padding: 1.85rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), border-color 180ms ease, box-shadow 180ms ease;
-}
-
-.lane-card:hover {
-  transform: translateY(-2px);
-}
-
-.lane-traditional .lane-card {
-  background: #0c0d12;
-  border-color: rgba(255, 255, 255, 0.07);
-}
-
-.comp-milestone-row.is-active .lane-traditional .lane-card {
-  border-color: rgba(239, 68, 68, 0.25);
-}
-
-.lane-unbrief .lane-card {
-  background: #0a0f1d;
-  border-color: rgba(59, 130, 246, 0.22);
-}
-
-.comp-milestone-row.is-active .lane-unbrief .lane-card {
-  border-color: rgba(59, 130, 246, 0.55);
-  box-shadow: 0 12px 35px -10px rgba(59, 130, 246, 0.22);
-}
-
-/* Card Header Meta */
-.card-meta-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.5rem;
-}
-
-.tag-friction {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: #f87171;
-}
-
-.tag-velocity {
-  font-family: var(--font-mono, monospace);
-  font-size: 0.65rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: #38bdf8;
-}
-
-.status-chip {
-  font-size: 0.68rem;
-  font-weight: 600;
-  padding: 0.18rem 0.55rem;
-  border-radius: 9999px;
-}
-
-.status-chip.warning {
-  background: rgba(245, 158, 11, 0.12);
-  color: #fcd34d;
-  border: 1px solid rgba(245, 158, 11, 0.25);
-}
-
-.status-chip.danger {
-  background: rgba(239, 68, 68, 0.12);
-  color: #fca5a5;
-  border: 1px solid rgba(239, 68, 68, 0.25);
-}
-
-.status-chip.success {
-  background: rgba(16, 185, 129, 0.12);
-  color: #6ee7b7;
-  border: 1px solid rgba(16, 185, 129, 0.25);
-}
-
-.card-headline {
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin: 0;
+.comp-item-title {
+  font-size: clamp(1.18rem, 1.65vw, 1.35rem);
+  font-weight: 750;
   line-height: 1.35;
-  letter-spacing: -0.015em;
-}
-
-.card-desc {
-  font-size: 0.82rem;
-  color: #94a3b8;
-  margin: 0;
-  line-height: 1.5;
-}
-
-/* ==========================================================================
-   TACTILE UI ARTIFACTS (MOBBIN DESIGN PATTERNS)
-   ========================================================================== */
-.lane-artifact {
-  background: #11131c;
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 8px;
-  padding: 0.85rem;
-  margin-top: 0.25rem;
-}
-
-.artifact-friction {
-  background: #13141a;
-  border-color: rgba(239, 68, 68, 0.15);
-}
-
-.artifact-velocity {
-  background: #101626;
-  border-color: rgba(59, 130, 246, 0.25);
-}
-
-.af-header, .av-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.65rem;
-  font-size: 0.72rem;
-}
-
-.af-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #ef4444;
-}
-
-.av-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #10b981;
-  box-shadow: 0 0 6px #10b981;
-}
-
-.af-title {
-  color: #94a3b8;
-  font-weight: 600;
-  flex: 1;
-  margin-left: 0.45rem;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.68rem;
-}
-
-.av-title {
+  letter-spacing: -0.02em;
   color: #cbd5e1;
-  font-weight: 600;
-  flex: 1;
-  margin-left: 0.45rem;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.68rem;
-}
-
-.af-badge {
-  font-size: 0.62rem;
-  color: #f87171;
-  background: rgba(239, 68, 68, 0.1);
-  padding: 0.15rem 0.45rem;
-  border-radius: 4px;
-}
-
-.av-badge {
-  font-size: 0.62rem;
-  color: #38bdf8;
-  background: rgba(59, 130, 246, 0.15);
-  padding: 0.15rem 0.45rem;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-/* Artifact 1: Mock Slides & Audio Tags */
-.af-mock-slides {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 0.45rem;
-  margin-bottom: 0.55rem;
-}
-
-.mock-slide {
-  height: 52px;
-  background: #181a24;
-  border: 1px dashed rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-  padding: 0.35rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.mock-slide.active {
-  border-color: rgba(239, 68, 68, 0.4);
-  background: rgba(239, 68, 68, 0.04);
-}
-
-.sl-bar {
-  height: 4px;
-  background: rgba(255, 255, 255, 0.12);
-  border-radius: 2px;
-  width: 80%;
-}
-
-.sl-bar.short { width: 50%; }
-
-.sl-warn {
-  font-size: 0.58rem;
-  color: #fca5a5;
-  margin-top: auto;
-}
-
-.av-tags-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  margin-bottom: 0.55rem;
-}
-
-.av-tag {
-  font-size: 0.68rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.2rem 0.55rem;
-  border-radius: 5px;
-  color: #e2e8f0;
-}
-
-/* Artifact 2: Haggling Email vs 3-Tier Mini Matrix */
-.af-email-quote {
-  background: #171822;
-  border-left: 2px solid #ef4444;
-  padding: 0.55rem 0.75rem;
-  border-radius: 0 4px 4px 0;
-  margin-bottom: 0.55rem;
-}
-
-.eq-sender {
-  font-size: 0.65rem;
-  color: #94a3b8;
-  display: block;
-  margin-bottom: 0.2rem;
-}
-
-.af-email-quote p {
-  font-size: 0.74rem;
-  color: #fca5a5;
   margin: 0;
-  line-height: 1.4;
-  font-style: italic;
 }
 
-.av-tiers-mini {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.4rem;
-  margin-bottom: 0.55rem;
-}
-
-.mini-tier {
-  background: #13192a;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 6px;
-  padding: 0.45rem 0.55rem;
-  text-align: center;
-}
-
-.mini-tier.featured {
-  background: #17233e;
-  border-color: rgba(59, 130, 246, 0.45);
-}
-
-.mt-name {
-  display: block;
-  font-size: 0.6rem;
-  color: #94a3b8;
-  margin-bottom: 0.2rem;
-}
-
-.mini-tier.featured .mt-name { color: #38bdf8; font-weight: 700; }
-
-.mt-price {
-  font-size: 0.85rem;
-  font-weight: 800;
+.comp-card-editorial.right .comp-item-title {
   color: #ffffff;
 }
 
-/* Artifact 3: Creep List vs Guard List */
-.af-creep-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  margin-bottom: 0.55rem;
-}
-
-.creep-item {
-  font-size: 0.72rem;
-  color: #fca5a5;
-  background: rgba(239, 68, 68, 0.06);
-  padding: 0.35rem 0.65rem;
-  border-radius: 4px;
-}
-
-.av-guard-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  margin-bottom: 0.55rem;
-}
-
-.guard-item {
-  font-size: 0.72rem;
-  color: #a7f3d0;
-  background: rgba(16, 185, 129, 0.08);
-  padding: 0.35rem 0.65rem;
-  border-radius: 4px;
-}
-
-/* Artifact 4: Ghost Box vs Sign Box */
-.af-ghost-box {
-  background: #181922;
-  padding: 0.55rem 0.75rem;
-  border-radius: 6px;
-  margin-bottom: 0.55rem;
-}
-
-.gb-status {
-  display: block;
-  font-size: 0.68rem;
-  color: #ef4444;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-}
-
-.gb-sub {
-  font-size: 0.72rem;
-  color: #94a3b8;
-  font-style: italic;
-  display: block;
-  line-height: 1.4;
-}
-
-.av-sign-box {
-  background: #141c30;
-  border: 1px solid rgba(16, 185, 129, 0.3);
-  padding: 0.55rem 0.75rem;
-  border-radius: 6px;
-  margin-bottom: 0.55rem;
-}
-
-.sign-meta {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.72rem;
-  color: #f1f5f9;
-  font-weight: 600;
-  margin-bottom: 0.25rem;
-}
-
-.sm-check {
-  color: #10b981;
-  font-weight: 800;
-}
-
-.sign-deposit {
-  font-size: 0.7rem;
-  color: #38bdf8;
-}
-
-.sign-deposit strong {
-  color: #ffffff;
-}
-
-/* Artifact Footers */
-.af-footer-metric, .av-footer-metric {
-  font-size: 0.68rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 0.45rem;
+.comp-item-body {
+  font-size: 0.94rem;
+  line-height: 1.65;
   color: #64748b;
-  font-weight: 500;
+  margin: 0;
 }
 
-.av-footer-metric {
-  color: #34d399;
+.comp-card-editorial.right .comp-item-body {
+  color: #94a3b8;
 }
 
-/* ==========================================================================
-   TACTICAL SUMMARY FOOTER
-   ========================================================================== */
-.comp-summary-strip {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #0d0e15;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 12px;
-  padding: 1.25rem 2rem;
-  margin-top: 3.5rem;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.css-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-.css-label {
+.comp-item-meta {
   font-family: var(--font-mono, monospace);
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: #64748b;
-  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #475569;
+  margin-top: 0.35rem;
 }
 
-.css-val {
-  font-size: 1.05rem;
-  font-weight: 800;
+.comp-card-editorial.right .comp-item-meta {
+  color: #cbd5e1;
 }
 
-.css-val.friction { color: #f87171; }
-.css-val.velocity { color: #38bdf8; }
-
-.css-divider {
-  width: 1px;
-  height: 32px;
-  background: rgba(255, 255, 255, 0.08);
-}
-
+/* Responsive Styles */
 @media (max-width: 860px) {
-  .comp-scrub-bar {
-    grid-template-columns: repeat(2, 1fr);
+  .comp-columns-header {
+    display: none;
   }
 
-  .comp-milestone-row {
+  .comp-center-divider {
+    display: none;
+  }
+
+  .comp-pair-row {
     grid-template-columns: 1fr;
-    gap: 1.25rem;
+    gap: 2.5rem;
+    padding: 2.5rem 0;
   }
 
-  .comp-center-spine {
-    display: none;
+  .comp-card-editorial.left {
+    grid-column: 1;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
   }
 
-  .spine-node {
-    margin: 0 0 0.5rem 0;
-  }
-
-  .comp-lane.lane-traditional,
-  .comp-lane.lane-unbrief {
-    padding: 0;
-  }
-
-  .comp-summary-strip {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .css-divider {
-    display: none;
+  .comp-card-editorial.right {
+    grid-column: 1;
   }
 }
 
