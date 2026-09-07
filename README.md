@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Unbrief — The Agency Proposal & Scoping Engine
+
+> Turn messy client briefs and discovery calls into scoped, defensibly priced 3-tier proposals in **8 minutes**. Engineered for digital and creative agency leaders.
+
+---
+
+## The First-Responder Advantage
+**74% of agency deals are won by the first responder.** Yet the average creative or digital agency takes 3–5 days to manually synthesize discovery notes, write Keynote decks, and calculate spreadsheets.
+
+**Unbrief** solves the two biggest bottlenecks in the agency business development pipeline:
+1. **Speed to Proposal**: Cuts turnaround from 4 business days to under 8 minutes.
+2. **Margin Defense & Scope Creep Protection**: Automatically pairs deliverables with structured 3-tier Good/Better/Best pricing, revision SLA caps, and explicit out-of-scope contractual guardrails.
+
+---
+
+## Features
+
+- **Messy Input Ingest**: Ingest chaotic client emails, bulleted briefs, or 45-minute audio recordings from Otter, Fireflies, and Loom.
+- **Ambiguity & Risk Scanner**: Detects missing budgets, undefined revision limits, and scope-creep traps before quotes are issued.
+- **3-Tier Commercial Architecture**: Automatically outputs Good, Better (Recommended), and Best pricing tiers calibrated against your agency day rates.
+- **Scope Creep Guardrails**: Writes legally sound out-of-scope boundaries and contingency hourly rates directly into the proposal.
+- **Interactive Web Proposals**: Client-facing, interactive web experience hosted on your custom CNAME with binding e-signatures and executive PDF export.
+- **Zero AI Clichés**: Built with an award-winning Swiss Modernist editorial art direction (Instrument Serif + Plus Jakarta Sans + Space Mono).
+
+---
+
+## Tech Stack
+
+- **Core**: Semantic HTML5 & Vanilla JavaScript
+- **Styling**: Pure Vanilla CSS (custom properties, responsive grid, zero glows, tactile dark mode)
+- **Typography**: Google Fonts (`Instrument Serif`, `Plus Jakarta Sans`, `Space Mono`)
+- **Hosting**: Zero-dependency static site (can be deployed on GitHub Pages, Cloudflare Pages, Vercel, or Netlify)
+
+---
 
 ## Getting Started
 
-First, run the development server:
+To run locally:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Clone the repository
+git clone https://github.com/byanam/unbrief.git
+cd unbrief
+
+# Serve with Python (or any static HTTP server)
+python3 -m http.server 3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## License
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+© 2026 Unbrief, Inc. All rights reserved.

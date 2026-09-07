@@ -1,5 +1,5 @@
 /**
- * QUOTABLY STUDIO ENGINE — AWWWARDS RUNTIME INTERACTIONS
+ * UNBRIEF STUDIO ENGINE — AWWWARDS RUNTIME INTERACTIONS
  * Drives interactive scoping artifact, telemetry streams, commercial tier switcher, studio case file accordions, and demo modal.
  */
 
@@ -161,7 +161,7 @@ and in-app onboarding flows. Can we do a fixed monthly retainer with 48h turnaro
           <div class="risk-scanner-box">
             <div class="risk-scanner-header">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/></svg>
-              <span>Quotably AI Risk Scanner: 3 Profit Leaks Detected</span>
+              <span>Unbrief AI Risk Scanner: 3 Profit Leaks Detected</span>
             </div>
             ${sc.traps.map(trap => `
               <div class="risk-leak-item">
@@ -262,7 +262,7 @@ const rawPayload = {
     {
       tag: "STEP 02 // AI SCOPING & PRICING ENGINE",
       code: `// MAPPING AGAINST AGENCY RATE CARD (Day Rate: $1,250)
-const pricingEngine = Quotably.generateArchitecture({
+const pricingEngine = Unbrief.generateArchitecture({
   models: ["Good", "Better", "Best"],
   marginThreshold: 0.58, // 58% Target Gross Margin
   scopeCreepDefense: true
@@ -283,7 +283,7 @@ const proposalPackage = {
   url: "https://proposals.apexcreative.com/lumina-dtc",
   cname: "proposals.youragency.com",
   analytics: "Real-time client view & scroll tracking enabled",
-  eSignProvider: "Quotably Legally Binding Signatures (Audit Log #89211)",
+  eSignProvider: "Unbrief Legally Binding Signatures (Audit Log #89211)",
   clientExperience: "Clean, responsive, zero-AI watermarks"
 };
 
