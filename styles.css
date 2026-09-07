@@ -1423,6 +1423,24 @@ button {
   border-color: rgba(255, 255, 255, 0.18);
 }
 
+.testimonial-clean-card.is-revealed .metric-pill {
+  animation: pillSlide 0.4s 0.12s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.testimonial-clean-card.is-revealed .author-block {
+  animation: authorSlide 0.45s 0.22s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes pillSlide {
+  0% { opacity: 0; transform: translateY(-6px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes authorSlide {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
 .metric-pill {
   display: inline-block;
   font-family: var(--font-mono);
