@@ -1260,6 +1260,7 @@ button {
 
 .comp-col-heading.left {
   grid-column: 1;
+  opacity: 0.72;
 }
 
 .comp-col-heading.right {
@@ -1272,13 +1273,9 @@ button {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #64748b;
+  color: #94a3b8;
   margin-bottom: 0.6rem;
   display: block;
-}
-
-.comp-col-heading.right .comp-heading-sub {
-  color: #94a3b8;
 }
 
 .comp-heading-main {
@@ -1286,12 +1283,8 @@ button {
   font-weight: 850;
   letter-spacing: -0.035em;
   line-height: 1.15;
-  color: #cbd5e1;
-  margin: 0;
-}
-
-.comp-col-heading.right .comp-heading-main {
   color: #ffffff;
+  margin: 0;
 }
 
 /* Comparison Stage with Central Hairline & Scroll Pip */
@@ -1371,6 +1364,7 @@ button {
 
 .comp-card-editorial.left {
   grid-column: 1;
+  opacity: 0.72;
 }
 
 .comp-card-editorial.right {
@@ -1382,12 +1376,8 @@ button {
   font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: #475569;
-  display: block;
-}
-
-.comp-card-editorial.right .comp-item-num {
   color: #64748b;
+  display: block;
 }
 
 .comp-item-title {
@@ -1395,23 +1385,15 @@ button {
   font-weight: 750;
   line-height: 1.35;
   letter-spacing: -0.02em;
-  color: #cbd5e1;
-  margin: 0;
-}
-
-.comp-card-editorial.right .comp-item-title {
   color: #ffffff;
+  margin: 0;
 }
 
 .comp-item-body {
   font-size: 0.94rem;
   line-height: 1.65;
-  color: #64748b;
-  margin: 0;
-}
-
-.comp-card-editorial.right .comp-item-body {
   color: #94a3b8;
+  margin: 0;
 }
 
 .comp-item-meta {
@@ -1419,12 +1401,8 @@ button {
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: #475569;
-  margin-top: 0.35rem;
-}
-
-.comp-card-editorial.right .comp-item-meta {
   color: #cbd5e1;
+  margin-top: 0.35rem;
 }
 
 /* Responsive Styles */
