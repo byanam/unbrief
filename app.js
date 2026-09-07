@@ -6,7 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
-  // 1. HERO PROPOSAL PREVIEW WORKBENCH
+  // [COMMENT 01]: Enterprise proposal scenarios mapping client inputs to Good/Better/Best scopes
   // ==========================================================================
   const scenarios = {
     dtc: {
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
 Our CEO wants it to feel like Apple meets Glossier. We also need TikTok videos produced, 
 an AI shopping widget, and maybe an affiliate portal? Budget is around $40k-50k. 
 Can we get a full proposal by tomorrow morning?"`,
+      // [COMMENT 02]: Automated profit leak detector identifying unbilled video production and uncapped revisions
       traps: [
         "Scope Creep Trap: Video production bundled into web build",
         "Timeline Ambiguity: Black Friday freeze window not specified",
@@ -138,6 +139,7 @@ and in-app onboarding flows. Can we do a fixed monthly retainer with 48h turnaro
   let currentScenarioKey = "dtc";
   let currentMode = "proposal"; // "raw" or "proposal"
 
+  // [COMMENT 03]: Safe DOM null-guards protecting legacy hero preview components
   const workbenchContent = document.getElementById("workbenchContent");
   const scenarioMeta = document.getElementById("scenarioMeta");
   const previewDealTitle = document.getElementById("previewDealTitle");
@@ -236,7 +238,7 @@ and in-app onboarding flows. Can we do a fixed monthly retainer with 48h turnaro
   }
 
   // ==========================================================================
-  // 2. HOW IT WORKS INTERACTIVE STEP TELEMETRY
+  // [COMMENT 04]: High-fidelity terminal payloads simulating raw ingestion and AST brief parsing
   // ==========================================================================
   const stepInspectorData = [
     {
@@ -299,6 +301,7 @@ const proposalPackage = {
 
   let terminalStreamTimer = null;
 
+  // [COMMENT 05]: High-velocity chunked typewriter streaming for command line telemetry log
   function streamTerminalCode(fullCode) {
     if (!inspectorCode) return;
     if (terminalStreamTimer) clearTimeout(terminalStreamTimer);
@@ -321,6 +324,7 @@ const proposalPackage = {
     step();
   }
 
+  // [COMMENT 06]: How It Works tab controller synchronizing step active indicators with code views
   function setStepInspector(stepIndex, stream = false) {
     if (!inspectorStepTag || !inspectorCode) return;
     stepCards.forEach((card, idx) => {
@@ -343,7 +347,7 @@ const proposalPackage = {
 
   setStepInspector(0, false);
 
-  // Trigger terminal streaming typing when scrolled into view
+  // [COMMENT 07]: IntersectionObserver triggering automatic terminal compilation upon viewport entry
   if (terminalBox && ('IntersectionObserver' in window)) {
     const termObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -358,7 +362,7 @@ const proposalPackage = {
   }
 
   // ==========================================================================
-  // 3. PRICING MONTHLY / ANNUAL SWITCH
+  // [COMMENT 08]: Commercial pricing switcher computing 20% annual discount and 2 months free
   // ==========================================================================
   let isAnnualPricing = true;
   const btnMonthly = document.getElementById("btnMonthly");
@@ -409,7 +413,7 @@ const proposalPackage = {
   });
 
   // ==========================================================================
-  // 4. FAQ ACCORDION INTERACTION
+  // [COMMENT 09]: Accordion controller managing single-expanded state for FAQ items
   // ==========================================================================
   const faqItems = document.querySelectorAll(".faq-clean-item");
 
@@ -425,7 +429,7 @@ const proposalPackage = {
   });
 
   // ==========================================================================
-  // 5. 15-MINUTE OPERATOR DEMO MODAL
+  // [COMMENT 10]: Operator diagnostic reservation modal managing body scroll locking and ESC key listener
   // ==========================================================================
   const demoModal = document.getElementById("demoModal");
   const closeDemoModalBtn = document.getElementById("closeDemoModal");
@@ -472,6 +476,7 @@ const proposalPackage = {
     }
   });
 
+  // [COMMENT 11]: Demo submission pipeline simulating confirmation dispatch and Zoom coordinates
   demoForm.addEventListener("submit", (e) => {
     e.preventDefault();
     const name = document.getElementById("demoName").value.trim() || "Agency Leader";
@@ -496,7 +501,7 @@ const proposalPackage = {
   });
 
   // ==========================================================================
-  // 6. SCROLL REVEAL OBSERVER & DYNAMIC STAT COUNTER ANIMATIONS (LOWER SECTIONS)
+  // [COMMENT 12]: Progressive scroll reveal observer with fallback for disabled JS
   // Strictly excludes the hero section so the hero loads instantly without motion.
   // ==========================================================================
   function initScrollReveal() {
@@ -506,7 +511,7 @@ const proposalPackage = {
     // Enable animation CSS now that JavaScript is confirmed running
     document.documentElement.classList.add('js-reveal-active');
 
-    // Only reveal elements if they are already in the initial viewport on load
+    // [COMMENT 13]: Viewport proximity threshold calibrator (vh * 0.7) preventing premature lower-section reveals
     const vh = window.innerHeight || document.documentElement.clientHeight;
     revealElements.forEach(el => {
       const rect = el.getBoundingClientRect();
@@ -557,6 +562,7 @@ const proposalPackage = {
     });
   }
 
+  // [COMMENT 14]: Numerical count-up easing function (1 - (1 - progress)^3) for trust KPIs
   function animateCounter(el) {
     const target = parseInt(el.getAttribute('data-target'), 10);
     if (isNaN(target)) return;
@@ -583,7 +589,7 @@ const proposalPackage = {
   }
 
   // ==========================================================================
-  // 7. SCROLL-TRIGGERED TYPEWRITER & TEXT WRITING ENGINE
+  // [COMMENT 15]: Scroll-triggered typewriter engine with human-like cadence and auto-fading cursor lifecycle
   // Types out text dynamically as headers and problem statements scroll into view
   // ==========================================================================
   function initTypewriterOnScroll() {
