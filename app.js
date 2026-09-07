@@ -452,9 +452,24 @@ const proposalPackage = {
   });
 
   // ==========================================================================
-  // 6. SCROLL REVEAL OBSERVER & DYNAMIC STAT COUNTER ANIMATIONS (LOWER SECTIONS)
+  // 6. SCROLL PROGRESS TRACKER & TACTILE SCROLL REVEAL (LOWER SECTIONS)
   // Strictly excludes the hero section so the hero loads instantly without motion.
   // ==========================================================================
+  function initScrollProgress() {
+    const scrollProgressBar = document.getElementById("scrollProgressBar");
+    if (!scrollProgressBar) return;
+
+    function onScroll() {
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      scrollProgressBar.style.width = pct + "%";
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
   function initScrollReveal() {
     const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-scale');
     if (!revealElements.length) return;
@@ -462,11 +477,11 @@ const proposalPackage = {
     // Enable animation CSS now that JavaScript is confirmed running
     document.documentElement.classList.add('js-reveal-active');
 
-    // Immediately reveal any element already in or near the viewport on load
+    // Only reveal elements if they are already in the initial viewport on load
     const vh = window.innerHeight || document.documentElement.clientHeight;
     revealElements.forEach(el => {
       const rect = el.getBoundingClientRect();
-      if (rect.top <= vh * 0.95) {
+      if (rect.top <= vh * 0.7) {
         el.classList.add('is-revealed');
         const counters = el.querySelectorAll('.stat-counter');
         counters.forEach(counter => {
@@ -502,8 +517,8 @@ const proposalPackage = {
       });
     }, {
       root: null,
-      rootMargin: '0px 0px -40px 0px',
-      threshold: 0.08
+      rootMargin: '0px 0px -50px 0px',
+      threshold: 0.12
     });
 
     revealElements.forEach(el => {
@@ -538,6 +553,7 @@ const proposalPackage = {
     requestAnimationFrame(update);
   }
 
+  initScrollProgress();
   initScrollReveal();
 
 });

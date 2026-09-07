@@ -176,40 +176,47 @@ button {
   border-radius: var(--radius-sm);
   transition: all 150ms var(--ease-clean);
   white-space: nowrap;
+  box-shadow: none !important;
 }
 
 .btn-primary {
-  background-color: var(--red-accent);
+  background-color: var(--accent-blue);
   color: #ffffff;
+  box-shadow: none !important;
 }
 
 .btn-primary:hover {
-  background-color: var(--red-hover);
+  background-color: var(--accent-blue-hover);
   transform: translateY(-1px);
+  box-shadow: none !important;
 }
 
 .btn-secondary {
   background-color: var(--bg-card);
   color: var(--text-primary);
   border: 1px solid var(--border-hairline);
+  box-shadow: none !important;
 }
 
 .btn-secondary:hover {
   background-color: var(--bg-card-hover);
   border-color: var(--border-hover);
   transform: translateY(-1px);
+  box-shadow: none !important;
 }
 
 .btn-ghost {
   background-color: transparent;
   color: var(--text-secondary);
   border: 1px solid var(--border-hairline);
+  box-shadow: none !important;
 }
 
 .btn-ghost:hover {
   background-color: var(--bg-card);
   color: #ffffff;
   border-color: var(--border-hover);
+  box-shadow: none !important;
 }
 
 .btn-sm {
@@ -224,10 +231,17 @@ button {
 }
 
 /* ==========================================================================
-   HERO SECTION — 1-TO-1 RECREATION (DARK OBSIDIAN THEME)
+   HERO SECTION — ATMOSPHERIC ACCENT BLUE GRADIENT CANVAS (ZERO GLOW)
    ========================================================================== */
 .hero-snipify-wrapper {
-  background: linear-gradient(180deg, #0c0d12 0%, #09090b 100%);
+  background: linear-gradient(180deg,
+    #0c1527 0%,
+    #122447 22%,
+    #18376e 45%,
+    #214d9b 64%,
+    #172f5c 82%,
+    #09090b 100%
+  );
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -273,7 +287,7 @@ button {
 .snipify-nav-link {
   font-size: 0.88rem;
   font-weight: 500;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.85);
   transition: color 150ms ease;
   text-decoration: none;
 }
@@ -283,22 +297,24 @@ button {
 }
 
 .snipify-nav-btn {
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 8px;
   color: #ffffff;
   font-size: 0.84rem;
   font-weight: 600;
   padding: 0.5rem 1.15rem;
   cursor: pointer;
+  box-shadow: none !important;
   transition: all 150ms ease;
 }
 
 .snipify-nav-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.35);
+  box-shadow: none !important;
 }
 
 .snipify-hero-section {
@@ -328,7 +344,7 @@ button {
 .snipify-hero-subhead {
   font-size: 1.12rem;
   line-height: 1.55;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.9);
   max-width: 580px;
   margin: 0 auto 2.2rem;
   font-weight: 400;
@@ -355,18 +371,20 @@ button {
   border-radius: 9999px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 10px 25px -4px rgba(255, 255, 255, 0.12);
-  transition: all 180ms ease;
+  box-shadow: none !important;
+  transition: all 160ms ease;
 }
 
 .snipify-btn-pill:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 30px -4px rgba(255, 255, 255, 0.2);
+  background: #f1f5f9;
+  color: #09090b;
+  transform: translateY(-1px);
+  box-shadow: none !important;
 }
 
 .snipify-subtext {
   font-size: 0.82rem;
-  color: var(--text-muted);
+  color: rgba(255, 255, 255, 0.78);
   margin-top: 0.75rem;
 }
 
@@ -1831,9 +1849,22 @@ button {
 
 /* ==========================================================================
    SCROLL REVEAL & INTERACTION ANIMATIONS (LOWER SECTIONS ONLY)
-   Smooth, tasteful reveals as user scrolls down — Hero is strictly static
+   Smooth, noticeable reveals as user scrolls down — Hero is strictly static
    Progressive enhancement: content is fully visible by default, then animated
    ========================================================================== */
+
+/* Sleek Top Scroll Progress Bar — Visible tactile feedback as user scrolls */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0%;
+  background: var(--accent-blue);
+  z-index: 99999;
+  pointer-events: none;
+  transition: width 0.08s linear;
+}
 
 /* Full visibility by default so content is NEVER hidden if JS is loading or delayed */
 .scroll-reveal,
@@ -1845,12 +1876,9 @@ button {
 /* Activated once JavaScript scroll observer is initialized */
 .js-reveal-active .scroll-reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.25s ease,
-              background-color 0.25s ease,
-              box-shadow 0.25s ease;
+  transform: translateY(42px);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -1859,20 +1887,20 @@ button {
   transform: translateY(0);
 }
 
-/* Staggered delays for child cards and elements */
-.stagger-1 { transition-delay: 70ms; }
-.stagger-2 { transition-delay: 140ms; }
-.stagger-3 { transition-delay: 210ms; }
-.stagger-4 { transition-delay: 280ms; }
-.stagger-5 { transition-delay: 350ms; }
-.stagger-6 { transition-delay: 420ms; }
+/* Staggered delays with noticeable cadence so cards cascade into view */
+.stagger-1 { transition-delay: 90ms; }
+.stagger-2 { transition-delay: 180ms; }
+.stagger-3 { transition-delay: 270ms; }
+.stagger-4 { transition-delay: 360ms; }
+.stagger-5 { transition-delay: 450ms; }
+.stagger-6 { transition-delay: 540ms; }
 
 /* Scale-in variant for focal points like the comparison table & final card */
 .js-reveal-active .scroll-reveal-scale {
   opacity: 0;
-  transform: scale(0.97) translateY(20px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.96) translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -1883,20 +1911,51 @@ button {
 
 /* Stat numbers highlight on reveal */
 .stat-clean-box.is-revealed .stat-clean-num {
-  animation: statPulse 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: statPulse 0.55s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes statPulse {
-  0% { transform: scale(0.95); }
-  50% { transform: scale(1.02); }
-  100% { transform: scale(1); }
+  0% { transform: translateY(8px) scale(0.94); opacity: 0.7; }
+  60% { transform: translateY(-2px) scale(1.03); opacity: 1; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* ==========================================================================
+   ABSOLUTE ZERO GLOW GUARANTEE ACROSS ALL BUTTONS & HOVER STATES
+   ========================================================================== */
+button,
+a,
+.btn,
+.btn:hover,
+.btn-primary,
+.btn-primary:hover,
+.btn-secondary,
+.btn-secondary:hover,
+.btn-ghost,
+.btn-ghost:hover,
+.snipify-btn-pill,
+.snipify-btn-pill:hover,
+.snipify-nav-btn,
+.snipify-nav-btn:hover,
+.pricing-switch-btn,
+.pricing-switch-btn:hover,
+.modal-close-btn,
+.modal-close-btn:hover,
+.step-clean-card:hover,
+.pricing-tier-card:hover,
+.testimonial-clean-card:hover,
+.faq-clean-item:hover {
+  box-shadow: none !important;
+  text-shadow: none !important;
+  filter: none !important;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .scroll-reveal,
   .scroll-reveal-scale,
   .js-reveal-active .scroll-reveal,
-  .js-reveal-active .scroll-reveal-scale {
+  .js-reveal-active .scroll-reveal-scale,
+  .scroll-progress-bar {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
