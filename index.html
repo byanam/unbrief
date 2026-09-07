@@ -423,165 +423,382 @@
   <!-- ========================================================================
        SECTION 4: COMPARISON — SPEED AND CLARITY MATRIX
        ======================================================================== -->
+  <!-- ========================================================================
+       SECTION 4: COMPARISON — SCROLL-SYNCED VELOCITY ENGINE
+       ======================================================================== -->
   <section class="comparison-section" id="comparison">
     <div class="container comp-container">
 
-      <!-- Compact Section Header -->
+      <!-- Section Editorial Header -->
       <div class="comp-head-minimal scroll-reveal">
-        <span class="comp-kicker">COMMERCIAL VELOCITY</span>
+        <div class="comp-eyebrow-pill">
+          <span class="comp-eyebrow-dot"></span>
+          <span>WORKFLOW CONTRAST ENGINE</span>
+        </div>
         <h2 class="comp-headline">The difference is speed and clarity.</h2>
         <p class="comp-subtext">
           Most proposals get ghosted because they take too long and leave requirements vague.
         </p>
       </div>
 
-      <!-- Architectural Spec Matrix: 4 Rows of Contrast -->
-      <div class="spec-matrix-card scroll-reveal">
-
-        <!-- Matrix Header Row -->
-        <div class="spec-matrix-header">
-          <div class="smh-col dim">
-            <span class="col-pill-dim">TRADITIONAL WORKFLOW</span>
-            <h3>3 to 5 days of friction</h3>
-          </div>
-          <div class="smh-col-divider">
-            <span class="divider-node">VS</span>
-          </div>
-          <div class="smh-col highlight">
-            <span class="col-pill-accent">THE UNBRIEF PROTOCOL</span>
-            <h3>Sent in 8 minutes</h3>
-          </div>
+      <!-- Interactive Scrubber / Milestone Tracker Bar (Click or Scroll-synced) -->
+      <div class="comp-scrub-bar-wrap scroll-reveal">
+        <div class="comp-scrub-bar" id="compScrubBar">
+          <button class="scrub-step-btn active" data-step="0">
+            <span class="ssb-num">01</span>
+            <span class="ssb-label">Discovery & Intake</span>
+          </button>
+          <button class="scrub-step-btn" data-step="1">
+            <span class="ssb-num">02</span>
+            <span class="ssb-label">Pricing Architecture</span>
+          </button>
+          <button class="scrub-step-btn" data-step="2">
+            <span class="ssb-num">03</span>
+            <span class="ssb-label">Scope Protection</span>
+          </button>
+          <button class="scrub-step-btn" data-step="3">
+            <span class="ssb-num">04</span>
+            <span class="ssb-label">Close Velocity</span>
+          </button>
         </div>
 
-        <!-- Row 1: Delivery Format & Time -->
-        <div class="spec-matrix-row">
-          <div class="sm-cell left">
-            <div class="sm-point">
-              <span class="sm-icon-friction">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              </span>
-              <div class="sm-text">
-                <span class="sm-title">Hours spent formatting slide decks clients rarely read</span>
-                <span class="sm-note">Wasting days nudging Canva/Keynote boxes instead of selling strategy</span>
-              </div>
-            </div>
+        <!-- Live Status Subheader -->
+        <div class="comp-telemetry-banner">
+          <div class="ctb-track left">
+            <span class="ctb-dot red"></span>
+            <span class="ctb-title">Traditional Pitch:</span>
+            <span class="ctb-stat" id="ctbTradStatus">3 to 5 Days of Friction</span>
           </div>
-          <div class="sm-spine">
-            <span class="spine-dot"></span>
+          <div class="ctb-metric-mid">
+            <span class="cmm-pill">REAL-TIME CONTRAST</span>
           </div>
-          <div class="sm-cell right">
-            <div class="sm-point">
-              <span class="sm-icon-velocity">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <div class="sm-text">
-                <span class="sm-title">Raw discovery notes turned into a clean interactive brief</span>
-                <span class="sm-note">Instant structured breakdown from call transcripts, Slack chats, or bullet notes</span>
-              </div>
-            </div>
+          <div class="ctb-track right">
+            <span class="ctb-dot cyan"></span>
+            <span class="ctb-title">Unbrief Engine:</span>
+            <span class="ctb-stat" id="ctbUnbriefStatus">Sent in 8 Minutes</span>
           </div>
         </div>
+      </div>
 
-        <!-- Row 2: Pricing Strategy -->
-        <div class="spec-matrix-row">
-          <div class="sm-cell left">
-            <div class="sm-point">
-              <span class="sm-icon-friction">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              </span>
-              <div class="sm-text">
-                <span class="sm-title">One flat take-it-or-leave-it price that invites haggling</span>
-                <span class="sm-note">Forces prospects into binary yes/no bargaining or requests for discounts</span>
-              </div>
-            </div>
-          </div>
-          <div class="sm-spine">
-            <span class="spine-dot"></span>
-          </div>
-          <div class="sm-cell right">
-            <div class="sm-point">
-              <span class="sm-icon-velocity">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <div class="sm-text">
-                <span class="sm-title">3 clear tiers (Good / Better / Best) that anchor deal size</span>
-                <span class="sm-note">Clients debate between Tier 2 and Tier 3 instead of chipping away at your fees</span>
-              </div>
-            </div>
-          </div>
+      <!-- Scroll-Synced Dual-Track Deck -->
+      <div class="comp-flightdeck" id="compFlightdeck">
+
+        <!-- Central Synchronized Tracker Spine -->
+        <div class="comp-center-spine">
+          <div class="spine-bg-line"></div>
+          <div class="spine-fill-line" id="spineFillLine"></div>
+          <div class="spine-laser-head" id="spineLaserHead"></div>
         </div>
 
-        <!-- Row 3: Scope Boundaries & Risk -->
-        <div class="spec-matrix-row">
-          <div class="sm-cell left">
-            <div class="sm-point">
-              <span class="sm-icon-friction">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              </span>
-              <div class="sm-text">
-                <span class="sm-title">Vague scope boundaries leading to unbilled revision rounds</span>
-                <span class="sm-note">Undefined deliverables cause silent scope creep and burnt-out studio teams</span>
+        <!-- 4 Milestone Rows (Scroll-Synced) -->
+        <div class="comp-milestones-track">
+
+          <!-- MILESTONE 01: Intake & Format -->
+          <div class="comp-milestone-row is-active" data-milestone="0" id="milestone-0">
+            
+            <!-- Spine Node Indicator -->
+            <div class="spine-node">
+              <span class="node-index">01</span>
+            </div>
+
+            <!-- Left Lane: Traditional (Friction) -->
+            <div class="comp-lane lane-traditional">
+              <div class="lane-card">
+                <div class="card-meta-top">
+                  <span class="tag-friction">DAY 1 – 2 • 36H DRAG</span>
+                  <span class="status-chip warning">14 billable hours lost</span>
+                </div>
+                <h3 class="card-headline">Hours spent formatting slide decks clients rarely read</h3>
+                <p class="card-desc">Wasting high-value partner hours re-aligning text boxes in Keynote or Canva for a 28-slide deck that gets skimmed on mobile.</p>
+                
+                <!-- Realistic UI Artifact: Cluttered Keynote Draft -->
+                <div class="lane-artifact artifact-friction">
+                  <div class="af-header">
+                    <span class="af-dot red"></span>
+                    <span class="af-title">Linear_Proposal_Draft_v14_FINAL.key</span>
+                    <span class="af-badge">42 MB</span>
+                  </div>
+                  <div class="af-mock-slides">
+                    <div class="mock-slide active">
+                      <span class="sl-bar"></span>
+                      <span class="sl-bar short"></span>
+                      <span class="sl-warn">⚠️ Text overflow on slide 18</span>
+                    </div>
+                    <div class="mock-slide"></div>
+                    <div class="mock-slide"></div>
+                  </div>
+                  <div class="af-footer-metric">
+                    <span>Outcome: Partner spent all weekend formatting</span>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="sm-spine">
-            <span class="spine-dot"></span>
-          </div>
-          <div class="sm-cell right">
-            <div class="sm-point">
-              <span class="sm-icon-velocity">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <div class="sm-text">
-                <span class="sm-title">Contractual out-of-scope boundaries to protect your margin</span>
-                <span class="sm-note">Iron-clad revision caps and explicit out-of-scope add-on menus protect profitability</span>
+
+            <!-- Right Lane: Unbrief (Clarity) -->
+            <div class="comp-lane lane-unbrief">
+              <div class="lane-card">
+                <div class="card-meta-top">
+                  <span class="tag-velocity">MINUTE 0 – 2 • INSTANT</span>
+                  <span class="status-chip success">Extracted in 42s</span>
+                </div>
+                <h3 class="card-headline">Raw discovery notes turned into a clean interactive brief</h3>
+                <p class="card-desc">Paste messy Otter call notes, raw Slack dumps, or audio transcripts. Automatically filter agency buzzwords into commercial deliverables.</p>
+
+                <!-- Realistic UI Artifact: Structured Ingestion Stream -->
+                <div class="lane-artifact artifact-velocity">
+                  <div class="av-header">
+                    <span class="av-dot"></span>
+                    <span class="av-title">Ingestion Stream // linear-migration.unbrief</span>
+                    <span class="av-badge">Live Web Link</span>
+                  </div>
+                  <div class="av-tags-row">
+                    <span class="av-tag">🎙️ 42m Call Audio</span>
+                    <span class="av-tag">🎯 Pain: 4-week lead drop</span>
+                    <span class="av-tag">💰 Budget: $40k–$60k</span>
+                  </div>
+                  <div class="av-footer-metric">
+                    <span>Outcome: Executive reverse-brief ready in 2 minutes</span>
+                  </div>
+                </div>
               </div>
             </div>
+
           </div>
+
+          <!-- MILESTONE 02: Pricing Architecture -->
+          <div class="comp-milestone-row" data-milestone="1" id="milestone-1">
+            
+            <!-- Spine Node Indicator -->
+            <div class="spine-node">
+              <span class="node-index">02</span>
+            </div>
+
+            <!-- Left Lane: Traditional (Friction) -->
+            <div class="comp-lane lane-traditional">
+              <div class="lane-card">
+                <div class="card-meta-top">
+                  <span class="tag-friction">DAY 3 • FLAT INVOICE</span>
+                  <span class="status-chip warning">Invites discounting</span>
+                </div>
+                <h3 class="card-headline">One flat take-it-or-leave-it price that invites haggling</h3>
+                <p class="card-desc">Offering a single $32,000 estimate forces clients into an all-or-nothing corner, triggering requests to remove research, QA, or strategy.</p>
+
+                <!-- Realistic UI Artifact: Haggling Email Thread -->
+                <div class="lane-artifact artifact-friction">
+                  <div class="af-header">
+                    <span class="af-dot red"></span>
+                    <span class="af-title">Invoice_Estimate_402.pdf</span>
+                    <span class="af-badge">$32,000 Flat</span>
+                  </div>
+                  <div class="af-email-quote">
+                    <span class="eq-sender">Client response (Day 3):</span>
+                    <p>&ldquo;We love the vibe, but could you do this for $20k if we skip the design sprints and test it ourselves?&rdquo;</p>
+                  </div>
+                  <div class="af-footer-metric">
+                    <span>Outcome: Forced into 2-week fee negotiation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Lane: Unbrief (Clarity) -->
+            <div class="comp-lane lane-unbrief">
+              <div class="lane-card">
+                <div class="card-meta-top">
+                  <span class="tag-velocity">MINUTE 3 – 5 • 3-TIER ANCHOR</span>
+                  <span class="status-chip success">+35% Deal Value</span>
+                </div>
+                <h3 class="card-headline">3 clear tiers (Good / Better / Best) that anchor deal size</h3>
+                <p class="card-desc">Clients stop asking &ldquo;Can you do this cheaper?&rdquo; and start debating between Option 2 and Option 3. Deal size naturally anchors upward.</p>
+
+                <!-- Realistic UI Artifact: 3-Tier Anchored Matrix -->
+                <div class="lane-artifact artifact-velocity">
+                  <div class="av-header">
+                    <span class="av-dot"></span>
+                    <span class="av-title">Defensible Rate Calibration</span>
+                    <span class="av-badge">3 Tiers</span>
+                  </div>
+                  <div class="av-tiers-mini">
+                    <div class="mini-tier">
+                      <span class="mt-name">Foundation</span>
+                      <span class="mt-price">$18.5k</span>
+                    </div>
+                    <div class="mini-tier featured">
+                      <span class="mt-name">Growth (Recommended)</span>
+                      <span class="mt-price">$36k</span>
+                    </div>
+                    <div class="mini-tier">
+                      <span class="mt-name">Enterprise</span>
+                      <span class="mt-price">$54k</span>
+                    </div>
+                  </div>
+                  <div class="av-footer-metric">
+                    <span>Outcome: 74% of clients self-select the $36k Tier</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- MILESTONE 03: Scope Protection -->
+          <div class="comp-milestone-row" data-milestone="2" id="milestone-2">
+            
+            <!-- Spine Node Indicator -->
+            <div class="spine-node">
+              <span class="node-index">03</span>
+            </div>
+
+            <!-- Left Lane: Traditional (Friction) -->
+            <div class="comp-lane lane-traditional">
+              <div class="lane-card">
+                <div class="card-meta-top">
+                  <span class="tag-friction">DAY 4 • UNBILLED CREEP</span>
+                  <span class="status-chip danger">Margin drops to 31%</span>
+                </div>
+                <h3 class="card-headline">Vague scope boundaries leading to unbilled revision rounds</h3>
+                <p class="card-desc">Ambiguous contract language invites unlimited tweaks, unstated API syncs, and endless stakeholder requests that wipe out studio profit.</p>
+
+                <!-- Realistic UI Artifact: Creep Revision Ticket -->
+                <div class="lane-artifact artifact-friction">
+                  <div class="af-header">
+                    <span class="af-dot red"></span>
+                    <span class="af-title">Slack DM // Revision Creep</span>
+                    <span class="af-badge">Unbilled</span>
+                  </div>
+                  <div class="af-creep-list">
+                    <div class="creep-item">✕ &ldquo;Can you also hook up custom HubSpot reverse-ETL?&rdquo;</div>
+                    <div class="creep-item">✕ &ldquo;CEO wants 3 more revisions on the hero layout.&rdquo;</div>
+                  </div>
+                  <div class="af-footer-metric">
+                    <span>Outcome: 28 unbilled hours absorbed by your team</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Lane: Unbrief (Clarity) -->
+            <div class="comp-lane lane-unbrief">
+              <div class="lane-card">
+                <div class="card-meta-top">
+                  <span class="tag-velocity">MINUTE 6 – 7 • SCOPE GUARD</span>
+                  <span class="status-chip success">68.4% Margin Locked</span>
+                </div>
+                <h3 class="card-headline">Contractual out-of-scope boundaries to protect your margin</h3>
+                <p class="card-desc">Automatic contract guardrails flag out-of-scope requests upfront. Add-on pricing menus turn client scope expansions into revenue opportunities.</p>
+
+                <!-- Realistic UI Artifact: Defensible Scope Guard -->
+                <div class="lane-artifact artifact-velocity">
+                  <div class="av-header">
+                    <span class="av-dot"></span>
+                    <span class="av-title">Defensible Scope Guard</span>
+                    <span class="av-badge">Boundaries Active</span>
+                  </div>
+                  <div class="av-guard-list">
+                    <div class="guard-item">✓ Custom HubSpot rebuild separated as Tier 3 Add-on ($9,500)</div>
+                    <div class="guard-item">✓ Revisions capped at 2 formal staging sprints</div>
+                  </div>
+                  <div class="av-footer-metric">
+                    <span>Outcome: Zero profit leaks • Legally enforced boundaries</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- MILESTONE 04: Velocity & Close -->
+          <div class="comp-milestone-row" data-milestone="3" id="milestone-3">
+            
+            <!-- Spine Node Indicator -->
+            <div class="spine-node">
+              <span class="node-index">04</span>
+            </div>
+
+            <!-- Left Lane: Traditional (Friction) -->
+            <div class="comp-lane lane-traditional">
+              <div class="lane-card">
+                <div class="card-meta-top">
+                  <span class="tag-friction">DAY 5+ • COLD PIPELINE</span>
+                  <span class="status-chip danger">~24% Win Rate</span>
+                </div>
+                <h3 class="card-headline">Losing high-value deals to faster competitors</h3>
+                <p class="card-desc">By day 5, client adrenaline has died down. Another studio that replied with speed and clarity already booked the kickoff call.</p>
+
+                <!-- Realistic UI Artifact: Ghosted Thread -->
+                <div class="lane-artifact artifact-friction">
+                  <div class="af-header">
+                    <span class="af-dot red"></span>
+                    <span class="af-title">Deal Status // Linear App Migration</span>
+                    <span class="af-badge">Ghosted</span>
+                  </div>
+                  <div class="af-ghost-box">
+                    <span class="gb-status">Status: No response after 7 days</span>
+                    <span class="gb-sub">&ldquo;Thanks for sending over the deck. We ended up kicking off with another studio yesterday.&rdquo;</span>
+                  </div>
+                  <div class="af-footer-metric">
+                    <span>Outcome: 18 hours of partner time uncompensated</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Lane: Unbrief (Clarity) -->
+            <div class="comp-lane lane-unbrief">
+              <div class="lane-card">
+                <div class="card-meta-top">
+                  <span class="tag-velocity">MINUTE 8 • SIGNED CONTRACT</span>
+                  <span class="status-chip success">74% Win Rate</span>
+                </div>
+                <h3 class="card-headline">First-responder advantage with a 74% close rate</h3>
+                <p class="card-desc">Send the defensible 3-tier proposal before the client gets up from their desk. Integrated Stripe deposit workflow collects payment immediately.</p>
+
+                <!-- Realistic UI Artifact: Signed E-Signature & Deposit -->
+                <div class="lane-artifact artifact-velocity">
+                  <div class="av-header">
+                    <span class="av-dot"></span>
+                    <span class="av-title">Contract Execution</span>
+                    <span class="av-badge">Deposit Paid</span>
+                  </div>
+                  <div class="av-sign-box">
+                    <div class="sign-meta">
+                      <span class="sm-check">✓</span>
+                      <span>Tier 2 ($36,000) Signed via Mobile by VP Marketing</span>
+                    </div>
+                    <div class="sign-deposit">
+                      <span>Stripe Deposit Captured: <strong>$12,000.00</strong> (14m after Zoom)</span>
+                    </div>
+                  </div>
+                  <div class="av-footer-metric">
+                    <span>Outcome: First responder wins 74% of competitive bids</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
-        <!-- Row 4: Deal Outcome & Close Rate -->
-        <div class="spec-matrix-row">
-          <div class="sm-cell left">
-            <div class="sm-point">
-              <span class="sm-icon-friction">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-              </span>
-              <div class="sm-text">
-                <span class="sm-title">Losing high-value deals to faster competitors</span>
-                <span class="sm-note">By day 4, client urgency has cooled and another agency has closed the deposit</span>
-              </div>
-            </div>
-          </div>
-          <div class="sm-spine">
-            <span class="spine-dot"></span>
-          </div>
-          <div class="sm-cell right">
-            <div class="sm-point">
-              <span class="sm-icon-velocity">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-              </span>
-              <div class="sm-text">
-                <span class="sm-title">First-responder advantage with a 74% close rate</span>
-                <span class="sm-note">Deliver the proposal while enthusiasm is high and close before competitors respond</span>
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
 
-        <!-- Matrix Metric Strip at the base -->
-        <div class="spec-matrix-footer">
-          <div class="smf-col left">
-            <span class="smf-label">Typical close rate</span>
-            <span class="smf-num dim">~24%</span>
-          </div>
-          <div class="smf-divider"></div>
-          <div class="smf-col right">
-            <span class="smf-label">First-responder close rate</span>
-            <span class="smf-num bright">74%</span>
-          </div>
+      <!-- Tactical Summary Footer -->
+      <div class="comp-summary-strip scroll-reveal">
+        <div class="css-stat">
+          <span class="css-label">TRADITIONAL VELOCITY</span>
+          <span class="css-val friction">3 to 5 Days • 24% Close</span>
         </div>
-
+        <div class="css-divider"></div>
+        <div class="css-stat">
+          <span class="css-label">UNBRIEF VELOCITY</span>
+          <span class="css-val velocity">8 Minutes • 74% Close</span>
+        </div>
+        <div class="css-cta">
+          <button class="hero-btn-primary open-demo-btn">
+            <span>Try interactive proposal builder</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </div>
       </div>
 
     </div>
