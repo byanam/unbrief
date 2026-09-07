@@ -424,6 +424,7 @@ button {
   margin: 0 auto;
   position: relative;
   padding: 0 1rem;
+  perspective: 1200px;
 }
 
 .snipify-dashboard-wrap::after {
@@ -436,6 +437,7 @@ button {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.4) 35%, rgba(0, 0, 0, 0.85) 70%, #000000 100%);
   pointer-events: none;
   z-index: 10;
+  animation: heroFadeIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s both;
 }
 
 .snipify-dashboard {
@@ -448,6 +450,9 @@ button {
   text-align: left;
   color: #ffffff;
   position: relative;
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+  animation: heroDashboardPop 1.15s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
 }
 
 .snipify-dashboard::after {
@@ -460,6 +465,43 @@ button {
   background: linear-gradient(180deg, rgba(13, 14, 19, 0) 0%, rgba(0, 0, 0, 0.5) 40%, #000000 100%);
   pointer-events: none;
   z-index: 5;
+}
+
+@keyframes heroDashboardPop {
+  0% {
+    opacity: 0;
+    transform: translateY(70px) scale(0.92) rotateX(10deg);
+    filter: blur(6px);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(-5px) scale(1.006) rotateX(-0.5deg);
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+    filter: blur(0px);
+  }
+}
+
+@keyframes heroFadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .snipify-dashboard,
+  .snipify-dashboard-wrap::after {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
 }
 
 .snipify-app-nav {
