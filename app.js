@@ -738,6 +738,22 @@ const proposalPackage = {
     window.addEventListener("scroll", () => {
       gradient.yOffset = window.scrollY;
     }, { passive: true });
+
+    // Optional second instance for comparison section background
+    const compGradientCanvas = document.getElementById("compGradient");
+    if (compGradientCanvas) {
+      try {
+        const compGradient = new neat.NeatGradient({
+          ref: compGradientCanvas,
+          ...config
+        });
+        window.addEventListener("scroll", () => {
+          compGradient.yOffset = window.scrollY;
+        }, { passive: true });
+      } catch (e) {
+        console.warn("NeatGradient comparison canvas initialization:", e);
+      }
+    }
   }
 
   // ==========================================================================
