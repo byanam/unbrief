@@ -594,5 +594,21 @@ const proposalPackage = {
   // ==========================================================================
   initScrollReveal();
 
+  // Footer waitlist & newsletter subscription pipeline
+  const refSubForm = document.getElementById("refSubForm");
+  if (refSubForm) {
+    refSubForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const subBtn = refSubForm.querySelector(".ref-sub-btn span");
+      const input = refSubForm.querySelector(".ref-sub-input");
+      if (subBtn) subBtn.textContent = "SUBSCRIBED";
+      if (input) {
+        input.value = "";
+        input.placeholder = "Added to waitlist";
+        input.disabled = true;
+      }
+    });
+  }
+
 });
 
