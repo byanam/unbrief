@@ -1,17 +1,17 @@
 /**
- * UNBRIEF STUDIO ENGINE — AWWWARDS RUNTIME INTERACTIONS
- * Drives interactive scoping artifact, telemetry streams, commercial tier switcher, studio case file accordions, and demo modal.
+ * UNBRIEF — CLEAN, PRISTINE INTERACTION ENGINE
+ * Powers interactive proposal preview, live telemetry streams, pricing toggle, FAQ accordions, and demo modal.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
   // ==========================================================================
-  // 1. SCOPING ARTIFACT DATA & ENGINE
+  // 1. HERO PROPOSAL PREVIEW WORKBENCH
   // ==========================================================================
   const scenarios = {
     dtc: {
-      title: "Shopify Plus Rebrand ($48,000)",
-      meta: "CLIENT TRANSMISSION: Sarah (Founder, Lumina DTC)",
+      dealTitle: "Proposal #482 — Lumina DTC Rebrand",
+      meta: "Client Input: Sarah (Founder, Lumina DTC)",
       rawText: `"Hey guys! We need to redo our entire Shopify store before Black Friday. 
 Our CEO wants it to feel like Apple meets Glossier. We also need TikTok videos produced, 
 an AI shopping widget, and maybe an affiliate portal? Budget is around $40k-50k. 
@@ -22,39 +22,38 @@ Can we get a full proposal by tomorrow morning?"`,
         "Technical Debt: Custom AI widget requires unstated API dependencies"
       ],
       proposal: {
-        title: "LUMINA DTC // SHOPIFY PLUS ENTERPRISE MIGRATION & REBRAND",
+        title: "Lumina DTC — Shopify Plus Enterprise Migration & Rebrand",
         meta: "Scoped in 7.4 seconds · Calibrated to Agency Day Rate ($1,250/day)",
-        status: "APPROVED FOR SIGNATURE",
         tiers: [
           {
-            name: "TIER 01 / CORE",
+            name: "Core",
             price: "$38,500",
             summary: "Core UX/UI + Custom Shopify Theme (14-day turnaround)",
-            popular: false
+            active: false
           },
           {
-            name: "TIER 02 / RECOMMENDED",
+            name: "Recommended",
             price: "$48,000",
             summary: "Custom Storefront + CRO Architecture + VIP Checkout Sprint",
-            popular: true
+            active: true
           },
           {
-            name: "TIER 03 / FLAGSHIP",
+            name: "Flagship",
             price: "$64,500",
             summary: "Headless Shopify + AI Recommendation Engine + Creative Suite",
-            popular: false
+            active: false
           }
         ],
         outOfScope: [
-          "TikTok Video Production (Add-on: $7,500 for 12 videos)",
+          "TikTok Video Production (Billed as add-on: $7,500 for 12 videos)",
           "Third-party app subscriptions (Klaviyo, Yotpo, Gorgias)",
-          "Max 2 revision rounds included per milestone; extra rounds billed at $165/hr"
+          "Max 2 revision rounds included per milestone; extra rounds at $165/hr"
         ]
       }
     },
     b2b: {
-      title: "B2B SaaS Web App Revamp ($85,000)",
-      meta: "CLIENT TRANSMISSION: David (VP Product, Dataview Analytics)",
+      dealTitle: "Proposal #483 — Dataview Analytics SaaS",
+      meta: "Client Input: David (VP Product, Dataview)",
       rawText: `"Looking to overhaul our core analytics dashboard. Need Figma prototypes 
 and production React code. 45 distinct views, role-based access control, export to CSV/PDF, 
 and SOC2 compliance audit trails. We need kickoff in 2 weeks. What would this cost?"`,
@@ -64,27 +63,26 @@ and SOC2 compliance audit trails. We need kickoff in 2 weeks. What would this co
         "Design vs Dev: Client expects full React integration under a design budget"
       ],
       proposal: {
-        title: "DATAVIEW // ENTERPRISE SAAS DESIGN SYSTEM & REACT CODE",
+        title: "Dataview — Enterprise SaaS Design System & React Architecture",
         meta: "Scoped in 8.1 seconds · Calibrated to Engineering Rate Card ($175/hr)",
-        status: "SCOPED & MARGIN PROTECTED",
         tiers: [
           {
-            name: "TIER 01 / PROTOTYPE",
+            name: "Design System",
             price: "$45,000",
             summary: "Complete Figma Design System + 15 Core Analytics Views",
-            popular: false
+            active: false
           },
           {
-            name: "TIER 02 / RECOMMENDED",
+            name: "Recommended",
             price: "$85,000",
             summary: "All 45 Views + Production React/TypeScript Components + Storybook",
-            popular: true
+            active: true
           },
           {
-            name: "TIER 03 / ENTERPRISE",
+            name: "Enterprise",
             price: "$118,000",
-            summary: "Design System + React Code + SOC2 Compliance Audit Support + QA",
-            popular: false
+            summary: "Design System + React Code + SOC2 Compliance Support + Full QA",
+            active: false
           }
         ],
         outOfScope: [
@@ -95,8 +93,8 @@ and SOC2 compliance audit trails. We need kickoff in 2 weeks. What would this co
       }
     },
     fintech: {
-      title: "Fintech Growth Retainer ($14,000/mo)",
-      meta: "CLIENT TRANSMISSION: Marcus (COO, PayBridge Global)",
+      dealTitle: "Proposal #484 — PayBridge Growth Retainer",
+      meta: "Client Input: Marcus (COO, PayBridge Global)",
       rawText: `"We need ongoing design and dev fire-support. Probably 1 Senior Designer 
 and 1 Full-Stack Dev on call. Rapid marketing experiments, landing page testing, 
 and in-app onboarding flows. Can we do a fixed monthly retainer with 48h turnaround?"`,
@@ -106,27 +104,26 @@ and in-app onboarding flows. Can we do a fixed monthly retainer with 48h turnaro
         "Tech Stack Sprawl: In-app flows require native iOS/Android skills"
       ],
       proposal: {
-        title: "PAYBRIDGE GLOBAL // AGILE GROWTH & RETENTION DESIGN RETAINER",
+        title: "PayBridge Global — Agile Growth & Conversion Retainer",
         meta: "Scoped in 6.9 seconds · Calibrated to Pod Day Rate ($2,100/day)",
-        status: "MARGIN LOCKED RETAINER",
         tiers: [
           {
-            name: "TIER 01 / SPRINT",
+            name: "Sprint",
             price: "$9,500 / mo",
             summary: "1 Dedicated Senior Designer (80 hrs/mo) · 3-day turnaround SLA",
-            popular: false
+            active: false
           },
           {
-            name: "TIER 02 / RECOMMENDED",
+            name: "Recommended",
             price: "$14,000 / mo",
             summary: "1 Senior Product Designer + 1 Front-End Dev (160 hrs total) · 48h SLA",
-            popular: true
+            active: true
           },
           {
-            name: "TIER 03 / POD",
+            name: "Full Pod",
             price: "$22,500 / mo",
             summary: "Full Pod: Lead Strategist + 2 Designers + 2 Devs (320 hrs) · 24h SLA",
-            popular: false
+            active: false
           }
         ],
         outOfScope: [
@@ -143,29 +140,31 @@ and in-app onboarding flows. Can we do a fixed monthly retainer with 48h turnaro
 
   const workbenchContent = document.getElementById("workbenchContent");
   const scenarioMeta = document.getElementById("scenarioMeta");
-  const scenarioButtons = document.querySelectorAll(".scenario-btn");
+  const previewDealTitle = document.getElementById("previewDealTitle");
+  const scenarioButtons = document.querySelectorAll(".scenario-pill-btn");
   const modeRawBtn = document.getElementById("modeRaw");
   const modeProposalBtn = document.getElementById("modeProposal");
 
-  function renderArtifact() {
+  function renderPreview() {
     const sc = scenarios[currentScenarioKey];
     scenarioMeta.textContent = sc.meta;
+    if (previewDealTitle) {
+      previewDealTitle.textContent = sc.dealTitle;
+    }
 
     if (currentMode === "raw") {
       workbenchContent.innerHTML = `
-        <div class="raw-intake-sheet">
-          <div style="font-size: 0.65rem; color: var(--text-muted); margin-bottom: 0.75rem; text-transform: uppercase;">
-            INCOMING UNSTRUCTURED TRANSMISSION // RAW BRIEF
-          </div>
-          <p class="raw-client-quote font-mono">${sc.rawText.replace(/\n/g, '<br/>')}</p>
-          <div class="risk-scanner-box">
-            <div class="risk-scanner-header">
+        <div class="raw-dump-box">
+          <div class="raw-dump-title">Client Raw Ingest // Unstructured Brief</div>
+          <p class="raw-dump-quote">${sc.rawText.replace(/\n/g, '<br/>')}</p>
+          <div class="risk-alert-box">
+            <div class="risk-alert-header">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0zM12 9v4M12 17h.01"/></svg>
-              <span>Unbrief AI Risk Scanner: 3 Profit Leaks Detected</span>
+              <span>Unbrief Risk Scanner: 3 Profit Leaks Detected</span>
             </div>
             ${sc.traps.map(trap => `
-              <div class="risk-leak-item">
-                <span style="color: var(--accent-red); font-weight: bold;">✕</span>
+              <div class="risk-leak-line">
+                <span style="color: var(--red-accent); font-weight: bold;">✕</span>
                 <span>${trap}</span>
               </div>
             `).join('')}
@@ -175,28 +174,25 @@ and in-app onboarding flows. Can we do a fixed monthly retainer with 48h turnaro
     } else {
       const p = sc.proposal;
       workbenchContent.innerHTML = `
-        <div class="proposal-artifact-sheet">
-          <div class="artifact-header-row">
-            <div>
-              <div class="artifact-deal-title">${p.title}</div>
-              <div class="artifact-deal-sub">${p.meta}</div>
-            </div>
-            <span class="deal-status-seal">${p.status}</span>
+        <div class="scoped-proposal-box">
+          <div>
+            <div class="proposal-meta-heading">${p.title}</div>
+            <div class="proposal-meta-sub">${p.meta}</div>
           </div>
 
-          <div class="architecture-tier-grid">
+          <div class="proposal-tiers-row">
             ${p.tiers.map(t => `
-              <div class="arch-tier-card ${t.popular ? 'recommended' : ''}">
-                <div class="arch-tier-label">${t.name}</div>
-                <div class="arch-tier-price">${t.price}</div>
-                <div class="arch-tier-detail">${t.summary}</div>
+              <div class="clean-tier-item ${t.active ? 'active' : ''}">
+                <div class="clean-tier-label">${t.name}</div>
+                <div class="clean-tier-price">${t.price}</div>
+                <div class="clean-tier-desc">${t.summary}</div>
               </div>
             `).join('')}
           </div>
 
-          <div class="boundaries-card">
-            <div class="boundaries-header">Contractual Scope Guardrails (Prevents Creep)</div>
-            <div class="boundaries-list">
+          <div class="clean-boundaries-box">
+            <div class="clean-boundaries-header">Contractual Scope Guardrails (Prevents Creep)</div>
+            <div class="clean-boundaries-list">
               ${p.outOfScope.map(clause => `
                 <div>• ${clause}</div>
               `).join('')}
@@ -213,7 +209,7 @@ and in-app onboarding flows. Can we do a fixed monthly retainer with 48h turnaro
       scenarioButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       currentScenarioKey = btn.getAttribute("data-scenario");
-      renderArtifact();
+      renderPreview();
     });
   });
 
@@ -222,18 +218,18 @@ and in-app onboarding flows. Can we do a fixed monthly retainer with 48h turnaro
     currentMode = "raw";
     modeRawBtn.classList.add("active");
     modeProposalBtn.classList.remove("active");
-    renderArtifact();
+    renderPreview();
   });
 
   modeProposalBtn.addEventListener("click", () => {
     currentMode = "proposal";
     modeProposalBtn.classList.add("active");
     modeRawBtn.classList.remove("active");
-    renderArtifact();
+    renderPreview();
   });
 
-  // Initial render of artifact
-  renderArtifact();
+  // Initial render
+  renderPreview();
 
   // ==========================================================================
   // 2. HOW IT WORKS INTERACTIVE STEP TELEMETRY
@@ -292,12 +288,12 @@ const proposalPackage = {
     }
   ];
 
-  const protocolCards = document.querySelectorAll(".protocol-step-card");
+  const stepCards = document.querySelectorAll(".step-clean-card");
   const inspectorStepTag = document.getElementById("inspectorStepTag");
   const inspectorCode = document.getElementById("inspectorCode");
 
   function setStepInspector(stepIndex) {
-    protocolCards.forEach((card, idx) => {
+    stepCards.forEach((card, idx) => {
       card.classList.toggle("active", idx === stepIndex);
     });
     const data = stepInspectorData[stepIndex];
@@ -305,7 +301,7 @@ const proposalPackage = {
     inspectorCode.textContent = data.code;
   }
 
-  protocolCards.forEach((card, idx) => {
+  stepCards.forEach((card, idx) => {
     card.addEventListener("click", () => {
       setStepInspector(idx);
     });
@@ -365,17 +361,17 @@ const proposalPackage = {
   });
 
   // ==========================================================================
-  // 4. FAQ ACCORDION INTERACTION (STUDIO CASE FILES)
+  // 4. FAQ ACCORDION INTERACTION
   // ==========================================================================
-  const faqBoxes = document.querySelectorAll(".faq-accordion-box");
+  const faqItems = document.querySelectorAll(".faq-clean-item");
 
-  faqBoxes.forEach(box => {
-    const triggerBtn = box.querySelector(".faq-toggle-trigger");
+  faqItems.forEach(item => {
+    const triggerBtn = item.querySelector(".faq-trigger");
     triggerBtn.addEventListener("click", () => {
-      const isOpen = box.classList.contains("active");
-      faqBoxes.forEach(b => b.classList.remove("active"));
+      const isOpen = item.classList.contains("active");
+      faqItems.forEach(i => i.classList.remove("active"));
       if (!isOpen) {
-        box.classList.add("active");
+        item.classList.add("active");
       }
     });
   });
@@ -403,7 +399,7 @@ const proposalPackage = {
     setTimeout(() => {
       modalFormContainer.style.display = "block";
       modalConfirmedContainer.style.display = "none";
-    }, 250);
+    }, 200);
   }
 
   openDemoBtns.forEach(btn => {
@@ -447,8 +443,8 @@ const proposalPackage = {
 
       modalFormContainer.style.display = "none";
       modalConfirmedContainer.style.display = "block";
-      confirmedDetails.textContent = `Thanks, ${name}! We've reserved your 15-minute live diagnostic for ${slotText}. An invitation with private Zoom coordinates has been dispatched to ${email}.`;
-    }, 450);
+      confirmedDetails.textContent = `Thanks, ${name}! We've reserved your 15-minute live diagnostic for ${slotText}. An invitation with private Zoom coordinates has been sent to ${email}.`;
+    }, 400);
   });
 
 });
