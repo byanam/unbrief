@@ -1,118 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Unbrief — Turn Messy Client Briefs into Scoped Proposals in 8 Mins</title>
-  <meta name="description" content="The proposal engine built for agency founders and heads of growth. Turn chaotic client emails and discovery calls into structured, defensibly priced 3-tier proposals in 8 minutes." />
+  <meta name="description"
+    content="The proposal engine built for agency founders and heads of growth. Turn chaotic client emails and discovery calls into structured, defensibly priced 3-tier proposals in 8 minutes." />
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
 
-  <!-- Site Header -->
-  <header class="site-header">
-    <div class="container nav-container">
-      <a href="#" class="brand-logo" aria-label="Unbrief Home">
-        <span class="brand-name">Unbrief</span>
-      </a>
-
-      <nav aria-label="Primary Navigation">
-        <ul class="nav-links">
-          <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
-          <li><a href="#comparison" class="nav-link">Comparison</a></li>
-          <li><a href="#pricing" class="nav-link">Pricing</a></li>
-          <li><a href="#testimonials" class="nav-link">Reviews</a></li>
-          <li><a href="#faq" class="nav-link">FAQ</a></li>
-        </ul>
-      </nav>
-
-      <div class="nav-actions">
-        <button class="btn btn-primary btn-sm open-demo-btn">
-          <span>Book 15-min demo</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
   <!-- ========================================================================
-       SECTION 1: HERO — CLEAN, BOLD, UNCLUTTERED
+       SECTION 1: HERO — 1-TO-1 RECREATION OF REFERENCE IMAGE (SNIPIFY STYLE)
        ======================================================================== -->
-  <section class="hero-section" id="hero">
-    <div class="container hero-grid">
-      
-      <!-- Left Column: Big Bold Headline & Clear CTAs -->
-      <div class="hero-left-content">
-        <h1 class="hero-headline">
-          Turn messy client briefs into scoped proposals in <span class="text-red">8 minutes</span>.
+  <div class="hero-snipify-wrapper">
+    
+    <!-- Ethereal Translucent Header matching reference -->
+    <header class="site-header snipify-header">
+      <div class="container snipify-nav-container">
+        <a href="#" class="snipify-brand-logo" aria-label="Unbrief Home">
+          <span class="snipify-brand-name">Unbrief</span>
+        </a>
+
+        <nav aria-label="Primary Navigation">
+          <ul class="snipify-nav-links">
+            <li><a href="#how-it-works" class="snipify-nav-link">Features</a></li>
+            <li><a href="#pricing" class="snipify-nav-link">Pricing</a></li>
+            <li><a href="#testimonials" class="snipify-nav-link">About</a></li>
+            <li><a href="#faq" class="snipify-nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="snipify-nav-actions">
+          <button class="snipify-nav-btn open-demo-btn">
+            <span>Start free trial</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Centered Hero Section -->
+    <section class="hero-section snipify-hero-section" id="hero">
+      <div class="container snipify-hero-container">
+        
+        <!-- Two-line Bold Centered Headline -->
+        <h1 class="snipify-hero-headline">
+          One messy brief.<br>
+          Scoped proposals.
         </h1>
 
-        <p class="hero-subhead">
-          The AI proposal engine built for agency founders and account leads. Ingest chaotic client emails or discovery audio, eliminate scope creep, and deliver defensible 3-tier proposals before your competitor opens a doc.
+        <!-- Centered Subhead -->
+        <p class="snipify-hero-subhead">
+          Save hours of work by turning chaotic client briefs into defensibly priced, 3-tier proposals in seconds
         </p>
 
-        <div class="hero-cta-group">
-          <button class="btn btn-primary btn-lg open-demo-btn">
-            <span>Book a 15-min demo</span>
+        <!-- Centered White Pill CTA -->
+        <div class="snipify-cta-wrap">
+          <button class="snipify-btn-pill open-demo-btn">
+            <span>Start 14-days free trial</span>
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
-          <a href="#how-it-works" class="btn btn-secondary btn-lg">
-            <span>See how it works</span>
-          </a>
+          <div class="snipify-subtext">No credit card required.</div>
         </div>
 
-        <div class="hero-checks">
-          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> No credit card required</span>
-          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 5-minute rate card setup</span>
-          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Zero client data trained on</span>
-        </div>
-      </div>
-
-      <!-- Right Column: Clean, Pristine Proposal Preview -->
-      <div class="hero-right-preview">
-        <div class="proposal-preview-card">
+        <!-- Centerpiece Dashboard Window (1-to-1 recreation of app window in reference) -->
+        <div class="snipify-dashboard-wrap">
           
-          <div class="preview-card-header">
-            <div class="preview-client-badge">
-              <span style="width: 8px; height: 8px; border-radius: 50%; background-color: var(--red-accent);"></span>
-              <span id="previewDealTitle">Proposal #482 — Lumina DTC Rebrand</span>
+          <!-- Floating Blue Play Trigger Button in Center -->
+          <button class="snipify-play-trigger open-demo-btn" title="Watch 15-second scoping demo">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+          </button>
+
+          <div class="snipify-dashboard">
+            
+            <!-- App Top Navigation Tabs -->
+            <div class="snipify-app-nav">
+              <span class="active">Dashboard</span>
+              <span>Predictions</span>
+              <span>Classifications</span>
+              <span>Data</span>
+              <span>Reports</span>
             </div>
-            <span class="preview-status-pill">Ready to Send (8 mins)</span>
-          </div>
 
-          <!-- Scenario Tabs -->
-          <div class="scenario-pills-row">
-            <button class="scenario-pill-btn active" data-scenario="dtc">Shopify DTC ($48k)</button>
-            <button class="scenario-pill-btn" data-scenario="b2b">B2B SaaS ($85k)</button>
-            <button class="scenario-pill-btn" data-scenario="fintech">Fintech Retainer ($14k/mo)</button>
-          </div>
-
-          <!-- View Switcher -->
-          <div class="preview-view-switch">
-            <span id="scenarioMeta">Client Input: Sarah (Founder, Lumina DTC)</span>
-            <div class="view-toggle-btns">
-              <button class="view-btn" id="modeRaw">Raw Brief</button>
-              <button class="view-btn active" id="modeProposal">Scoped (AI)</button>
+            <!-- Dashboard Subheader -->
+            <div class="snipify-dash-header">
+              <div class="snipify-dash-title">Dashboard</div>
+              <div class="snipify-dash-filters">
+                <div class="snipify-filter-item">
+                  <span>Symbol</span>
+                  <strong>All</strong>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+                <div class="snipify-filter-item">
+                  <span>Viewing:</span>
+                  <strong>Month To Date</strong>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"/></svg>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <!-- Dynamic Workbench Body -->
-          <div class="preview-card-body" id="workbenchContent">
-            <!-- Populated cleanly via JavaScript -->
-          </div>
+            <!-- 5 KPI Cards Row matching reference -->
+            <div class="snipify-kpi-grid">
+              
+              <div class="snipify-kpi-card">
+                <div class="snipify-kpi-head">
+                  <span class="snipify-kpi-label">Total AUM</span>
+                  <span class="snipify-kpi-icon">$</span>
+                </div>
+                <div class="snipify-kpi-val">$45,231.89M</div>
+                <div class="snipify-kpi-delta green">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+                  <span>+20.1% from last month</span>
+                </div>
+              </div>
 
+              <div class="snipify-kpi-card">
+                <div class="snipify-kpi-head">
+                  <span class="snipify-kpi-label">Total Firms</span>
+                  <span class="snipify-kpi-icon">◫</span>
+                </div>
+                <div class="snipify-kpi-val">+573</div>
+                <div class="snipify-kpi-delta green">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+                  <span>+11% from last month</span>
+                </div>
+              </div>
+
+              <div class="snipify-kpi-card">
+                <div class="snipify-kpi-head">
+                  <span class="snipify-kpi-label">New Clients</span>
+                  <span class="snipify-kpi-icon">👥</span>
+                </div>
+                <div class="snipify-kpi-val">+8</div>
+                <div class="snipify-kpi-delta green">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+                  <span>+4% from last month</span>
+                </div>
+              </div>
+
+              <div class="snipify-kpi-card">
+                <div class="snipify-kpi-head">
+                  <span class="snipify-kpi-label">New Firms</span>
+                  <span class="snipify-kpi-icon">📊</span>
+                </div>
+                <div class="snipify-kpi-val">+12</div>
+                <div class="snipify-kpi-delta green">
+                  <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"/></svg>
+                  <span>+8% from last month</span>
+                </div>
+              </div>
+
+              <div class="snipify-kpi-card">
+                <div class="snipify-kpi-head">
+                  <span class="snipify-kpi-label">Most Recent Date</span>
+                  <span class="snipify-kpi-icon">📅</span>
+                </div>
+                <div class="snipify-kpi-val date">January 15, 2026</div>
+                <div class="snipify-kpi-delta gray">
+                  <span>Last updated: 19 days ago</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Lower Section: 2 Columns Matching Reference Image -->
+            <div class="snipify-lower-grid">
+              
+              <!-- Left Column: Monthly Growth by Product (Bar Chart) -->
+              <div class="snipify-lower-panel">
+                <div class="snipify-panel-head">
+                  <div class="snipify-panel-title">Monthly Growth by Product</div>
+                </div>
+                <div class="snipify-chart-container">
+                  <div class="snipify-chart-y-axis">
+                    <span>$8000</span>
+                    <span>$4500</span>
+                    <span>$3000</span>
+                  </div>
+                  <div class="snipify-chart-bars">
+                    <div class="snipify-bar-group">
+                      <span class="snipify-bar h-30"></span>
+                      <span class="snipify-bar h-45"></span>
+                      <span class="snipify-bar h-60"></span>
+                    </div>
+                    <div class="snipify-bar-group">
+                      <span class="snipify-bar h-40"></span>
+                      <span class="snipify-bar h-55"></span>
+                      <span class="snipify-bar h-75"></span>
+                    </div>
+                    <div class="snipify-bar-group">
+                      <span class="snipify-bar h-35"></span>
+                      <span class="snipify-bar h-50"></span>
+                      <span class="snipify-bar h-70"></span>
+                    </div>
+                    <div class="snipify-bar-group">
+                      <span class="snipify-bar h-25"></span>
+                      <span class="snipify-bar h-40"></span>
+                      <span class="snipify-bar h-65"></span>
+                    </div>
+                    <div class="snipify-bar-group">
+                      <span class="snipify-bar h-50"></span>
+                      <span class="snipify-bar h-65"></span>
+                      <span class="snipify-bar h-85"></span>
+                    </div>
+                    <div class="snipify-bar-group">
+                      <span class="snipify-bar h-30"></span>
+                      <span class="snipify-bar h-45"></span>
+                      <span class="snipify-bar h-55"></span>
+                    </div>
+                    <div class="snipify-bar-group">
+                      <span class="snipify-bar h-45"></span>
+                      <span class="snipify-bar h-60"></span>
+                      <span class="snipify-bar h-90"></span>
+                    </div>
+                    <div class="snipify-bar-group">
+                      <span class="snipify-bar h-35"></span>
+                      <span class="snipify-bar h-50"></span>
+                      <span class="snipify-bar h-70"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Column: Goal Progress -->
+              <div class="snipify-lower-panel">
+                <div class="snipify-panel-head">
+                  <div class="snipify-panel-title">Goal progress</div>
+                </div>
+                <div class="snipify-progress-list">
+                  
+                  <div class="snipify-progress-item">
+                    <div class="snipify-prog-meta">
+                      <span class="snipify-prog-region">Mid-Atlantic</span>
+                      <span class="snipify-prog-val">$72.0M / $80.0M <span class="pct">90.0%</span></span>
+                    </div>
+                    <div class="snipify-prog-track">
+                      <div class="snipify-prog-fill" style="width: 90%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="snipify-progress-item">
+                    <div class="snipify-prog-meta">
+                      <span class="snipify-prog-region">Mid-Atlantic</span>
+                      <span class="snipify-prog-val">$72.0M / $80.0M <span class="pct">90.0%</span></span>
+                    </div>
+                    <div class="snipify-prog-track">
+                      <div class="snipify-prog-fill" style="width: 90%;"></div>
+                    </div>
+                  </div>
+
+                  <div class="snipify-progress-item">
+                    <div class="snipify-prog-meta">
+                      <span class="snipify-prog-region">Southeast</span>
+                      <span class="snipify-prog-val">$55.0M / $65.0M <span class="pct">84.0%</span></span>
+                    </div>
+                    <div class="snipify-prog-track">
+                      <div class="snipify-prog-fill" style="width: 84%;"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
         </div>
-      </div>
 
-    </div>
-  </section>
+      </div>
+    </section>
+  </div>
 
   <!-- ========================================================================
        SECTION 2: SOCIAL PROOF & TRUST METRICS
        ======================================================================== -->
   <section class="social-proof-section">
     <div class="container">
-      
+
       <div class="stats-clean-grid">
         <div class="stat-clean-box">
           <div class="stat-clean-num">8<span class="red-plus">m</span></div>
@@ -147,24 +313,26 @@
        ======================================================================== -->
   <section class="hiw-section" id="how-it-works">
     <div class="container">
-      
+
       <div class="section-head">
         <span class="section-tag">How It Works</span>
         <h2 class="section-title">From raw brief to signed contract in 3 steps</h2>
         <p class="section-desc">
-          Stop spending your weekends cobbling together Keynote decks. Deliver enterprise-grade reverse-briefs before your competitor opens a blank doc.
+          Stop spending your weekends cobbling together Keynote decks. Deliver enterprise-grade reverse-briefs before
+          your competitor opens a blank doc.
         </p>
       </div>
 
       <div class="hiw-grid">
-        
+
         <!-- 3 Steps -->
         <div class="hiw-steps-col">
           <div class="step-clean-card active" data-step="0">
             <div class="step-clean-num">STEP 01</div>
             <h3 class="step-clean-title">Paste brief or discovery notes</h3>
             <p class="step-clean-body">
-              Drop in whatever the client sent: a 45-minute Fireflies or Otter audio transcript, a chaotic bulleted email, or Slack call notes. Unbrief filters buzzwords and identifies real commercial goals.
+              Drop in whatever the client sent: a 45-minute Fireflies or Otter audio transcript, a chaotic bulleted
+              email, or Slack call notes. Unbrief filters buzzwords and identifies real commercial goals.
             </p>
           </div>
 
@@ -172,7 +340,8 @@
             <div class="step-clean-num">STEP 02</div>
             <h3 class="step-clean-title">AI qualifies, scopes, and prices</h3>
             <p class="step-clean-body">
-              The engine detects hidden dependencies, constructs 3 structured pricing tiers (Good / Better / Best), matches your agency rate cards, and writes contractual out-of-scope boundaries.
+              The engine detects hidden dependencies, constructs 3 structured pricing tiers (Good / Better / Best),
+              matches your agency rate cards, and writes contractual out-of-scope boundaries.
             </p>
           </div>
 
@@ -180,7 +349,8 @@
             <div class="step-clean-num">STEP 03</div>
             <h3 class="step-clean-title">Clean proposal out & e-sign</h3>
             <p class="step-clean-body">
-              Deliver an interactive proposal hosted on your custom domain or export to PDF. The client selects their desired tier, reviews milestones, and executes a legally binding e-signature.
+              Deliver an interactive proposal hosted on your custom domain or export to PDF. The client selects their
+              desired tier, reviews milestones, and executes a legally binding e-signature.
             </p>
           </div>
         </div>
@@ -206,7 +376,7 @@
        ======================================================================== -->
   <section class="comparison-section" id="comparison">
     <div class="container">
-      
+
       <div class="section-head">
         <span class="section-tag">Comparison</span>
         <h2 class="section-title">Unbrief vs manual scoping vs legacy tools</h2>
@@ -274,12 +444,13 @@
        ======================================================================== -->
   <section class="pricing-section" id="pricing">
     <div class="container">
-      
+
       <div class="section-head">
         <span class="section-tag">Pricing</span>
         <h2 class="section-title">Zero hidden fees. No per-seat tax.</h2>
         <p class="section-desc">
-          Every plan includes unlimited seats for your strategy and delivery team, AI brief parsing, and binding e-signatures.
+          Every plan includes unlimited seats for your strategy and delivery team, AI brief parsing, and binding
+          e-signatures.
         </p>
 
         <div style="display: flex; align-items: center; justify-content: center;">
@@ -292,7 +463,7 @@
       </div>
 
       <div class="pricing-grid">
-        
+
         <!-- Tier 1: Boutique -->
         <div class="pricing-tier-card">
           <h3 class="tier-title">Boutique</h3>
@@ -306,27 +477,39 @@
           </div>
           <ul class="tier-bullets">
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Up to 10 active proposals / month</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Full AI brief-to-strategy engine</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Automated 3-tier pricing (Good/Better/Best)</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Scope-creep boundary & revision clauses</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Interactive web proposals & executive PDF</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Unlimited client e-signatures</span>
             </li>
           </ul>
@@ -347,27 +530,39 @@
           </div>
           <ul class="tier-bullets">
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span><strong>Unlimited proposals</strong> & scoping runs</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span><strong>Zero per-seat charges</strong> (unlimited team access)</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Ingest 60-min audio calls (Otter, Fireflies, Zoom)</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Multi-role rate cards (Design, Dev, Strategy, PM)</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Custom domain CNAME (proposals.youragency.com)</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>HubSpot, Slack, Notion & Stripe integrations</span>
             </li>
           </ul>
@@ -387,23 +582,33 @@
           </div>
           <ul class="tier-bullets">
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Everything in Growth Agency</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Multi-entity billing & regional rate currencies</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Custom AI fine-tuning on past winning proposals</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Dedicated agency operations concierge</span>
             </li>
             <li class="tier-bullet-item">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
               <span>Custom Master Service Agreement & SOC-2 package</span>
             </li>
           </ul>
@@ -415,7 +620,9 @@
       <!-- ROI Banner -->
       <div class="roi-clean-bar">
         <div class="roi-clean-text">
-          💡 <strong>Agency ROI:</strong> Closing just <span style="color: var(--red-accent);">ONE</span> extra $15,000 project from being first responder pays for over <span style="color: var(--red-accent);">13 YEARS</span> of Unbrief.
+          💡 <strong>Agency ROI:</strong> Closing just <span style="color: var(--red-accent);">ONE</span> extra $15,000
+          project from being first responder pays for over <span style="color: var(--red-accent);">13 YEARS</span> of
+          Unbrief.
         </div>
         <button class="btn btn-secondary btn-sm open-demo-btn">Calculate Your ROI</button>
       </div>
@@ -428,7 +635,7 @@
        ======================================================================== -->
   <section class="testimonials-section" id="testimonials">
     <div class="container">
-      
+
       <div class="section-head">
         <span class="section-tag">Reviews</span>
         <h2 class="section-title">Built for agency leaders who value speed & margins</h2>
@@ -438,13 +645,15 @@
       </div>
 
       <div class="testimonials-grid">
-        
+
         <!-- Testimonial 1 -->
         <div class="testimonial-clean-card">
           <div>
             <span class="metric-pill">Turnaround: 4 days → 45 mins</span>
             <p class="testimonial-quote">
-              &ldquo;We used to spend 4 days writing 35-page proposal decks that clients barely skimmed. With Unbrief, we dropped our discovery transcript in and delivered an interactive reverse-brief 45 minutes later. We closed a <strong>$42,000 deal</strong> before our competitor held their debrief.&rdquo;
+              &ldquo;We used to spend 4 days writing 35-page proposal decks that clients barely skimmed. With Unbrief,
+              we dropped our discovery transcript in and delivered an interactive reverse-brief 45 minutes later. We
+              closed a <strong>$42,000 deal</strong> before our competitor held their debrief.&rdquo;
             </p>
           </div>
           <div class="author-block">
@@ -461,7 +670,9 @@
           <div>
             <span class="metric-pill">$18,000 Preserved Margins</span>
             <p class="testimonial-quote">
-              &ldquo;Our biggest profit leak was vague client requests that spiraled into 20+ hours of unbilled revisions. Unbrief's automated scope boundaries locked in strict revision limits and hourly rates directly in the quote. It saved us over <strong>$18,000</strong> in our first quarter.&rdquo;
+              &ldquo;Our biggest profit leak was vague client requests that spiraled into 20+ hours of unbilled
+              revisions. Unbrief's automated scope boundaries locked in strict revision limits and hourly rates directly
+              in the quote. It saved us over <strong>$18,000</strong> in our first quarter.&rdquo;
             </p>
           </div>
           <div class="author-block">
@@ -478,7 +689,9 @@
           <div>
             <span class="metric-pill">Win Rate: 28% → 43%</span>
             <p class="testimonial-quote">
-              &ldquo;The 3-tier Good/Better/Best pricing architecture changed everything for our sales calls. Instead of asking 'should we hire Archetype or another agency?', clients now spend their energy choosing between Option 2 and Option 3. Close rate jumped to <strong>43%</strong> within 60 days.&rdquo;
+              &ldquo;The 3-tier Good/Better/Best pricing architecture changed everything for our sales calls. Instead of
+              asking 'should we hire Archetype or another agency?', clients now spend their energy choosing between
+              Option 2 and Option 3. Close rate jumped to <strong>43%</strong> within 60 days.&rdquo;
             </p>
           </div>
           <div class="author-block">
@@ -500,7 +713,7 @@
        ======================================================================== -->
   <section class="faq-section" id="faq">
     <div class="container">
-      
+
       <div class="section-head">
         <span class="section-tag">FAQ</span>
         <h2 class="section-title">Frequently asked questions</h2>
@@ -510,14 +723,17 @@
       </div>
 
       <div class="faq-list-clean">
-        
+
         <div class="faq-clean-item active">
           <button class="faq-trigger">
             <span>Will the AI invent deliverables or quote numbers our agency can't fulfill?</span>
             <span class="faq-icon-arrow">▼</span>
           </button>
           <div class="faq-answer-box">
-            No. Unbrief is strictly anchored to your agency's operational constraints. During setup (which takes ~5 minutes), you configure your blended rate cards, day rates, delivery team capacity, and core capabilities. Unbrief maps the client's messy brief against your actual team parameters, rather than guessing generic market averages.
+            No. Unbrief is strictly anchored to your agency's operational constraints. During setup (which takes ~5
+            minutes), you configure your blended rate cards, day rates, delivery team capacity, and core capabilities.
+            Unbrief maps the client's messy brief against your actual team parameters, rather than guessing generic
+            market averages.
           </div>
         </div>
 
@@ -527,7 +743,9 @@
             <span class="faq-icon-arrow">▼</span>
           </button>
           <div class="faq-answer-box">
-            Unbrief supports 4 core agency commercial models out of the box: Fixed-Bid Milestones, Agile Sprints (Time & Materials), Value-Anchored Retainers, and Hybrid Scopes (Discovery Sprint transitioning into a recurring Monthly Retainer). You can switch between pricing frameworks with a single toggle.
+            Unbrief supports 4 core agency commercial models out of the box: Fixed-Bid Milestones, Agile Sprints (Time &
+            Materials), Value-Anchored Retainers, and Hybrid Scopes (Discovery Sprint transitioning into a recurring
+            Monthly Retainer). You can switch between pricing frameworks with a single toggle.
           </div>
         </div>
 
@@ -537,7 +755,10 @@
             <span class="faq-icon-arrow">▼</span>
           </button>
           <div class="faq-answer-box">
-            The client receives an interactive, web-native proposal hosted on your agency's custom CNAME (e.g., proposals.youragency.com) or an executive PDF export. It looks and feels like your senior strategists spent 3 days crafting a bespoke reverse-brief. There is zero Unbrief branding or AI watermarking on any client-facing deliverable.
+            The client receives an interactive, web-native proposal hosted on your agency's custom CNAME (e.g.,
+            proposals.youragency.com) or an executive PDF export. It looks and feels like your senior strategists spent
+            3 days crafting a bespoke reverse-brief. There is zero Unbrief branding or AI watermarking on any
+            client-facing deliverable.
           </div>
         </div>
 
@@ -547,7 +768,10 @@
             <span class="faq-icon-arrow">▼</span>
           </button>
           <div class="faq-answer-box">
-            Scope creep begins during the brief stage when requirements are left ambiguous. Unbrief automatically pairs every deliverable with explicit 'Out-of-Scope' guardrails (e.g., maximum 2 revision rounds, client asset turnaround windows, third-party licensing disclaimers, and contingency hourly rates for extra work). When a client requests unplanned changes, you have an iron-clad contractual reference point.
+            Scope creep begins during the brief stage when requirements are left ambiguous. Unbrief automatically pairs
+            every deliverable with explicit 'Out-of-Scope' guardrails (e.g., maximum 2 revision rounds, client asset
+            turnaround windows, third-party licensing disclaimers, and contingency hourly rates for extra work). When a
+            client requests unplanned changes, you have an iron-clad contractual reference point.
           </div>
         </div>
 
@@ -557,7 +781,8 @@
             <span class="faq-icon-arrow">▼</span>
           </button>
           <div class="faq-answer-box">
-            Onboarding takes less than 15 minutes. Enter your agency rate cards and primary service offerings, and paste your first client brief. There is zero complex software configuration or team training required.
+            Onboarding takes less than 15 minutes. Enter your agency rate cards and primary service offerings, and paste
+            your first client brief. There is zero complex software configuration or team training required.
           </div>
         </div>
 
@@ -567,7 +792,9 @@
             <span class="faq-icon-arrow">▼</span>
           </button>
           <div class="faq-answer-box">
-            100% yes. We enforce strict enterprise-grade data isolation. Your client discovery call recordings, rate cards, and financial figures are never used to train public models. All data is encrypted in transit and at rest using AES-256 standards.
+            100% yes. We enforce strict enterprise-grade data isolation. Your client discovery call recordings, rate
+            cards, and financial figures are never used to train public models. All data is encrypted in transit and at
+            rest using AES-256 standards.
           </div>
         </div>
 
@@ -584,13 +811,16 @@
       <div class="final-clean-card">
         <h2 class="final-clean-title">Stop losing 15 hours a week on proposals that never close.</h2>
         <p class="final-clean-sub">
-          Paste your messy client discovery notes right now. Have a defensible, 3-tier, scope-protected proposal ready to send in 8 minutes.
+          Paste your messy client discovery notes right now. Have a defensible, 3-tier, scope-protected proposal ready
+          to send in 8 minutes.
         </p>
 
         <div class="final-clean-btns">
           <button class="btn btn-primary btn-lg open-demo-btn">
             <span>Book a 15-min demo</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </button>
           <a href="#how-it-works" class="btn btn-secondary btn-lg">
             <span>See how it works</span>
@@ -598,9 +828,15 @@
         </div>
 
         <div class="final-guarantees-clean">
-          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 14-day zero-risk trial</span>
-          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 5-minute rate card setup</span>
-          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Zero client data trained on</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12" />
+            </svg> 14-day zero-risk trial</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12" />
+            </svg> 5-minute rate card setup</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+              <polyline points="20 6 9 17 4 12" />
+            </svg> Zero client data trained on</span>
         </div>
       </div>
     </div>
@@ -612,13 +848,14 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-clean-grid">
-        
+
         <div>
           <div class="brand-logo" style="margin-bottom: 0.75rem;">
             <span class="brand-name">Unbrief</span>
           </div>
           <p class="footer-brand-desc">
-            The proposal and scoping engine built specifically for agency founders, account leads, and heads of business development.
+            The proposal and scoping engine built specifically for agency founders, account leads, and heads of business
+            development.
           </p>
           <button class="btn btn-secondary btn-sm open-demo-btn">Book 15-min demo</button>
         </div>
@@ -678,7 +915,9 @@
       <div class="modal-header">
         <div class="modal-title">Book 15-Min Operator Diagnostic</div>
         <button class="modal-close-btn" id="closeDemoModal" aria-label="Close modal">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
         </button>
       </div>
 
@@ -686,7 +925,8 @@
         <form id="demoForm">
           <div class="form-group">
             <label class="form-label" for="demoName">Your Name & Role</label>
-            <input class="form-input" type="text" id="demoName" placeholder="e.g. Alex Morgan, Managing Partner" required />
+            <input class="form-input" type="text" id="demoName" placeholder="e.g. Alex Morgan, Managing Partner"
+              required />
           </div>
 
           <div class="form-group">
@@ -725,7 +965,9 @@
 
           <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;" id="demoSubmitBtn">
             <span>Confirm 15-Min Live Diagnostic</span>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
           </button>
         </form>
       </div>
@@ -733,11 +975,15 @@
       <!-- Confirmed State -->
       <div class="modal-body confirmed-box" id="modalConfirmedContainer" style="display: none;">
         <div class="confirmed-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
         </div>
         <h3 style="font-size: 1.2rem; font-weight: 800; margin-bottom: 0.5rem;">Diagnostic Reserved</h3>
-        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;" id="confirmedDetails">
-          We've sent calendar invitation details to your email. We'll demonstrate how to turn raw client discovery notes into a closed $40k+ proposal in 8 minutes.
+        <p style="font-size: 0.88rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.5rem;"
+          id="confirmedDetails">
+          We've sent calendar invitation details to your email. We'll demonstrate how to turn raw client discovery notes
+          into a closed $40k+ proposal in 8 minutes.
         </p>
         <button class="btn btn-secondary btn-sm" id="closeConfirmedBtn">Done</button>
       </div>
@@ -746,4 +992,5 @@
 
   <script src="app.js"></script>
 </body>
+
 </html>
