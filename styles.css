@@ -94,25 +94,6 @@ button {
   font-family: var(--font-mono);
 }
 
-/* Minimal Top Announcement */
-.announcement-bar {
-  background-color: var(--bg-surface);
-  border-bottom: 1px solid var(--border-hairline);
-  padding: 0.55rem 1rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.announcement-bar .badge-red {
-  color: var(--red-accent);
-  font-weight: 700;
-}
 
 /* Clean Header */
 .site-header {
@@ -249,23 +230,6 @@ button {
   align-items: center;
 }
 
-.hero-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.85rem;
-  background-color: var(--bg-surface);
-  border: 1px solid var(--border-hairline);
-  border-radius: var(--radius-full);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
-}
-
-.hero-pill .star-gold {
-  color: #eab308;
-}
 
 /* Headline: BIGGER, BOLDER, UNIFIED SANS */
 .hero-headline {
