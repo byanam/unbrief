@@ -1853,19 +1853,6 @@ button {
    Progressive enhancement: content is fully visible by default, then animated
    ========================================================================== */
 
-/* Sleek Top Scroll Progress Bar — Visible tactile feedback as user scrolls */
-.scroll-progress-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 3px;
-  width: 0%;
-  background: var(--accent-blue);
-  z-index: 99999;
-  pointer-events: none;
-  transition: width 0.08s linear;
-}
-
 /* Full visibility by default so content is NEVER hidden if JS is loading or delayed */
 .scroll-reveal,
 .scroll-reveal-scale {
@@ -1954,8 +1941,7 @@ a,
   .scroll-reveal,
   .scroll-reveal-scale,
   .js-reveal-active .scroll-reveal,
-  .js-reveal-active .scroll-reveal-scale,
-  .scroll-progress-bar {
+  .js-reveal-active .scroll-reveal-scale {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;

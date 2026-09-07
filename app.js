@@ -452,24 +452,9 @@ const proposalPackage = {
   });
 
   // ==========================================================================
-  // 6. SCROLL PROGRESS TRACKER & TACTILE SCROLL REVEAL (LOWER SECTIONS)
+  // 6. SCROLL REVEAL OBSERVER & DYNAMIC STAT COUNTER ANIMATIONS (LOWER SECTIONS)
   // Strictly excludes the hero section so the hero loads instantly without motion.
   // ==========================================================================
-  function initScrollProgress() {
-    const scrollProgressBar = document.getElementById("scrollProgressBar");
-    if (!scrollProgressBar) return;
-
-    function onScroll() {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      scrollProgressBar.style.width = pct + "%";
-    }
-
-    window.addEventListener("scroll", onScroll, { passive: true });
-    onScroll();
-  }
-
   function initScrollReveal() {
     const revealElements = document.querySelectorAll('.scroll-reveal, .scroll-reveal-scale');
     if (!revealElements.length) return;
@@ -553,7 +538,6 @@ const proposalPackage = {
     requestAnimationFrame(update);
   }
 
-  initScrollProgress();
   initScrollReveal();
 
 });
