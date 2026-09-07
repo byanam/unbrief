@@ -952,67 +952,64 @@
   </section>
 
   <!-- ========================================================================
-       CLEAN MINIMAL FOOTER
+       EDITORIAL FOOTER — 1-TO-1 MATCHING REFERENCE IMAGE
        ======================================================================== -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-clean-grid">
+  <footer class="site-footer ref-footer">
+    <div class="container ref-footer-container">
+      
+      <!-- Top Row: Newsletter, Nav, and Legal/Status -->
+      <div class="ref-footer-top">
+        
+        <!-- Left: Email Subscribe Form -->
+        <div class="ref-footer-subscribe">
+          <form class="ref-sub-form" onsubmit="event.preventDefault(); const s=this.querySelector('.ref-sub-btn span'); s.textContent='SUBSCRIBED';">
+            <div class="ref-input-group">
+              <input type="email" class="ref-sub-input" placeholder="Email" required />
+            </div>
+            <div class="ref-btn-group">
+              <button type="submit" class="ref-sub-btn">
+                <span>SUBSCRIBE</span>
+              </button>
+              <button type="submit" class="ref-plus-btn" aria-label="Subscribe submit">
+                <span>+</span>
+              </button>
+            </div>
+          </form>
+          <span class="ref-sub-caption">Unsubscribe anytime.</span>
+        </div>
 
-        <div>
-          <div class="brand-logo" style="margin-bottom: 0.75rem;">
-            <span class="brand-name">Unbrief</span>
+        <!-- Center: Minimal Nav -->
+        <div class="ref-footer-nav">
+          <a href="#hero" class="ref-nav-link">ABOUT</a>
+          <a href="#faq" class="ref-nav-link">CONTACT</a>
+        </div>
+
+        <!-- Right: Legal & Waitlist Status -->
+        <div class="ref-footer-right">
+          <div class="ref-legal-links">
+            <a href="#" class="ref-legal-link">Privacy Policy</a>
+            <a href="#" class="ref-legal-link">Legal Notice</a>
           </div>
-          <p class="footer-brand-desc">
-            The proposal and scoping engine built specifically for agency founders, account leads, and heads of business
-            development.
-          </p>
-          <button class="btn btn-secondary btn-sm open-demo-btn">Book 15-min demo</button>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Product</div>
-          <ul class="footer-clean-links">
-            <li><a href="#how-it-works" class="footer-clean-link">Brief Scoping Engine</a></li>
-            <li><a href="#how-it-works" class="footer-clean-link">Good/Better/Best Pricing</a></li>
-            <li><a href="#how-it-works" class="footer-clean-link">Scope-Creep Guardrails</a></li>
-            <li><a href="#pricing" class="footer-clean-link">Agency Rate Cards</a></li>
-            <li><a href="#comparison" class="footer-clean-link">Speed-to-Proposal Matrix</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Comparisons</div>
-          <ul class="footer-clean-links">
-            <li><a href="#comparison" class="footer-clean-link">Unbrief vs PandaDoc</a></li>
-            <li><a href="#comparison" class="footer-clean-link">Unbrief vs Proposify</a></li>
-            <li><a href="#comparison" class="footer-clean-link">Unbrief vs Google Docs</a></li>
-            <li><a href="#comparison" class="footer-clean-link">Unbrief vs Keynote Decks</a></li>
-            <li><a href="#comparison" class="footer-clean-link">Unbrief vs Bonsai</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="footer-col-title">Trust & Security</div>
-          <ul class="footer-clean-links">
-            <li class="footer-clean-link" style="color: #10b981;">✓ Zero Model Training</li>
-            <li class="footer-clean-link">SOC-2 Type II In Review</li>
-            <li class="footer-clean-link">GDPR & CCPA Compliant</li>
-            <li class="footer-clean-link">AES-256 Cloud Encryption</li>
-            <li class="footer-clean-link">Custom NDA Terms Supported</li>
-          </ul>
+          <div class="ref-waitlist-badge">
+            <span class="ref-status-box">■</span>
+            <span>ACCEPTING AGENCIES. JOIN THE WAITLIST.</span>
+          </div>
         </div>
 
       </div>
 
-      <div class="footer-bottom-bar">
-        <div style="display: flex; align-items: center; gap: 0.5rem; color: #10b981;">
-          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #10b981;"></span>
-          <span>UNBRIEF ENGINE v2.4 // ALL SYSTEMS OPERATIONAL</span>
-        </div>
-        <div>
-          <span>© 2026 Unbrief, Inc. All rights reserved.</span>
-        </div>
+      <!-- Middle: Copyright & Studio Credit -->
+      <div class="ref-footer-mid">
+        <div class="ref-copy-year">© 2026</div>
+        <div class="ref-copy-company">Unbrief Technologies, Inc.</div>
+        <div class="ref-copy-tagline">Let Unbrief handle it.</div>
       </div>
+
+      <!-- Bottom: Massive Giant Wordmark -->
+      <div class="ref-footer-wordmark-wrap">
+        <div class="ref-giant-wordmark">unbrief</div>
+      </div>
+
     </div>
   </footer>
 
