@@ -1170,6 +1170,38 @@ button {
   color: #93c5fd;
 }
 
+/* Table row sequential scroll reveal animations */
+.clean-table tbody tr {
+  transition: background-color 150ms ease;
+}
+
+.clean-table tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.03);
+}
+
+.table-clean-wrapper.is-revealed .clean-table tbody tr {
+  animation: tableRowFade 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+}
+
+.table-clean-wrapper.is-revealed .clean-table tbody tr:nth-child(1) { animation-delay: 80ms; }
+.table-clean-wrapper.is-revealed .clean-table tbody tr:nth-child(2) { animation-delay: 160ms; }
+.table-clean-wrapper.is-revealed .clean-table tbody tr:nth-child(3) { animation-delay: 240ms; }
+.table-clean-wrapper.is-revealed .clean-table tbody tr:nth-child(4) { animation-delay: 320ms; }
+.table-clean-wrapper.is-revealed .clean-table tbody tr:nth-child(5) { animation-delay: 400ms; }
+.table-clean-wrapper.is-revealed .clean-table tbody tr:nth-child(6) { animation-delay: 480ms; }
+
+@keyframes tableRowFade {
+  0% {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
 /* ==========================================================================
    PRICING SECTION — SPACIOUS, ARCHITECTURAL 3-TIER
    ========================================================================== */
