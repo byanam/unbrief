@@ -17,13 +17,9 @@
        ======================================================================== -->
   <div class="hero-snipify-wrapper">
     
-    <!-- High-Definition ShaderGradient Hero Background (ruucm/shadergradient) -->
-    <div class="shadergradient-media-wrap" aria-hidden="true">
-      <video class="shadergradient-media" autoplay loop muted playsinline preload="auto">
-        <source src="shadergradient.webm" type="video/webm">
-        <source src="shadergradient.mp4" type="video/mp4">
-        <img src="shadergradient.gif" alt="Shader Gradient" class="shadergradient-media" />
-      </video>
+    <!-- Neat 3D Gradient Background (@firecms/neat) -->
+    <div class="neat-gradient-wrap" aria-hidden="true">
+      <canvas id="gradient" style="width: 100%; height: 100%"></canvas>
     </div>
     
     <!-- Ethereal Translucent Header matching reference -->
@@ -919,7 +915,7 @@
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="vendor/neat.umd.js"></script>
   <script src="app.js"></script>
 </body>
 
