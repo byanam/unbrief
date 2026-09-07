@@ -295,23 +295,67 @@ const proposalPackage = {
   const stepCards = document.querySelectorAll(".step-clean-card");
   const inspectorStepTag = document.getElementById("inspectorStepTag");
   const inspectorCode = document.getElementById("inspectorCode");
+  const terminalBox = document.querySelector(".terminal-clean-box");
 
-  function setStepInspector(stepIndex) {
+  let terminalStreamTimer = null;
+
+  function streamTerminalCode(fullCode) {
+    if (!inspectorCode) return;
+    if (terminalStreamTimer) clearTimeout(terminalStreamTimer);
+
+    inspectorCode.textContent = "";
+    let charIdx = 0;
+    const len = fullCode.length;
+
+    function step() {
+      // Fast chunked streaming simulates high-velocity CLI compiler output
+      const chunk = Math.min(3, len - charIdx);
+      inspectorCode.textContent += fullCode.substr(charIdx, chunk);
+      charIdx += chunk;
+
+      if (charIdx < len) {
+        terminalStreamTimer = setTimeout(step, 9);
+      }
+    }
+
+    step();
+  }
+
+  function setStepInspector(stepIndex, stream = false) {
+    if (!inspectorStepTag || !inspectorCode) return;
     stepCards.forEach((card, idx) => {
       card.classList.toggle("active", idx === stepIndex);
     });
     const data = stepInspectorData[stepIndex];
     inspectorStepTag.textContent = data.tag;
-    inspectorCode.textContent = data.code;
+    if (stream) {
+      streamTerminalCode(data.code);
+    } else {
+      inspectorCode.textContent = data.code;
+    }
   }
 
   stepCards.forEach((card, idx) => {
     card.addEventListener("click", () => {
-      setStepInspector(idx);
+      setStepInspector(idx, true);
     });
   });
 
-  setStepInspector(0);
+  setStepInspector(0, false);
+
+  // Trigger terminal streaming typing when scrolled into view
+  if (terminalBox && ('IntersectionObserver' in window)) {
+    const termObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !terminalBox.dataset.hasStreamed) {
+          terminalBox.dataset.hasStreamed = "true";
+          setStepInspector(0, true);
+          termObserver.unobserve(terminalBox);
+        }
+      });
+    }, { threshold: 0.25 });
+    termObserver.observe(terminalBox);
+  }
 
   // ==========================================================================
   // 3. PRICING MONTHLY / ANNUAL SWITCH
