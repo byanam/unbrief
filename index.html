@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quotably — The Agency Proposal & Scoping Engine</title>
+  <meta name="description" content="Turn messy client briefs and discovery calls into scoped, defensibly priced 3-tier proposals in 8 minutes. Built for digital and creative agency leaders." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Top Announcement Bar (Architectural Studio Header) -->
+  <div class="announcement-bar">
+    <div class="announcement-left">
+      <span class="live-pulse"></span>
+      <span>SYSTEM NOTICE // 74% OF AGENCY DEALS ARE WON BY THE FIRST RESPONDER</span>
+    </div>
+    <div class="announcement-right">
+      <span>TURNAROUND: 4 DAYS → 8 MINS</span>
+      <span>EDITION: 2026.4</span>
+    </div>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" aria-label="Quotably Home">
+        <div class="brand-monogram">Q</div>
+        <div class="brand-name">
+          <span>QUOTABLY</span>
+          <span class="brand-edition">/ v2.4</span>
+        </div>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#how-it-works" class="nav-link"><span class="nav-index">01</span> Protocol</a></li>
+          <li><a href="#comparison" class="nav-link"><span class="nav-index">02</span> Ledger</a></li>
+          <li><a href="#pricing" class="nav-link"><span class="nav-index">03</span> Pricing</a></li>
+          <li><a href="#testimonials" class="nav-link"><span class="nav-index">04</span> Dispatches</a></li>
+          <li><a href="#faq" class="nav-link"><span class="nav-index">05</span> FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-primary btn-sm open-demo-btn">
+          <span>Book 15-min demo</span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       SECTION 1: HERO (AWWWARDS EDITORIAL ART DIRECTION & WORKBENCH)
+       ======================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container">
+      
+      <!-- Architectural Metadata Ribbon -->
+      <div class="hero-meta-bar">
+        <div>
+          <span class="hero-index-tag">[INDEX // 001]</span>
+          <span style="margin-left: 0.5rem;">AGENCY SCOPING & PROPOSAL PROTOCOL</span>
+        </div>
+        <div>
+          <span>FIRST RESPONDER VELOCITY: <strong style="color: #ffffff;">8.2 MINS AVG</strong></span>
+        </div>
+      </div>
+
+      <div class="hero-grid">
+        
+        <!-- Left: Commanding Editorial Headline & Copy -->
+        <div class="hero-copy-column">
+          <h1 class="hero-headline">
+            Turn messy briefs into <span class="serif-accent">scoped, priced</span> proposals in <span class="red-num">8 mins</span>.
+          </h1>
+
+          <p class="hero-subhead">
+            The proposal engine engineered for agency founders and growth directors. Ingest chaotic client emails or 45-min Zoom audio, extract hidden scope, and deliver defensible <strong>3-tier commercial proposals</strong> before competitors finish reviewing their notes.
+          </p>
+
+          <div class="hero-cta-row">
+            <button class="btn btn-primary btn-lg open-demo-btn">
+              <span>Book a 15-min demo</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </button>
+            <a href="#how-it-works" class="btn btn-secondary btn-lg">
+              <span>See protocol preview</span>
+            </a>
+          </div>
+
+          <!-- Studio Technical Spec Strip -->
+          <div class="hero-spec-strip">
+            <div class="spec-item">
+              <span class="spec-label">SLA Turnaround</span>
+              <span class="spec-value">8 mins vs 4 days</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">Scope Protection</span>
+              <span class="spec-value">Automated SLA caps</span>
+            </div>
+            <div class="spec-item">
+              <span class="spec-label">First Responder Win Rate</span>
+              <span class="spec-value">74% average close</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Interactive Physical Scoping Artifact -->
+        <div class="hero-artifact-column">
+          <div class="scoping-artifact">
+            
+            <div class="artifact-topline">
+              <span>SYSTEM DISPATCH // LIVE PROPOSAL BENCH</span>
+              <div class="artifact-stamp">
+                <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #10b981;"></span>
+                <span>CALIBRATED TO RATE CARD</span>
+              </div>
+            </div>
+
+            <!-- Scenario Tabs -->
+            <div class="scenario-selector">
+              <button class="scenario-btn active" data-scenario="dtc">Shopify DTC ($48k)</button>
+              <button class="scenario-btn" data-scenario="b2b">B2B SaaS ($85k)</button>
+              <button class="scenario-btn" data-scenario="fintech">Fintech Retainer ($14k/mo)</button>
+            </div>
+
+            <!-- Mode Selector Bar -->
+            <div class="artifact-toolbar">
+              <span class="font-mono" style="color: var(--text-dim);" id="scenarioMeta">Client Input: Sarah (Founder, Lumina DTC)</span>
+              <div class="mode-pills">
+                <button class="mode-pill-btn" id="modeRaw">Raw Dump</button>
+                <button class="mode-pill-btn active" id="modeProposal">Scoped (AI)</button>
+              </div>
+            </div>
+
+            <!-- Dynamic Artifact Content Area -->
+            <div class="artifact-body" id="workbenchContent">
+              <!-- Populated via JavaScript -->
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 2: SOCIAL PROOF STRIP & METRICS LEDGER
+       ======================================================================== -->
+  <section class="social-proof-section">
+    <!-- Infinite Continuous Ticker -->
+    <div class="ticker-strip">
+      <div class="ticker-wrapper">
+        <div class="ticker-items">
+          <span><span class="red-dot">●</span> 74% OF DEALS ARE WON BY THE FIRST RESPONDER</span>
+          <span><span class="red-dot">●</span> FROM MESSY BRIEF TO DEFENDED PROPOSAL IN 8 MINS</span>
+          <span><span class="red-dot">●</span> AUTOMATED SCOPE CREEP BOUNDARIES & REVISION SLAS</span>
+          <span><span class="red-dot">●</span> 3-TIER GOOD / BETTER / BEST PRICING ARCHITECTURE</span>
+          <span><span class="red-dot">●</span> ZERO PER-SEAT SEAT TAX FOR AGENCY TEAMS</span>
+        </div>
+        <div class="ticker-items" aria-hidden="true">
+          <span><span class="red-dot">●</span> 74% OF DEALS ARE WON BY THE FIRST RESPONDER</span>
+          <span><span class="red-dot">●</span> FROM MESSY BRIEF TO DEFENDED PROPOSAL IN 8 MINS</span>
+          <span><span class="red-dot">●</span> AUTOMATED SCOPE CREEP BOUNDARIES & REVISION SLAS</span>
+          <span><span class="red-dot">●</span> 3-TIER GOOD / BETTER / BEST PRICING ARCHITECTURE</span>
+          <span><span class="red-dot">●</span> ZERO PER-SEAT SEAT TAX FOR AGENCY TEAMS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 Architectural Metric Columns -->
+    <div class="container">
+      <div class="metrics-architecture">
+        <div class="metric-column">
+          <div class="metric-index">[ METRIC // 01 ]</div>
+          <div class="metric-giant-number">8<span class="serif-suffix">m</span></div>
+          <div class="metric-label-text">Average proposal delivery turnaround, compressed down from 4 business days.</div>
+        </div>
+
+        <div class="metric-column">
+          <div class="metric-index">[ METRIC // 02 ]</div>
+          <div class="metric-giant-number">74<span class="serif-suffix">%</span></div>
+          <div class="metric-label-text">First-responder pitch win rate across 1,400+ qualified agency proposals.</div>
+        </div>
+
+        <div class="metric-column">
+          <div class="metric-index">[ METRIC // 03 ]</div>
+          <div class="metric-giant-number">$58<span class="serif-suffix">M+</span></div>
+          <div class="metric-label-text">Total project value scoped with zero unbilled scope-creep leaks.</div>
+        </div>
+      </div>
+
+      <!-- Partner Agency Marks -->
+      <div class="agency-partners-row">
+        <div class="agency-tagline">DEPLOYED BY TEAMS AT //</div>
+        <div class="agency-monochrome-logos">
+          <span class="agency-mark">APEX CREATIVE</span>
+          <span class="agency-mark">BRIK DIGITAL</span>
+          <span class="agency-mark">NORTHWAY LABS</span>
+          <span class="agency-mark">ARCHETYPE STUDIO</span>
+          <span class="agency-mark">VELOCITY MEDIA</span>
+          <span class="agency-mark">MONOLITH DEV</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 3: HOW IT WORKS (PROTOCOL & TELEMETRY STREAM)
+       ======================================================================== -->
+  <section class="hiw-section" id="how-it-works">
+    <div class="container">
+      
+      <div class="section-editorial-header">
+        <div class="section-protocol-index">[ PROTOCOL // 002 ] — 3-STAGE WORKFLOW</div>
+        <h2 class="section-main-title">
+          From raw client chaos to <span class="serif-accent">defensible contract</span>.
+        </h2>
+        <p class="section-editorial-desc">
+          Eliminate lost weekends spent formatting Keynote decks or recalculating day rates in spreadsheets. Deliver enterprise-grade reverse-briefs while your competitor is still drafting an intake email.
+        </p>
+      </div>
+
+      <div class="hiw-layout-grid">
+        
+        <!-- 3 Interactive Step Cards -->
+        <div class="protocol-steps-stack">
+          
+          <div class="protocol-step-card active" data-step="0">
+            <div class="protocol-card-head">
+              <span class="protocol-step-num">01 /</span>
+              <span class="protocol-phase-pill">INTAKE ENGINE</span>
+            </div>
+            <h3 class="protocol-step-title">Paste brief or discovery audio</h3>
+            <p class="protocol-step-body">
+              Drop in whatever the client sent: a 45-minute Fireflies or Otter audio transcript, a rambling bulleted email, or Slack call notes. Quotably filters out buzzwords and pinpoints commercial requirements.
+            </p>
+          </div>
+
+          <div class="protocol-step-card" data-step="1">
+            <div class="protocol-card-head">
+              <span class="protocol-step-num">02 /</span>
+              <span class="protocol-phase-pill">AMBIGUITY & PRICING SCAN</span>
+            </div>
+            <h3 class="protocol-step-title">AI qualifies, scopes, and prices</h3>
+            <p class="protocol-step-body">
+              The engine detects unspoken dependencies, constructs 3 structured tiers (Good / Better / Best), pairs deliverables with your blended rate cards, and writes contractual out-of-scope boundaries.
+            </p>
+          </div>
+
+          <div class="protocol-step-card" data-step="2">
+            <div class="protocol-card-head">
+              <span class="protocol-step-num">03 /</span>
+              <span class="protocol-phase-pill">COMMERCIAL DISPATCH</span>
+            </div>
+            <h3 class="protocol-step-title">Clean proposal out & e-sign</h3>
+            <p class="protocol-step-body">
+              Deliver an interactive proposal hosted on your agency's custom domain or export to executive PDF. The client selects their desired tier, reviews milestones, and executes a legally binding e-signature.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Right: Telemetry Terminal Inspector -->
+        <div class="telemetry-inspector">
+          <div class="telemetry-topbar">
+            <span>TERMINAL LOG // REVERSE BRIEF COMPILER</span>
+            <span id="inspectorStepTag" style="color: var(--accent-red);">STEP 01 // RAW INGEST STREAM</span>
+          </div>
+          <div class="telemetry-terminal-body">
+            <pre class="telemetry-code" id="inspectorCode"></pre>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 4: COMPARISON MATRIX (ARCHITECTURAL LEDGER)
+       ======================================================================== -->
+  <section class="comparison-section" id="comparison">
+    <div class="container">
+      
+      <div class="section-editorial-header">
+        <div class="section-protocol-index">[ PROTOCOL // 003 ] — BENCHMARK MATRIX</div>
+        <h2 class="section-main-title">
+          Quotably vs <span class="serif-accent">manual documents</span> & legacy tools.
+        </h2>
+        <p class="section-editorial-desc">
+          Why leading agencies are dumping PDF templates and spreadsheets for automated scoping and margin defense.
+        </p>
+      </div>
+
+      <div class="comparison-ledger-card">
+        <table class="ledger-table">
+          <thead>
+            <tr>
+              <th style="width: 26%;">DIMENSION / CAPABILITY</th>
+              <th class="col-quotably" style="width: 28%;">⚡ QUOTABLY ENGINE</th>
+              <th style="width: 23%;">MANUAL SPREADSHEETS</th>
+              <th style="width: 23%;">LEGACY PROPOSAL TOOLS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="ledger-row-title">Turnaround to sent proposal</td>
+              <td class="col-quotably ledger-val-quotably">8–12 minutes from raw brief</td>
+              <td class="ledger-val-standard">12–16 hours over 3–5 days</td>
+              <td class="ledger-val-muted">4–6 hours (formatting templates)</td>
+            </tr>
+            <tr>
+              <td class="ledger-row-title">Handling chaotic client inputs</td>
+              <td class="col-quotably ledger-val-quotably">Paste raw audio transcript or emails</td>
+              <td class="ledger-val-standard">Manual line-by-line reading</td>
+              <td class="ledger-val-muted">Requires pre-written clean copy</td>
+            </tr>
+            <tr>
+              <td class="ledger-row-title">Pricing Architecture</td>
+              <td class="col-quotably ledger-val-quotably">Automated 3-tier Good/Better/Best</td>
+              <td class="ledger-val-standard">Single take-it-or-leave-it figure</td>
+              <td class="ledger-val-muted">Static tables & basic calculators</td>
+            </tr>
+            <tr>
+              <td class="ledger-row-title">Scope Creep Defense</td>
+              <td class="col-quotably ledger-val-quotably">Auto-generated out-of-scope clauses</td>
+              <td class="ledger-val-standard">Forgotten or loosely worded</td>
+              <td class="ledger-val-muted">Zero scoping or risk detection</td>
+            </tr>
+            <tr>
+              <td class="ledger-row-title">Agency Economics</td>
+              <td class="col-quotably ledger-val-quotably">Flat pricing (Zero per-seat charges)</td>
+              <td class="ledger-val-standard">Free software, massive labor loss</td>
+              <td class="ledger-val-muted">$49–$99/user/mo seat tax</td>
+            </tr>
+            <tr>
+              <td class="ledger-row-title">Pitch Win Rate</td>
+              <td class="col-quotably ledger-val-quotably">74% average close rate</td>
+              <td class="ledger-val-standard">28% (lost to faster responses)</td>
+              <td class="ledger-val-muted">34% (standard follow-up)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 5: PRICING (3 REFINED COMMERCIAL TIERS)
+       ======================================================================== -->
+  <section class="pricing-section" id="pricing">
+    <div class="container">
+      
+      <div style="text-align: center; margin-bottom: 3.5rem;">
+        <div class="section-protocol-index">[ PROTOCOL // 004 ] — COMMERCIAL TIERS</div>
+        <h2 class="section-main-title">
+          Zero hidden add-ons. <span class="serif-accent">No per-seat tax</span>.
+        </h2>
+        <p class="section-editorial-desc" style="margin: 0 auto;">
+          Every plan includes unlimited seats for your strategy and delivery team, AI brief parsing, and binding e-signatures.
+        </p>
+
+        <!-- Annual / Monthly Toggle -->
+        <div class="pricing-switch-wrapper" style="margin-top: 2rem;">
+          <div class="pricing-switch-housing">
+            <button class="pricing-tab-btn" id="btnMonthly">Monthly</button>
+            <button class="pricing-tab-btn active" id="btnAnnual">Annual</button>
+          </div>
+          <span class="pricing-badge-save">SAVE 20% + 2 MONTHS FREE</span>
+        </div>
+      </div>
+
+      <!-- 3 Tier Cards -->
+      <div class="commercial-tiers-grid">
+        
+        <!-- Tier 1: Boutique -->
+        <div class="commercial-tier-card">
+          <div class="tier-code-header">TIER // 01</div>
+          <h3 class="tier-primary-title">BOUTIQUE</h3>
+          <p class="tier-ideal-subhead">For solo strategists & boutique studios up to 3 people</p>
+          <div class="tier-price-display">
+            <span class="tier-amount" id="priceBoutique">$39</span>
+            <span class="tier-cycle" id="periodBoutique">/ month, billed annually</span>
+          </div>
+          <div class="tier-scope-summary">
+            Everything required to turn messy client briefs into closed proposals in under 10 minutes.
+          </div>
+          <ul class="tier-deliverables-list">
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Up to 10 active proposals / month</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Full AI brief-to-strategy engine</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Automated 3-tier pricing (Good/Better/Best)</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Scope-creep boundary & revision clauses</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Interactive web proposals & executive PDF</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Unlimited client e-signatures</span>
+            </li>
+          </ul>
+          <button class="btn btn-secondary open-demo-btn">Book 15-min demo</button>
+        </div>
+
+        <!-- Tier 2: Growth Agency (Flagship) -->
+        <div class="commercial-tier-card flagship-tier">
+          <div class="flagship-banner-tag">MOST POPULAR</div>
+          <div class="tier-code-header">TIER // 02 — FLAGSHIP</div>
+          <h3 class="tier-primary-title">GROWTH AGENCY</h3>
+          <p class="tier-ideal-subhead">For scaling digital & creative agencies (4–20 team members)</p>
+          <div class="tier-price-display">
+            <span class="tier-amount" id="priceGrowth">$95</span>
+            <span class="tier-cycle" id="periodGrowth">/ month, billed annually</span>
+          </div>
+          <div class="tier-scope-summary">
+            Unlimited proposals, blended rate cards, audio transcript ingest, and custom domain branding.
+          </div>
+          <ul class="tier-deliverables-list">
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Unlimited proposals</strong> & scoping runs</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span><strong>Zero per-seat charges</strong> (unlimited team access)</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Ingest 60-min audio calls (Otter, Fireflies, Zoom)</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Multi-role rate cards (Design, Dev, Strategy, PM)</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Custom domain CNAME (proposals.youragency.com)</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>HubSpot, Slack, Notion & Stripe integrations</span>
+            </li>
+          </ul>
+          <button class="btn btn-primary open-demo-btn">Book 15-min demo</button>
+        </div>
+
+        <!-- Tier 3: Scale -->
+        <div class="commercial-tier-card">
+          <div class="tier-code-header">TIER // 03</div>
+          <h3 class="tier-primary-title">SCALE</h3>
+          <p class="tier-ideal-subhead">For established multi-disciplinary agencies (20+ people)</p>
+          <div class="tier-price-display">
+            <span class="tier-amount" id="priceScale">$199</span>
+            <span class="tier-cycle" id="periodScale">/ month, billed annually</span>
+          </div>
+          <div class="tier-scope-summary">
+            Enterprise SLA, multi-entity margin auditing, custom fine-tuning, and dedicated concierge.
+          </div>
+          <ul class="tier-deliverables-list">
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Everything in Growth Agency</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Multi-entity billing & regional rate currencies</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Custom AI fine-tuning on past winning proposals</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Dedicated agency operations concierge</span>
+            </li>
+            <li class="deliverable-line">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Custom MSA & SOC-2 compliance package</span>
+            </li>
+          </ul>
+          <button class="btn btn-secondary open-demo-btn">Book 15-min demo</button>
+        </div>
+
+      </div>
+
+      <!-- ROI Banner -->
+      <div class="agency-roi-banner">
+        <div class="roi-statement-text">
+          AGENCY ROI MATH // Closing just <span class="red-callout">ONE</span> extra $15,000 project from being first responder pays for over <span class="red-callout">13 YEARS</span> of Quotably.
+        </div>
+        <button class="btn btn-secondary btn-sm open-demo-btn">Calculate Your Agency ROI</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 6: TESTIMONIALS (VERIFIED DISPATCH CARDS)
+       ======================================================================== -->
+  <section class="testimonials-section" id="testimonials">
+    <div class="container">
+      
+      <div class="section-editorial-header">
+        <div class="section-protocol-index">[ PROTOCOL // 005 ] — OPERATOR DISPATCHES</div>
+        <h2 class="section-main-title">
+          Trusted by <span class="serif-accent">agency founders</span> & operators.
+        </h2>
+        <p class="section-editorial-desc">
+          Real feedback from agency partners who unlocked the first-responder advantage.
+        </p>
+      </div>
+
+      <div class="testimonials-editorial-grid">
+        
+        <!-- Dispatch 1 -->
+        <div class="dispatch-review-card">
+          <div>
+            <div class="dispatch-top-badge">Turnaround: 4 days → 45 mins</div>
+            <p class="dispatch-quote-text">
+              &ldquo;We used to spend 4 days writing 35-page proposal decks that clients barely skimmed. With Quotably, we dropped our discovery transcript in and delivered an interactive reverse-brief 45 minutes later. We closed a $42,000 deal before our competitor even held their internal debrief.&rdquo;
+            </p>
+          </div>
+          <div class="dispatch-author-block">
+            <div class="author-monogram-box">ER</div>
+            <div>
+              <div class="author-credentials-name">Elena Rostova</div>
+              <div class="author-credentials-title">Managing Director, Apex Creative (NYC)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dispatch 2 -->
+        <div class="dispatch-review-card">
+          <div>
+            <div class="dispatch-top-badge">$18,000 Preserved Margins</div>
+            <p class="dispatch-quote-text">
+              &ldquo;Our biggest profit leak was vague client requests that spiraled into 20+ hours of unbilled revisions. Quotably's automated scope boundaries locked in strict revision limits and hourly rates directly in the proposal. It saved us over $18,000 in our first quarter.&rdquo;
+            </p>
+          </div>
+          <div class="dispatch-author-block">
+            <div class="author-monogram-box">MC</div>
+            <div>
+              <div class="author-credentials-name">Marcus Chen</div>
+              <div class="author-credentials-title">Head of Ops, Northway Labs (San Francisco)</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dispatch 3 -->
+        <div class="dispatch-review-card">
+          <div>
+            <div class="dispatch-top-badge">Win Rate: 28% → 43%</div>
+            <p class="dispatch-quote-text">
+              &ldquo;The 3-tier Good/Better/Best pricing architecture changed everything for our sales calls. Instead of asking 'should we hire Archetype or another agency?', clients now spend their energy choosing between Option 2 and Option 3. Close rate jumped to 43% within 60 days.&rdquo;
+            </p>
+          </div>
+          <div class="dispatch-author-block">
+            <div class="author-monogram-box">SP</div>
+            <div>
+              <div class="author-credentials-name">Samira Patel</div>
+              <div class="author-credentials-title">Partner, Archetype Digital (Berlin)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 7: FAQ (STUDIO CASE FILES)
+       ======================================================================== -->
+  <section class="faq-section" id="faq">
+    <div class="container">
+      
+      <div style="text-align: center; margin-bottom: 4rem;">
+        <div class="section-protocol-index">[ PROTOCOL // 006 ] — CASE FILES</div>
+        <h2 class="section-main-title">
+          Frequently asked <span class="serif-accent">operator questions</span>.
+        </h2>
+        <p class="section-editorial-desc" style="margin: 0 auto;">
+          Straightforward answers on how Quotably protects your agency's margins, reputation, and proprietary data.
+        </p>
+      </div>
+
+      <div class="faq-stack-list">
+        
+        <div class="faq-accordion-box active">
+          <button class="faq-toggle-trigger">
+            <div class="faq-query-label">
+              <span class="faq-query-index">01 /</span>
+              <span>Will the AI invent deliverables or quote numbers our agency can't fulfill?</span>
+            </div>
+            <span class="faq-symbol-toggle">+</span>
+          </button>
+          <div class="faq-answer-collapse">
+            No. Quotably is strictly anchored to your agency's operational constraints. During setup (which takes ~5 minutes), you configure your blended rate cards, day rates, delivery team capacity, and core capabilities. Quotably maps the client's messy brief against your actual team parameters, rather than guessing generic market averages.
+          </div>
+        </div>
+
+        <div class="faq-accordion-box">
+          <button class="faq-toggle-trigger">
+            <div class="faq-query-label">
+              <span class="faq-query-index">02 /</span>
+              <span>How does Quotably handle complex bespoke pricing (sprints vs retainers vs fixed fee)?</span>
+            </div>
+            <span class="faq-symbol-toggle">+</span>
+          </button>
+          <div class="faq-answer-collapse">
+            Quotably supports 4 core agency commercial models out of the box: Fixed-Bid Milestones, Agile Sprints (Time & Materials), Value-Anchored Retainers, and Hybrid Scopes (Discovery Sprint transitioning into a recurring Monthly Retainer). You can switch between pricing frameworks with a single toggle.
+          </div>
+        </div>
+
+        <div class="faq-accordion-box">
+          <button class="faq-toggle-trigger">
+            <div class="faq-query-label">
+              <span class="faq-query-index">03 /</span>
+              <span>What does the client actually receive? Do they know AI was used?</span>
+            </div>
+            <span class="faq-symbol-toggle">+</span>
+          </button>
+          <div class="faq-answer-collapse">
+            The client receives an interactive, web-native proposal hosted on your agency's custom CNAME (e.g., proposals.youragency.com) or an executive PDF export. It looks and feels like your senior strategists spent 3 days crafting a bespoke reverse-brief. There is zero Quotably branding or AI watermarking on any client-facing deliverable.
+          </div>
+        </div>
+
+        <div class="faq-accordion-box">
+          <button class="faq-toggle-trigger">
+            <div class="faq-query-label">
+              <span class="faq-query-index">04 /</span>
+              <span>How does Quotably actually stop scope creep after the deal is signed?</span>
+            </div>
+            <span class="faq-symbol-toggle">+</span>
+          </button>
+          <div class="faq-answer-collapse">
+            Scope creep begins during the brief stage when requirements are left ambiguous. Quotably automatically pairs every deliverable with explicit 'Out-of-Scope' guardrails (e.g., maximum 2 revision rounds, client asset turnaround windows, third-party licensing disclaimers, and contingency hourly rates for extra work). When a client requests unplanned changes, you have an iron-clad contractual reference point.
+          </div>
+        </div>
+
+        <div class="faq-accordion-box">
+          <button class="faq-toggle-trigger">
+            <div class="faq-query-label">
+              <span class="faq-query-index">05 /</span>
+              <span>How long does onboarding take for my account leads and project managers?</span>
+            </div>
+            <span class="faq-symbol-toggle">+</span>
+          </button>
+          <div class="faq-answer-collapse">
+            Onboarding takes less than 15 minutes. Enter your agency rate cards and primary service offerings, and paste your first client brief. There is zero complex software configuration or team training required.
+          </div>
+        </div>
+
+        <div class="faq-accordion-box">
+          <button class="faq-toggle-trigger">
+            <div class="faq-query-label">
+              <span class="faq-query-index">06 /</span>
+              <span>Is client discovery audio and confidential brief data kept private?</span>
+            </div>
+            <span class="faq-symbol-toggle">+</span>
+          </button>
+          <div class="faq-answer-collapse">
+            100% yes. We enforce strict enterprise-grade data isolation. Your client discovery call recordings, rate cards, and financial figures are never used to train public models. All data is encrypted in transit and at rest using AES-256 standards.
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       SECTION 8: FINAL HIGH-IMPACT CTA SECTION
+       ======================================================================== -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="final-editorial-frame">
+        <div class="final-cta-stamp">[ DISPATCH // CLOSING ADVANTAGE ]</div>
+        <h2 class="final-cta-headline">
+          Stop losing 15 hours a week on proposals that <span class="serif-accent">never close</span>.
+        </h2>
+        <p class="final-cta-subtext">
+          Paste your messy client discovery notes right now. Have a defensible, 3-tier, scope-protected proposal ready to send before your competitor opens a blank doc.
+        </p>
+
+        <div class="final-actions-row">
+          <button class="btn btn-primary btn-lg open-demo-btn">
+            <span>Book a 15-min demo</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <a href="#how-it-works" class="btn btn-secondary btn-lg">
+            <span>See interactive protocol</span>
+          </a>
+        </div>
+
+        <div class="final-guarantees-bar">
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 14-day zero-risk trial</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> 5-minute rate card setup</span>
+          <span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg> Zero client data trained on</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       ARCHITECTURAL OBSIDIAN FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-architectural-grid">
+        
+        <div>
+          <div class="brand-logo" style="margin-bottom: 1.25rem;">
+            <div class="brand-monogram">Q</div>
+            <span class="footer-brand-heading">QUOTABLY</span>
+          </div>
+          <p class="footer-brand-mission">
+            The proposal and scoping engine built specifically for agency founders, account leads, and heads of business development.
+          </p>
+          <button class="btn btn-primary btn-sm open-demo-btn">Book 15-min demo</button>
+        </div>
+
+        <div>
+          <div class="footer-section-index">[ PRODUCT ]</div>
+          <ul class="footer-nav-list">
+            <li><a href="#how-it-works" class="footer-nav-item">Brief Scoping Engine</a></li>
+            <li><a href="#how-it-works" class="footer-nav-item">Good/Better/Best Pricing</a></li>
+            <li><a href="#how-it-works" class="footer-nav-item">Scope-Creep Guardrails</a></li>
+            <li><a href="#pricing" class="footer-nav-item">Agency Rate Cards</a></li>
+            <li><a href="#comparison" class="footer-nav-item">Speed-to-Proposal Matrix</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-section-index">[ COMPARISONS ]</div>
+          <ul class="footer-nav-list">
+            <li><a href="#comparison" class="footer-nav-item">Quotably vs PandaDoc</a></li>
+            <li><a href="#comparison" class="footer-nav-item">Quotably vs Proposify</a></li>
+            <li><a href="#comparison" class="footer-nav-item">Quotably vs Google Docs</a></li>
+            <li><a href="#comparison" class="footer-nav-item">Quotably vs Keynote Decks</a></li>
+            <li><a href="#comparison" class="footer-nav-item">Quotably vs Bonsai</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-section-index">[ TRUST & SECURITY ]</div>
+          <ul class="footer-nav-list">
+            <li class="footer-nav-item" style="color: #10b981;">✓ Zero Model Training</li>
+            <li class="footer-nav-item">SOC-2 Type II In Review</li>
+            <li class="footer-nav-item">GDPR & CCPA Compliant</li>
+            <li class="footer-nav-item">AES-256 Cloud Encryption</li>
+            <li class="footer-nav-item">Custom NDA Terms Supported</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-sub-bar">
+        <div style="display: flex; align-items: center; gap: 0.5rem; color: #10b981;">
+          <span style="width: 6px; height: 6px; border-radius: 50%; background-color: #10b981;"></span>
+          <span>QUOTABLY ENGINE v2.4 // ALL SYSTEMS OPERATIONAL</span>
+        </div>
+        <div>
+          <span>© 2026 Quotably, Inc. All rights reserved. Built for digital & creative agency operators.</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       15-MINUTE OPERATOR DEMO MODAL
+       ======================================================================== -->
+  <div class="modal-overlay" id="demoModal" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div class="modal-title">Book 15-Min Operator Diagnostic</div>
+        <button class="modal-close-btn" id="closeDemoModal" aria-label="Close modal">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="modal-body" id="modalFormContainer">
+        <form id="demoForm">
+          <div class="form-group">
+            <label class="form-label" for="demoName">Your Name & Role</label>
+            <input class="form-input" type="text" id="demoName" placeholder="e.g. Alex Morgan, Managing Partner" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="demoEmail">Agency Work Email</label>
+            <input class="form-input" type="email" id="demoEmail" placeholder="alex@agencyname.com" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="demoAgencySize">Agency Size</label>
+            <select class="form-select" id="demoAgencySize">
+              <option value="1-5">1–5 team members (Boutique studio)</option>
+              <option value="6-15" selected>6–15 team members (Growth agency)</option>
+              <option value="16-50">16–50 team members (Scale agency)</option>
+              <option value="50+">50+ team members (Enterprise shop)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="demoBottleneck">Primary Pipeline Bottleneck</label>
+            <select class="form-select" id="demoBottleneck">
+              <option value="speed" selected>Proposal turnaround takes 3–5 days (Losing deals)</option>
+              <option value="creep">Scope creep eating our profit margins on signed deals</option>
+              <option value="pricing">Difficulty defending premium day rates to budget clients</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="demoSlot">Preferred 15-Min Diagnostic Slot</label>
+            <select class="form-select" id="demoSlot">
+              <option value="tomorrow_14">Tomorrow at 2:00 PM EST (Recommended)</option>
+              <option value="tomorrow_16">Tomorrow at 4:30 PM EST</option>
+              <option value="wednesday_11">Wednesday at 11:00 AM EST</option>
+              <option value="wednesday_15">Wednesday at 3:00 PM EST</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 0.5rem;" id="demoSubmitBtn">
+            <span>Confirm 15-Min Live Diagnostic</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+        </form>
+      </div>
+
+      <!-- Confirmed State -->
+      <div class="modal-body confirmed-box" id="modalConfirmedContainer" style="display: none;">
+        <div class="confirmed-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 class="font-mono" style="font-size: 1.25rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem;">Diagnostic Reserved</h3>
+        <p style="font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 1.5rem;" id="confirmedDetails">
+          We've dispatched calendar invitation details to your email. We'll demonstrate how to turn raw client discovery notes into a closed $40k+ proposal in 8 minutes.
+        </p>
+        <button class="btn btn-secondary btn-sm" id="closeConfirmedBtn">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
