@@ -1289,6 +1289,16 @@ button {
   letter-spacing: 0.05em;
   padding: 0.3rem 0.85rem;
   border-radius: var(--radius-full);
+  transition: transform 150ms ease;
+}
+
+.pricing-tier-card.featured.is-revealed .featured-badge {
+  animation: badgePop 0.45s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes badgePop {
+  0% { transform: translateY(6px) scale(0.88); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
 }
 
 .tier-title {
