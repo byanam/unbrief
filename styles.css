@@ -1065,6 +1065,15 @@ button {
   text-wrap: balance;
 }
 
+.hiw-section .section-title {
+  font-size: clamp(2.6rem, 4.8vw, 3.85rem);
+  font-weight: 850;
+  letter-spacing: -0.04em;
+  line-height: 1.12;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
 .section-desc {
   font-size: 1.05rem;
   color: var(--text-secondary);
