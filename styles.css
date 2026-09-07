@@ -1031,6 +1031,7 @@ button {
    ========================================================================== */
 .hiw-section {
   padding: 8rem 0;
+  background-color: #000000 !important;
   border-bottom: 1px solid var(--border-hairline);
 }
 
