@@ -246,10 +246,47 @@ button {
       #09090b 100%
     );
   background-size: 180% 180%;
+  animation: heroGradientShift 18s ease-in-out infinite alternate;
   position: relative;
   width: 100%;
   overflow: hidden;
   border-bottom: 1px solid var(--border-hairline);
+}
+
+.hero-snipify-wrapper::before {
+  content: "";
+  position: absolute;
+  top: -15%;
+  left: 10%;
+  width: 80%;
+  height: 70%;
+  background: radial-gradient(ellipse at 50% 30%, rgba(37, 99, 235, 0.16) 0%, rgba(29, 78, 216, 0.06) 50%, transparent 80%);
+  pointer-events: none;
+  animation: heroAuraBreath 14s ease-in-out infinite alternate;
+  z-index: 1;
+}
+
+@keyframes heroGradientShift {
+  0% {
+    background-position: 0% 15%;
+  }
+  50% {
+    background-position: 100% 85%;
+  }
+  100% {
+    background-position: 25% 0%;
+  }
+}
+
+@keyframes heroAuraBreath {
+  0% {
+    transform: scale(0.94) translateY(0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.06) translateY(24px);
+    opacity: 1;
+  }
 }
 
 .snipify-header {
