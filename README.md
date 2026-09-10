@@ -1,4 +1,13 @@
-# Unbrief — The Agency Proposal & Scoping Engine
+<div align="center">
+  <h1>Unbrief — The Agency Proposal & Scoping Engine</h1>
+  <p>Turn messy client briefs and discovery calls into scoped, defensibly priced 3-tier proposals in <b>8 minutes</b>.</p>
+  <p>
+    <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5">
+    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3">
+    <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript">
+    <img src="https://img.shields.io/badge/Design-Swiss_Modernist-000000?style=for-the-badge" alt="Design">
+  </p>
+</div>
 
 > Turn messy client briefs and discovery calls into scoped, defensibly priced 3-tier proposals in **8 minutes**. Engineered for digital and creative agency leaders.
 
