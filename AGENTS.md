@@ -1,9 +1,21 @@
-<!-- BEGIN:nextjs-agent-rules -->
+# Unbrief — Agent Rules & Architecture Guidelines
 
-# This is NOT the Next.js you know
+## Architecture & Tech Stack
+- **Core**: Semantic HTML5 & Vanilla JavaScript (ES6+). Zero heavy frameworks.
+- **Styling**: Pure Vanilla CSS3 with custom properties and responsive fluid layouts.
+- **Aesthetic**: Swiss Modernist editorial design direction (restrained monochrome, subtle border hairines, zero glows, tactile dark mode).
+- **Typography**: Google Fonts (`Plus Jakarta Sans` for body/display, `Space Mono` for metrics/code).
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` (resolved from this file's directory; in monorepos the `next` package may not be visible from the repo root) before writing any code. Heed deprecation notices.
+## Local Development & Testing
+- Serve locally using:
+  ```bash
+  npm run dev
+  # or
+  python3 -m http.server 3000
+  ```
+- Test changes in multiple viewport widths (desktop, tablet, mobile).
+- Ensure all interactive elements have valid `type="button"`, `aria-label`, and keyboard focus indicators.
 
-This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
-
-<!-- END:nextjs-agent-rules -->
+## Git & Version Control
+- Commit with concise, conventional commit prefixes (`feat:`, `fix:`, `refactor:`, `perf:`, `style:`, `docs:`, `chore:`).
+- Always push verified changes to `origin/main`.
