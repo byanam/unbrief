@@ -1,4 +1,25 @@
 {
+  "name": "unbrief",
+  "version": "1.0.0",
+  "description": "Turn messy client briefs and discovery calls into scoped, defensibly priced 3-tier proposals in 8 minutes.",
+  "scripts": {
+    "dev": "python3 -m http.server 3000",
+    "start": "python3 -m http.server 3000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byanam/unbrief.git"
+  },
+  "keywords": [
+    "proposal",
+    "scoping",
+    "agency",
+    "pricing-matrix",
+    "client-brief",
+    "web-proposal"
+  ],
+  "author": "Anam Razzaque",
+  "license": "MIT",
   "dependencies": {
     "@firecms/neat": "^1.0.2"
   }
