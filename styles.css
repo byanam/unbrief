@@ -2330,6 +2330,7 @@ button {
 
 @media (max-width: 860px) {
   /* Remove un-optimizable desktop elements */
+  .snipify-dashboard-wrap,
   .terminal-clean-box,
   .neat-gradient-wrap canvas,
   .comp-columns-header,
@@ -2340,7 +2341,7 @@ button {
 
   /* Compact section paddings to eliminate excessive vertical length */
   .snipify-hero-section {
-    padding: 1.75rem 0 0 !important;
+    padding: 2.25rem 0 2rem !important;
   }
 
   .social-proof-section,
