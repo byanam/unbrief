@@ -360,12 +360,12 @@ button {
 }
 
 .snipify-hero-headline {
-  font-size: clamp(3rem, 5.8vw, 4.4rem);
-  font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.035em;
+  font-size: clamp(3.4rem, 6.6vw, 5.2rem);
+  font-weight: 900;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
   color: #ffffff;
-  margin: 0 auto 1.25rem;
+  margin: 0 auto 1.35rem;
   text-wrap: balance;
 }
 
@@ -2303,7 +2303,9 @@ button {
   }
 
   .snipify-hero-headline {
-    font-size: 2.4rem;
+    font-size: clamp(2.4rem, 7.5vw, 3rem);
+    font-weight: 900;
+    line-height: 1.08;
   }
 
   .snipify-kpi-grid {
