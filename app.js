@@ -828,5 +828,89 @@ const proposalPackage = {
 
   initComparisonFlightdeck();
 
+  // ==========================================================================
+  // [COMMENT 17]: Mobile slider arrow controls & scroll-driven auto-slide
+  // Handles arrow click navigation and auto-slides horizontal carousels when user scrolls down
+  // ==========================================================================
+  function initMobileSliderControls() {
+    // Arrow button click navigation
+    document.querySelectorAll('.slider-arrow-ctrls').forEach(ctrl => {
+      const targetSelector = ctrl.getAttribute('data-slider');
+      const track = document.querySelector(targetSelector);
+      if (!track) return;
+      const prevBtn = ctrl.querySelector('.prev');
+      const nextBtn = ctrl.querySelector('.next');
+      if (prevBtn) {
+        prevBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const step = Math.min(320, track.clientWidth * 0.85);
+          track.scrollBy({ left: -step, behavior: 'smooth' });
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          const step = Math.min(320, track.clientWidth * 0.85);
+          track.scrollBy({ left: step, behavior: 'smooth' });
+        });
+      }
+    });
+
+    // Scroll-driven auto horizontal advancement on mobile
+    const sliders = [
+      { container: document.querySelector('.hiw-steps-col'), section: document.getElementById('how-it-works') },
+      { container: document.querySelector('.comp-pairs-list'), section: document.getElementById('comparison') },
+      { container: document.querySelector('.pricing-grid'), section: document.getElementById('pricing') },
+      { container: document.querySelector('.testimonials-grid'), section: document.getElementById('testimonials') }
+    ];
+
+    let userTouching = false;
+    let touchTimer = null;
+
+    sliders.forEach(({ container }) => {
+      if (!container) return;
+      container.addEventListener('touchstart', () => {
+        userTouching = true;
+        clearTimeout(touchTimer);
+      }, { passive: true });
+      container.addEventListener('touchend', () => {
+        touchTimer = setTimeout(() => { userTouching = false; }, 1200);
+      }, { passive: true });
+    });
+
+    let ticking = false;
+    function onMobileScroll() {
+      if (window.innerWidth > 860 || userTouching) {
+        ticking = false;
+        return;
+      }
+      const vh = window.innerHeight;
+
+      sliders.forEach(({ container, section }) => {
+        if (!container || !section) return;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+        if (maxScroll <= 15) return;
+
+        const rect = section.getBoundingClientRect();
+        const start = vh * 0.7;
+        const end = vh * 0.1;
+        if (rect.top <= start && rect.bottom >= end) {
+          const progress = Math.max(0, Math.min(1, (start - rect.top) / (start - end)));
+          container.scrollLeft = progress * maxScroll;
+        }
+      });
+      ticking = false;
+    }
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(onMobileScroll);
+        ticking = true;
+      }
+    }, { passive: true });
+  }
+
+  initMobileSliderControls();
+
 });
 
