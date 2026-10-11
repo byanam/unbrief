@@ -1626,28 +1626,41 @@ button {
 
 /* Responsive Styles */
 @media (max-width: 860px) {
-  .comp-columns-header {
-    display: none;
-  }
-
-  .comp-center-divider {
-    display: none;
+  .comp-columns-header,
+  .comp-center-divider,
+  #dividerScrollPip {
+    display: none !important;
   }
 
   .comp-pair-row {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-    padding: 2.5rem 0;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 0.85rem;
+    padding: 1.25rem 0 !important;
+    opacity: 1 !important;
+    transform: none !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
 
-  .comp-card-editorial.left {
-    grid-column: 1;
-    padding-bottom: 2rem;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.08);
+  .comp-pair-row::-webkit-scrollbar {
+    display: none;
   }
 
+  .comp-card-editorial.left,
   .comp-card-editorial.right {
-    grid-column: 1;
+    flex: 0 0 84% !important;
+    min-width: 260px;
+    max-width: 320px;
+    scroll-snap-align: start;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
   }
 }
 
@@ -2262,7 +2275,7 @@ button {
 @media (max-width: 1024px) {
   .hero-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
   }
 
   .hiw-grid {
@@ -2270,14 +2283,7 @@ button {
   }
 
   .terminal-clean-box {
-    position: static;
-  }
-
-  .pricing-grid,
-  .testimonials-grid,
-  .stats-clean-grid,
-  .simple-comp-grid {
-    grid-template-columns: 1fr;
+    display: none !important;
   }
 
   .footer-clean-grid {
@@ -2285,54 +2291,219 @@ button {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 860px) {
+  /* Remove un-optimizable desktop elements */
+  .terminal-clean-box,
+  .neat-gradient-wrap canvas,
+  .comp-columns-header,
+  .comp-center-divider,
+  #dividerScrollPip {
+    display: none !important;
+  }
+
+  /* Compact section paddings to eliminate excessive vertical length */
+  .snipify-hero-section {
+    padding: 2.5rem 0 0 !important;
+  }
+
+  .social-proof-section,
+  .hiw-section,
+  .comparison-section,
+  .pricing-section,
+  .testimonials-section,
+  .faq-section {
+    padding: 3.5rem 0 !important;
+  }
+
+  .section-title {
+    font-size: clamp(1.75rem, 5.5vw, 2.2rem) !important;
+    line-height: 1.15;
+  }
+
+  .snipify-hero-subhead {
+    font-size: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .snipify-cta-wrap {
+    margin-bottom: 2.25rem;
+  }
+
+  /* SIDE-BY-SIDE MOBILE LAYOUTS (Left-to-Right instead of vertical stacking) */
+
+  /* 1. Hero KPI Cards */
   .snipify-kpi-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 0.75rem;
+    padding-bottom: 0.6rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
   }
-
-  .snipify-lower-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .nav-links,
-  .snipify-nav-links {
+  .snipify-kpi-grid::-webkit-scrollbar {
     display: none;
   }
-
-  .snipify-hero-headline {
-    font-size: clamp(2.8rem, 10.5vw, 4.2rem);
-    font-weight: 900;
-    line-height: 1.02;
-    letter-spacing: -0.04em;
+  .snipify-kpi-card {
+    flex: 0 0 210px !important;
+    min-width: 210px;
+    scroll-snap-align: start;
   }
 
-  .snipify-kpi-grid {
-    grid-template-columns: 1fr;
+  /* 2. Hero Lower Panels (Scope Feed & 3-Tier Matrix) */
+  .snipify-lower-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 0.85rem;
+    padding-bottom: 0.6rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .snipify-lower-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .snipify-lower-panel {
+    flex: 0 0 85% !important;
+    min-width: 275px;
+    max-width: 330px;
+    scroll-snap-align: start;
   }
 
-  .snipify-app-nav {
-    overflow-x: auto;
-    padding: 0.75rem 1rem;
-    gap: 1.2rem;
+  /* 3. Social Proof Stats */
+  .stats-clean-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 0.75rem;
+    padding-bottom: 0.6rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .stats-clean-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .stat-clean-box {
+    flex: 0 0 200px !important;
+    min-width: 200px;
+    scroll-snap-align: start;
+    padding: 1.25rem 1rem !important;
   }
 
+  /* 4. Client Logos */
+  .logos-clean-row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    gap: 1.5rem;
+    padding: 0.85rem 0 !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .logos-clean-row::-webkit-scrollbar {
+    display: none;
+  }
+  .logo-clean-item {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  /* 5. How It Works Steps */
+  .hiw-steps-col {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 0.85rem;
+    padding-bottom: 0.6rem;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .hiw-steps-col::-webkit-scrollbar {
+    display: none;
+  }
+  .step-clean-card {
+    flex: 0 0 84% !important;
+    min-width: 260px;
+    max-width: 320px;
+    scroll-snap-align: start;
+    padding: 1.5rem 1.25rem !important;
+  }
+
+  /* 6. Pricing Cards */
+  .pricing-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 0.5rem 0 1.25rem !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .pricing-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .pricing-tier-card {
+    flex: 0 0 85% !important;
+    min-width: 280px;
+    max-width: 330px;
+    scroll-snap-align: center;
+    padding: 2rem 1.35rem !important;
+  }
+
+  /* 7. Testimonial Cards */
+  .testimonials-grid {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding: 0.5rem 0 1.25rem !important;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .testimonials-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .testimonial-clean-card {
+    flex: 0 0 84% !important;
+    min-width: 265px;
+    max-width: 320px;
+    scroll-snap-align: start;
+    padding: 1.6rem 1.25rem !important;
+  }
+
+  /* 8. Dashboard Subheader & Filters */
   .snipify-dash-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.75rem;
   }
-
-  .section-title {
-    font-size: 2rem;
+  .snipify-dash-filters .snipify-filter-item:first-child {
+    display: none;
   }
 
-
-
+  /* 9. Navigation & Footer */
+  .nav-links,
+  .snipify-nav-links {
+    display: none;
+  }
   .footer-clean-grid {
     grid-template-columns: 1fr;
+  }
+  .ref-giant-wordmark {
+    font-size: clamp(3.8rem, 18vw, 7.5rem);
   }
 }
 
