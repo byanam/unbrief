@@ -1246,6 +1246,7 @@ button {
   0% {
     transform: translateX(0);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -1709,6 +1710,7 @@ button {
 
 /* Responsive Styles */
 @media (max-width: 860px) {
+
   .comp-columns-header,
   .comp-center-divider,
   #dividerScrollPip {
@@ -2413,6 +2415,7 @@ button {
 }
 
 @media (max-width: 860px) {
+
   /* Complete removal of scroll wheel / scrollbar indicator on mobile */
   html,
   body,
@@ -2420,6 +2423,7 @@ button {
     scrollbar-width: none !important;
     -ms-overflow-style: none !important;
   }
+
   html::-webkit-scrollbar,
   body::-webkit-scrollbar,
   *::-webkit-scrollbar {
@@ -2585,9 +2589,11 @@ button {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
+
   .snipify-kpi-grid::-webkit-scrollbar {
     display: none;
   }
+
   .snipify-kpi-card {
     flex: 0 0 170px !important;
     min-width: 170px !important;
@@ -2595,13 +2601,16 @@ button {
     border-radius: 8px !important;
     scroll-snap-align: start;
   }
+
   .snipify-kpi-label {
     font-size: 0.68rem !important;
   }
+
   .snipify-kpi-val {
     font-size: 1.2rem !important;
     margin: 0.25rem 0 !important;
   }
+
   .snipify-kpi-delta {
     font-size: 0.68rem !important;
   }
@@ -2620,9 +2629,11 @@ button {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
+
   .snipify-lower-grid::-webkit-scrollbar {
     display: none;
   }
+
   .snipify-lower-panel {
     flex: 0 0 calc(100vw - 80px) !important;
     min-width: 260px !important;
@@ -2631,21 +2642,27 @@ button {
     border-radius: 8px !important;
     scroll-snap-align: center;
   }
+
   .snipify-panel-title {
     font-size: 0.82rem !important;
   }
+
   .unbrief-scope-name {
     font-size: 0.76rem !important;
   }
+
   .unbrief-scope-meta {
     font-size: 0.68rem !important;
   }
+
   .unbrief-tier-name {
     font-size: 0.8rem !important;
   }
+
   .unbrief-tier-price {
     font-size: 0.88rem !important;
   }
+
   .unbrief-tier-desc {
     font-size: 0.68rem !important;
   }
@@ -2661,6 +2678,7 @@ button {
     overflow-x: visible !important;
     width: 100% !important;
   }
+
   .stat-clean-box {
     flex: none !important;
     min-width: 0 !important;
@@ -2668,11 +2686,13 @@ button {
     border-radius: 8px !important;
     text-align: center;
   }
+
   .stat-clean-num {
     font-size: clamp(1.35rem, 5vw, 1.75rem) !important;
     line-height: 1;
     margin-bottom: 0.25rem;
   }
+
   .stat-clean-text {
     font-size: clamp(0.58rem, 2.1vw, 0.7rem) !important;
     line-height: 1.25 !important;
@@ -2705,9 +2725,11 @@ button {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
+
   .hiw-steps-col::-webkit-scrollbar {
     display: none;
   }
+
   .step-clean-card {
     flex: 0 0 calc(100vw - 64px) !important;
     min-width: 270px !important;
@@ -2716,14 +2738,17 @@ button {
     padding: 1.25rem 1.15rem !important;
     border-radius: 12px !important;
   }
+
   .step-clean-num {
     font-size: 0.72rem !important;
     margin-bottom: 0.35rem !important;
   }
+
   .step-clean-title {
     font-size: 1.1rem !important;
     margin-bottom: 0.45rem !important;
   }
+
   .step-clean-body {
     font-size: 0.82rem !important;
     line-height: 1.45 !important;
@@ -2733,9 +2758,11 @@ button {
   .pricing-toggle-container {
     margin-top: 1.15rem !important;
   }
+
   .pricing-switch-housing {
     padding: 3px !important;
   }
+
   .pricing-switch-btn {
     font-size: 0.8rem !important;
     padding: 0.35rem 0.95rem !important;
@@ -2756,9 +2783,11 @@ button {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
+
   .pricing-grid::-webkit-scrollbar {
     display: none;
   }
+
   .pricing-tier-card {
     flex: 0 0 calc(100vw - 64px) !important;
     min-width: 275px !important;
@@ -2768,50 +2797,61 @@ button {
     border-radius: 14px !important;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
   }
+
   .featured-badge {
     top: -10px !important;
     font-size: 0.62rem !important;
     padding: 0.25rem 0.65rem !important;
   }
+
   .tier-title {
     font-size: 1.25rem !important;
     margin-bottom: 0.25rem !important;
   }
+
   .tier-desc {
     font-size: 0.78rem !important;
     min-height: auto !important;
     margin-bottom: 0.5rem !important;
     line-height: 1.35 !important;
   }
+
   .tier-price-row {
     margin-bottom: 0.35rem !important;
   }
+
   .tier-price-num {
     font-size: 2.25rem !important;
   }
+
   .tier-price-period {
     font-size: 0.75rem !important;
   }
+
   .tier-summary-line {
     font-size: 0.78rem !important;
     padding: 0.5rem 0 !important;
     margin-bottom: 0.75rem !important;
     line-height: 1.35 !important;
   }
+
   .tier-bullets {
     gap: 0.4rem !important;
     margin-bottom: 1.15rem !important;
   }
+
   .tier-bullet-item {
     font-size: 0.76rem !important;
     line-height: 1.35 !important;
     gap: 0.45rem !important;
   }
+
   .tier-bullet-item svg {
     width: 13px !important;
     height: 13px !important;
     margin-top: 2px !important;
   }
+
   .pricing-tier-card .btn {
     padding: 0.65rem 1rem !important;
     font-size: 0.85rem !important;
@@ -2826,6 +2866,7 @@ button {
     gap: 0.85rem !important;
     margin-top: 1.75rem !important;
   }
+
   .roi-clean-text {
     font-size: 0.82rem !important;
     line-height: 1.4 !important;
@@ -2847,9 +2888,11 @@ button {
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
   }
+
   .testimonials-grid::-webkit-scrollbar {
     display: none;
   }
+
   .testimonial-clean-card {
     flex: 0 0 calc(100vw - 64px) !important;
     min-width: 270px !important;
@@ -2858,27 +2901,33 @@ button {
     padding: 1.25rem 1.1rem !important;
     border-radius: 12px !important;
   }
+
   .metric-pill {
     font-size: 0.72rem !important;
     padding: 0.2rem 0.55rem !important;
     margin-bottom: 0.65rem !important;
   }
+
   .testimonial-quote {
     font-size: 0.88rem !important;
     line-height: 1.45 !important;
     margin-bottom: 1rem !important;
   }
+
   .author-block {
     gap: 0.65rem !important;
   }
+
   .author-avatar {
     width: 32px !important;
     height: 32px !important;
     font-size: 0.75rem !important;
   }
+
   .author-name {
     font-size: 0.85rem !important;
   }
+
   .author-agency {
     font-size: 0.75rem !important;
   }
@@ -2888,6 +2937,7 @@ button {
     border-radius: 8px !important;
     margin-bottom: 0.5rem !important;
   }
+
   .faq-trigger {
     padding: 0.8rem 0.95rem !important;
     font-size: 0.84rem !important;
@@ -2895,12 +2945,14 @@ button {
     font-weight: 600 !important;
     line-height: 1.3 !important;
   }
+
   .faq-answer-box {
     padding: 0 0.95rem !important;
     font-size: 0.78rem !important;
     line-height: 1.42 !important;
     color: #94a3b8 !important;
   }
+
   .faq-clean-item.active .faq-answer-box {
     padding-bottom: 0.8rem !important;
   }
@@ -2910,9 +2962,11 @@ button {
   .snipify-nav-links {
     display: none;
   }
+
   .footer-clean-grid {
     grid-template-columns: 1fr;
   }
+
   .ref-giant-wordmark {
     font-size: clamp(3.8rem, 18vw, 7.5rem);
   }

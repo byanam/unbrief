@@ -618,8 +618,8 @@ const proposalPackage = {
   const gradientCanvas = document.getElementById("gradient");
   if (gradientCanvas && typeof neat !== "undefined" && neat.NeatGradient) {
     // Disable watermark render and click listeners
-    neat.NeatGradient.prototype._renderWatermark = function () {};
-    neat.NeatGradient.prototype._initWatermark = function () {};
+    neat.NeatGradient.prototype._renderWatermark = function () { };
+    neat.NeatGradient.prototype._initWatermark = function () { };
 
     const config = {
       colors: [
@@ -839,8 +839,8 @@ const proposalPackage = {
       // Collect all slideable cards inside the track container
       const cards = Array.from(track.children).filter(child => {
         return child.nodeType === 1 &&
-               !child.classList.contains('slider-arrow-ctrls') &&
-               child.offsetWidth > 0;
+          !child.classList.contains('slider-arrow-ctrls') &&
+          child.offsetWidth > 0;
       });
 
       if (!cards.length) return;
