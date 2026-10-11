@@ -354,18 +354,18 @@ button {
 }
 
 .snipify-hero-container {
-  max-width: 1200px;
+  max-width: 1340px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
 
 .snipify-hero-headline {
-  font-size: clamp(3.4rem, 6.6vw, 5.2rem);
+  font-size: clamp(4.2rem, 9.2vw, 7.5rem);
   font-weight: 900;
-  line-height: 1.04;
-  letter-spacing: -0.04em;
+  line-height: 0.98;
+  letter-spacing: -0.045em;
   color: #ffffff;
-  margin: 0 auto 1.35rem;
+  margin: 0 auto 1.75rem;
   text-wrap: balance;
 }
 
@@ -2303,9 +2303,10 @@ button {
   }
 
   .snipify-hero-headline {
-    font-size: clamp(2.4rem, 7.5vw, 3rem);
+    font-size: clamp(2.8rem, 10.5vw, 4.2rem);
     font-weight: 900;
-    line-height: 1.08;
+    line-height: 1.02;
+    letter-spacing: -0.04em;
   }
 
   .snipify-kpi-grid {
