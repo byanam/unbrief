@@ -62,6 +62,14 @@ html {
   background-color: var(--bg-page);
   color-scheme: dark;
   -webkit-font-smoothing: antialiased;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 body {
@@ -70,6 +78,14 @@ body {
   color: var(--text-primary);
   line-height: 1.5;
   overflow-x: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 ::selection {
@@ -1237,25 +1253,47 @@ button {
 
 .slider-arrow-ctrls {
   display: none;
+  position: relative;
+  z-index: 25;
 }
 
 .slider-arrow-btn {
-  width: 32px;
-  height: 32px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   color: #ffffff;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 150ms ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: transform 120ms ease, background-color 150ms ease, border-color 150ms ease;
+}
+
+.slider-arrow-btn svg {
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.slider-arrow-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.35);
 }
 
 .slider-arrow-btn:active {
-  background: rgba(255, 255, 255, 0.22);
-  transform: scale(0.92);
+  background: var(--accent-blue);
+  border-color: var(--accent-blue);
+  transform: scale(0.90);
 }
 
 .slider-hint {
@@ -1264,6 +1302,7 @@ button {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   font-family: var(--font-mono, monospace);
+  user-select: none;
 }
 
 .logo-clean-item {
@@ -1686,6 +1725,7 @@ button {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     gap: 1rem;
     margin-left: -1.5rem !important;
     margin-right: -1.5rem !important;
@@ -2373,6 +2413,22 @@ button {
 }
 
 @media (max-width: 860px) {
+  /* Complete removal of scroll wheel / scrollbar indicator on mobile */
+  html,
+  body,
+  * {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    background: transparent !important;
+  }
+
   /* Remove un-optimizable desktop elements */
   .snipify-dashboard-wrap,
   .terminal-clean-box,
@@ -2627,8 +2683,11 @@ button {
     display: flex !important;
     align-items: center;
     justify-content: center;
-    gap: 0.75rem;
-    margin: 0.4rem auto 0.9rem auto;
+    gap: 0.85rem;
+    margin: 0.5rem auto 1rem auto;
+    position: relative;
+    z-index: 30;
+    pointer-events: auto;
   }
 
   /* 5. How It Works Steps Sliding Carousel */
@@ -2638,6 +2697,7 @@ button {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     gap: 1rem !important;
     margin-left: -1.5rem !important;
     margin-right: -1.5rem !important;
@@ -2687,6 +2747,7 @@ button {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     gap: 1rem !important;
     margin-top: 1.75rem !important;
     margin-left: -1.5rem !important;
@@ -2777,6 +2838,7 @@ button {
     flex-wrap: nowrap !important;
     overflow-x: auto !important;
     scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
     gap: 1rem !important;
     margin-top: 1.5rem !important;
     margin-left: -1.5rem !important;

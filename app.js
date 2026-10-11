@@ -829,85 +829,105 @@ const proposalPackage = {
   initComparisonFlightdeck();
 
   // ==========================================================================
-  // [COMMENT 17]: Mobile slider arrow controls & scroll-driven auto-slide
-  // Handles arrow click navigation and auto-slides horizontal carousels when user scrolls down
+  // [COMMENT 17]: Mobile slider arrow controls
+  // Enables smooth left-to-right sliding between cards via arrow buttons
   // ==========================================================================
   function initMobileSliderControls() {
-    // Arrow button click navigation
+    function slideTrack(track, direction) {
+      if (!track) return;
+
+      // Collect all slideable cards inside the track container
+      const cards = Array.from(track.children).filter(child => {
+        return child.nodeType === 1 &&
+               !child.classList.contains('slider-arrow-ctrls') &&
+               child.offsetWidth > 0;
+      });
+
+      if (!cards.length) return;
+
+      const trackRect = track.getBoundingClientRect();
+      const trackCenter = trackRect.left + trackRect.width / 2;
+
+      // Find which card is closest to the visible center of the track
+      let closestIdx = 0;
+      let minDistance = Infinity;
+
+      cards.forEach((card, idx) => {
+        const cardRect = card.getBoundingClientRect();
+        const cardCenter = cardRect.left + cardRect.width / 2;
+        const distance = Math.abs(cardCenter - trackCenter);
+        if (distance < minDistance) {
+          minDistance = distance;
+          closestIdx = idx;
+        }
+      });
+
+      // Calculate target card index
+      let targetIdx = direction === 'next' ? closestIdx + 1 : closestIdx - 1;
+      if (targetIdx >= cards.length) {
+        targetIdx = 0; // Wrap around to the start
+      }
+      if (targetIdx < 0) {
+        targetIdx = cards.length - 1; // Wrap around to the end
+      }
+
+      const targetCard = cards[targetIdx];
+      if (!targetCard) return;
+
+      // Calculate exact scrollLeft coordinate so target card is centered
+      const cardRect = targetCard.getBoundingClientRect();
+      const currentScroll = track.scrollLeft;
+      const targetOffset = (cardRect.left - trackRect.left) + currentScroll - Math.max(0, (track.clientWidth - cardRect.width) / 2);
+
+      // Smoothly scroll track container directly
+      track.scrollTo({
+        left: Math.max(0, Math.round(targetOffset)),
+        behavior: 'smooth'
+      });
+
+      // Also trigger scrollIntoView for browser scroll-snap engines
+      try {
+        targetCard.scrollIntoView({
+          behavior: 'smooth',
+          inline: 'center',
+          block: 'nearest'
+        });
+      } catch (e) {
+        // Fallback already handled by scrollTo
+      }
+
+      // If cards have step indicators, sync active class
+      if (targetCard.dataset && targetCard.dataset.step !== undefined) {
+        cards.forEach(c => c.classList.remove('active'));
+        targetCard.classList.add('active');
+      }
+    }
+
+    // Bind all slider control arrow buttons
     document.querySelectorAll('.slider-arrow-ctrls').forEach(ctrl => {
       const targetSelector = ctrl.getAttribute('data-slider');
       const track = document.querySelector(targetSelector);
       if (!track) return;
+
       const prevBtn = ctrl.querySelector('.prev');
       const nextBtn = ctrl.querySelector('.next');
+
       if (prevBtn) {
         prevBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          const step = Math.min(320, track.clientWidth * 0.85);
-          track.scrollBy({ left: -step, behavior: 'smooth' });
+          e.stopPropagation();
+          slideTrack(track, 'prev');
         });
       }
+
       if (nextBtn) {
         nextBtn.addEventListener('click', (e) => {
           e.preventDefault();
-          const step = Math.min(320, track.clientWidth * 0.85);
-          track.scrollBy({ left: step, behavior: 'smooth' });
+          e.stopPropagation();
+          slideTrack(track, 'next');
         });
       }
     });
-
-    // Scroll-driven auto horizontal advancement on mobile
-    const sliders = [
-      { container: document.querySelector('.hiw-steps-col'), section: document.getElementById('how-it-works') },
-      { container: document.querySelector('.comp-pairs-list'), section: document.getElementById('comparison') },
-      { container: document.querySelector('.pricing-grid'), section: document.getElementById('pricing') },
-      { container: document.querySelector('.testimonials-grid'), section: document.getElementById('testimonials') }
-    ];
-
-    let userTouching = false;
-    let touchTimer = null;
-
-    sliders.forEach(({ container }) => {
-      if (!container) return;
-      container.addEventListener('touchstart', () => {
-        userTouching = true;
-        clearTimeout(touchTimer);
-      }, { passive: true });
-      container.addEventListener('touchend', () => {
-        touchTimer = setTimeout(() => { userTouching = false; }, 1200);
-      }, { passive: true });
-    });
-
-    let ticking = false;
-    function onMobileScroll() {
-      if (window.innerWidth > 860 || userTouching) {
-        ticking = false;
-        return;
-      }
-      const vh = window.innerHeight;
-
-      sliders.forEach(({ container, section }) => {
-        if (!container || !section) return;
-        const maxScroll = container.scrollWidth - container.clientWidth;
-        if (maxScroll <= 15) return;
-
-        const rect = section.getBoundingClientRect();
-        const start = vh * 0.7;
-        const end = vh * 0.1;
-        if (rect.top <= start && rect.bottom >= end) {
-          const progress = Math.max(0, Math.min(1, (start - rect.top) / (start - end)));
-          container.scrollLeft = progress * maxScroll;
-        }
-      });
-      ticking = false;
-    }
-
-    window.addEventListener('scroll', () => {
-      if (!ticking) {
-        requestAnimationFrame(onMobileScroll);
-        ticking = true;
-      }
-    }, { passive: true });
   }
 
   initMobileSliderControls();
